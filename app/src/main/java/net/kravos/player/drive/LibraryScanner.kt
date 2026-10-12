@@ -26,6 +26,7 @@ import net.kravos.player.data.Prefs
 import net.kravos.player.data.Track
 import net.kravos.player.tags.AudioTags
 import net.kravos.player.tags.BufferedRangeSource
+import net.kravos.player.tags.FileNameInfo
 import net.kravos.player.tags.PictureRef
 import net.kravos.player.tags.TagReader
 import java.io.File
@@ -224,13 +225,11 @@ class LibraryScanner(
     }
 
     private fun buildTrack(file: DriveFile, node: Node, tags: AudioTags, coverId: String?, now: Long): Track {
-        val base = file.name.substringBeforeLast('.')
-        val numbered = FILE_TRACK.find(base)
-        val fileTrack = numbered?.groupValues?.get(1)?.toIntOrNull()
-        val fileTitle = (numbered?.groupValues?.get(2) ?: base).replace('_', ' ').trim()
-        val title = tags.title ?: fileTitle
+        val fn = FileNameInfo.parse(file.name)
+        val title = tags.title ?: fn.title
         val album = tags.album ?: if (node.depth >= 1) node.name else "Unknown Album"
-        val artist = tags.artist ?: tags.albumArtist ?: (if (node.depth >= 2) node.parentName else null) ?: "Unknown Artist"
+        val artist = tags.artist ?: tags.albumArtist ?: fn.artist
+            ?: (if (node.depth >= 2) node.parentName else null) ?: "Unknown Artist"
         val albumArtist = tags.albumArtist ?: artist
         val albumKey = if (tags.albumArtist != null) {
             "a:" + albumArtist.lowercase().trim() + "|" + album.lowercase().trim()
@@ -250,8 +249,8 @@ class LibraryScanner(
             albumArtist = albumArtist,
             genre = tags.genre ?: "",
             year = tags.year ?: 0,
-            trackNo = tags.track ?: fileTrack ?: 0,
-            discNo = tags.disc ?: 1,
+            trackNo = tags.track ?: fn.track ?: 0,
+            discNo = tags.disc ?: fn.disc ?: 1,
             durationMs = tags.durationMs,
             format = tags.format.ifEmpty { file.extension.uppercase() },
             sampleRate = tags.sampleRate,
@@ -306,7 +305,6 @@ class LibraryScanner(
         private const val PARALLEL = 6
         private const val ART_SIZE = 640
         private const val MAX_ART_BYTES = 12 * 1024 * 1024
-        private val FILE_TRACK = Regex("^(\\d{1,3})\\s*[-._)]?\\s+(.+)$")
 
         fun describe(e: Throwable): String = when (e) {
             is NotAuthorizedException -> "Google Drive needs to be (re)connected"
