@@ -1,6 +1,7 @@
 package net.kravos.player.drive
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import net.kravos.player.auth.GoogleAuth
 import net.kravos.player.tags.RangeSource
@@ -11,6 +12,7 @@ import okhttp3.Request
 import okhttp3.Response
 import org.json.JSONObject
 import java.io.IOException
+import kotlin.random.Random
 
 /** Adds the Google bearer token to Drive API requests and retries once on 401. */
 class AuthInterceptor(private val auth: GoogleAuth) : Interceptor {
@@ -66,9 +68,10 @@ class DriveApi(private val http: OkHttpClient) {
 
     /** Folders shared with the user (top level of "Shared with me"). */
     suspend fun sharedFolders(): List<DriveFile> =
-        query("sharedWithMe = true and mimeType = '$FOLDER_MIME' and trashed = false")
+        query("sharedWithMe = true and mimeType = '$FOLDER_MIME' and trashed = false", orderBy = null)
+            .sortedBy { it.name.lowercase() }
 
-    suspend fun query(q: String): List<DriveFile> = withContext(Dispatchers.IO) {
+    suspend fun query(q: String, orderBy: String? = "folder,name"): List<DriveFile> = withContext(Dispatchers.IO) {
         val out = ArrayList<DriveFile>()
         var pageToken: String? = null
         do {
@@ -76,14 +79,19 @@ class DriveApi(private val http: OkHttpClient) {
                 .addQueryParameter("q", q)
                 .addQueryParameter("fields", "nextPageToken,files(id,name,mimeType,size,modifiedTime)")
                 .addQueryParameter("pageSize", "1000")
-                .addQueryParameter("orderBy", "folder,name")
+                .apply { orderBy?.let { addQueryParameter("orderBy", it) } }
                 .addQueryParameter("supportsAllDrives", "true")
                 .addQueryParameter("includeItemsFromAllDrives", "true")
                 .apply { pageToken?.let { addQueryParameter("pageToken", it) } }
                 .build()
-            http.newCall(Request.Builder().url(url).build()).execute().use { r ->
-                val body = r.body?.string() ?: ""
-                if (!r.isSuccessful) throw DriveException(r.code, body)
+            val body = retrying {
+                http.newCall(Request.Builder().url(url).build()).execute().use { r ->
+                    val b = r.body?.string() ?: ""
+                    if (!r.isSuccessful) throw DriveException(r.code, b)
+                    b
+                }
+            }
+            run {
                 val json = JSONObject(body)
                 val files = json.optJSONArray("files")
                 if (files != null) {
@@ -105,15 +113,17 @@ class DriveApi(private val http: OkHttpClient) {
     }
 
     /** Reads [length] bytes at [offset] with an HTTP Range request. */
-    suspend fun readRange(fileId: String, offset: Long, length: Int): ByteArray = withContext(Dispatchers.IO) {
-        if (length <= 0) return@withContext ByteArray(0)
+    suspend fun readRange(fileId: String, offset: Long, length: Int): ByteArray =
+        if (length <= 0) ByteArray(0) else retrying { readRangeOnce(fileId, offset, length) }
+
+    private suspend fun readRangeOnce(fileId: String, offset: Long, length: Int): ByteArray = withContext(Dispatchers.IO) {
         val req = Request.Builder()
             .url(mediaUrl(fileId))
             .header("Range", "bytes=$offset-${offset + length - 1}")
             .build()
         http.newCall(req).execute().use { r ->
             if (r.code == 416) return@use ByteArray(0)
-            if (!r.isSuccessful) throw DriveException(r.code, "range read failed for $fileId")
+            if (!r.isSuccessful) throw DriveException(r.code, "range read failed for $fileId: " + (r.body?.string()?.take(300) ?: ""))
             val body = r.body ?: return@use ByteArray(0)
             if (r.code == 206) {
                 body.bytes()
@@ -143,6 +153,25 @@ class DriveApi(private val http: OkHttpClient) {
     fun source(file: DriveFile): RangeSource = object : RangeSource {
         override val size: Long = file.size
         override suspend fun read(offset: Long, length: Int): ByteArray = readRange(file.id, offset, length)
+    }
+
+    /** Retries rate-limit, server and network errors with exponential backoff. */
+    private suspend fun <T> retrying(block: suspend () -> T): T {
+        var attempt = 0
+        while (true) {
+            try {
+                return block()
+            } catch (e: NotAuthorizedException) {
+                throw e
+            } catch (e: DriveException) {
+                val retryable = e.code == 429 || e.code >= 500 || (e.code == 403 && (e.message ?: "").contains("ateLimit"))
+                if (!retryable || attempt >= 5) throw e
+            } catch (e: IOException) {
+                if (attempt >= 3) throw e
+            }
+            delay((500L shl attempt) + Random.nextLong(300))
+            attempt++
+        }
     }
 
     companion object {

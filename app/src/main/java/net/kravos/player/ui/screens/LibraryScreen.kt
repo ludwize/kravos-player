@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
@@ -66,6 +67,7 @@ fun LibraryScreen(vm: MainViewModel) {
     val count by vm.trackCount.collectAsStateWithLifecycle()
     val pager = rememberPagerState(initialPage = vm.libraryTab) { TABS.size }
     val scope = rememberCoroutineScope()
+    val connect = rememberDriveConnector(vm)
     LaunchedEffect(pager.currentPage) { vm.libraryTab = pager.currentPage }
 
     Column(Modifier.fillMaxSize()) {
@@ -83,11 +85,23 @@ fun LibraryScreen(vm: MainViewModel) {
         }
         if (!connected || roots.isEmpty()) {
             if (count == 0) {
+                val authError by vm.graph.auth.lastError.collectAsStateWithLifecycle()
                 EmptyState(
                     if (!connected) "Connect your Google Drive to start." else "Pick the Drive folder(s) with your music.",
                 ) {
-                    Button(onClick = { vm.open(if (!connected) Screen.Settings else Screen.FolderPicker) }) {
+                    Button(onClick = {
+                        if (!connected) {
+                            connect()
+                        } else {
+                            vm.pickerOpen(emptyList())
+                            vm.open(Screen.FolderPicker)
+                        }
+                    }) {
                         Text(if (!connected) "Connect Google Drive" else "Choose folders")
+                    }
+                    authError?.let {
+                        Spacer(Modifier.height(12.dp))
+                        Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
                     }
                 }
                 return@Column
