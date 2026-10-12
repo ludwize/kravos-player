@@ -1,0 +1,7 @@
+tapped Allow
+tapped Settings
+tapped Playlists
+tapped Search
+tapped Library
+tapped Connect Google Drive
+tapped Connect
