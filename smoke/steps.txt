@@ -4,4 +4,4 @@ tapped Playlists
 tapped Search
 tapped Library
 tapped Connect Google Drive
-tapped Connect
+not found: Connect
