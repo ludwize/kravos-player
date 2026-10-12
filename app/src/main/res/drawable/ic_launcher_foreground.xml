@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original mark: a cloud with a bass-clef-like swirl and a play triangle. 108dp adaptive canvas. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- cloud -->
+    <path
+        android:fillColor="#FFFF7A3D"
+        android:pathData="M38,70 C30,70 25,64 25,57.5 C25,51.5 29.5,46.5 35.5,46 C37,38 44,32 52.5,32 C60.5,32 67,37.5 68.8,45 C69.5,45 70,45 70.5,45 C78,45 83,51 83,57.5 C83,64.5 77.5,70 70.5,70 Z" />
+    <!-- play -->
+    <path
+        android:fillColor="#FF161210"
+        android:pathData="M48,44 L64,53.5 L48,63 Z" />
+    <!-- underline, like a string -->
+    <path
+        android:fillColor="#FFFF7A3D"
+        android:pathData="M30,76 L78,76 L78,78.5 L30,78.5 Z" />
+</vector>

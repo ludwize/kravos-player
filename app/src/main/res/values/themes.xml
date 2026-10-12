@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- AppCompat parent: the Cast button (MediaRouteButton) needs it for its device picker dialog. -->
+    <style name="Theme.KravosPlayer" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <color name="bg">#FF111111</color>
+    <color name="accent">#FFFF7A3D</color>
+    <color name="icon_bg">#FF161210</color>
+</resources>
