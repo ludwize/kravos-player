@@ -16,6 +16,14 @@ Built in the spirit of CloudPlayer's paid tier, plus a practice mode for learnin
   streaming cache (512 MB to 8 GB) so replays don't hit Drive again.
 - **Chromecast**: the phone runs a small LAN proxy with a random per-session secret in every URL,
   so the Cast device can stream Drive files without your OAuth token ever leaving the phone.
+- **Internet radio**: Serbian and worldwide stations from the radio-browser.info directory, favorites,
+  add any stream by URL (.pls/.m3u resolved), quality and "casts on its own" filters, live now-playing titles.
+  HTTPS stations are handed straight to the Chromecast, which keeps playing after the phone leaves Wi-Fi;
+  HTTP-only stations are relayed through the phone. When a Cast session drops, the phone never starts
+  playing on its own speaker.
+- **Drive browser**: walk the whole Drive (My Drive / Shared with me), search by name, play any file or a
+  whole folder including subfolders without scanning, add a folder to the library with one tap.
+  The library Folders tab can search folders and play/shuffle a folder with all its subfolders.
 - **Sleep timer** with fade-out, or stop at the end of the current song.
 - **Practice mode**: tempo 0.5×–1.5× without pitch change, pitch shift ±12 semitones, and an A–B loop
   with ¼-second nudges.
