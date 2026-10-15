@@ -5,3 +5,9 @@ tapped Search
 tapped Library
 tapped Connect Google Drive
 not found: Connect
+tapped Radio
+tapped Play station
+tapped Open player
+tapped World
+tapped Library
+not found: Browse Google Drive
