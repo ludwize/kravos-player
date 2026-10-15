@@ -53,6 +53,38 @@ tap_text "Connect"
 sleep 4
 adb exec-out screencap -p > "$OUT/06-auth.png"
 
+# Radio: directory loads, a Serbian station plays, Now Playing shows LIVE + ICY title.
+tap_text "Radio"
+sleep 10
+adb exec-out screencap -p > "$OUT/07-radio.png"
+tap_text "Play station"
+sleep 20
+adb exec-out screencap -p > "$OUT/08-radio-playing.png"
+tap_text "Open player"
+sleep 3
+adb exec-out screencap -p > "$OUT/09-now-playing.png"
+adb shell input keyevent KEYCODE_BACK
+sleep 2
+tap_text "World"
+sleep 8
+adb exec-out screencap -p > "$OUT/10-world.png"
+adb shell dumpsys media_session > "$OUT/media_session.txt" 2>&1
+
+# Folders tab + Drive browser entry
+tap_text "Library"
+sleep 2
+SIZE=$(adb shell wm size | grep -oE '[0-9]+x[0-9]+' | tail -1)
+W=${SIZE%x*}; H=${SIZE#*x}
+for i in 1 2 3 4; do
+  adb shell input swipe $((W * 9 / 10)) $((H / 2)) $((W / 10)) $((H / 2)) 250
+  sleep 1
+done
+sleep 1
+adb exec-out screencap -p > "$OUT/11-folders.png"
+tap_text "Browse Google Drive"
+sleep 2
+adb exec-out screencap -p > "$OUT/12-drive-browser.png"
+
 # Start the playback service directly through a MediaController-less path: just check the process is alive.
 PID=$(adb shell pidof $PKG | tr -d '\r')
 echo "pid=$PID" > "$OUT/status.txt"

@@ -7,6 +7,7 @@ import androidx.annotation.OptIn
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.database.StandaloneDatabaseProvider
 import androidx.media3.datasource.DataSource
+import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.datasource.cache.CacheDataSource
 import androidx.media3.datasource.cache.LeastRecentlyUsedCacheEvictor
 import androidx.media3.datasource.cache.NoOpCacheEvictor
@@ -28,6 +29,8 @@ import net.kravos.player.drive.AuthInterceptor
 import net.kravos.player.drive.DriveApi
 import net.kravos.player.drive.LibraryScanner
 import net.kravos.player.playback.PlayerConnection
+import net.kravos.player.playback.RoutingDataSource
+import net.kravos.player.radio.RadioApi
 import okhttp3.OkHttpClient
 import java.io.File
 import java.util.concurrent.TimeUnit
@@ -121,6 +124,22 @@ class AppGraph(val app: App) {
             .setUpstreamDataSourceFactory(streaming)
             .setCacheWriteDataSinkFactory(null)
     }
+
+    /** Live radio straight from the station; http→https redirects allowed (common with stream hosts). */
+    val radioDataSourceFactory: DataSource.Factory by lazy {
+        DefaultHttpDataSource.Factory()
+            .setUserAgent(RadioApi.USER_AGENT)
+            .setAllowCrossProtocolRedirects(true)
+            .setConnectTimeoutMs(10_000)
+            .setReadTimeoutMs(20_000)
+    }
+
+    /** What the player uses: Drive through the caches, radio straight from the station. */
+    val playerDataSourceFactory: DataSource.Factory by lazy {
+        RoutingDataSource.Factory(playbackDataSourceFactory, radioDataSourceFactory)
+    }
+
+    val radio: RadioApi by lazy { RadioApi(plainHttp) }
 
     val downloads: Downloads by lazy {
         Downloads(app, Downloads.newManager(app), scope) { runCatching { downloadCache.cacheSpace }.getOrDefault(0L) }

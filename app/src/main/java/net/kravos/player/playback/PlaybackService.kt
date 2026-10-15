@@ -12,6 +12,7 @@ import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
+import androidx.media3.common.MimeTypes
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DefaultDataSource
@@ -64,7 +65,7 @@ class PlaybackService : MediaSessionService() {
         proxy = CastProxyServer(this, graph.http, File(filesDir, "art"))
 
         exo = ExoPlayer.Builder(this)
-            .setMediaSourceFactory(DefaultMediaSourceFactory(graph.playbackDataSourceFactory))
+            .setMediaSourceFactory(DefaultMediaSourceFactory(graph.playerDataSourceFactory))
             .setAudioAttributes(
                 AudioAttributes.Builder().setUsage(C.USAGE_MEDIA).setContentType(C.AUDIO_CONTENT_TYPE_MUSIC).build(),
                 true,
@@ -125,11 +126,35 @@ class PlaybackService : MediaSessionService() {
 
     // ------------------------------------------------------------ media items
 
-    private fun resolve(item: MediaItem, forCast: Boolean): MediaItem {
+    private fun resolve(input: MediaItem, forCast: Boolean): MediaItem {
+        // Items coming back from the Cast receiver lose our extras; use the version we built earlier.
+        val item = if (input.mediaMetadata.extras == null) known[input.mediaId] ?: input else input
         val id = item.mediaId
         val meta = item.mediaMetadata
-        val mime = meta.extras?.getString(EXTRA_MIME) ?: item.localConfiguration?.mimeType
-        val exoItem = known[id]?.takeIf { meta.extras == null } ?: MediaItem.Builder()
+        val extras = meta.extras
+        if (item.isRadio()) {
+            val url = extras?.getString(EXTRA_URL) ?: item.localConfiguration?.uri?.toString() ?: return item
+            val hls = item.localConfiguration?.mimeType == MimeTypes.APPLICATION_M3U8 ||
+                extras?.getString(EXTRA_CAST_MIME) == "application/x-mpegURL"
+            val exoItem = MediaItem.Builder()
+                .setMediaId(id)
+                .setUri(url)
+                .setMimeType(if (hls) MimeTypes.APPLICATION_M3U8 else null)
+                .setMediaMetadata(meta)
+                .build()
+            known[id] = exoItem
+            if (!forCast) return exoItem
+            // HTTPS stream: the Chromecast fetches it itself and keeps going without the phone.
+            // HTTP-only stream: relay through the phone (works only while the phone is on the same Wi-Fi).
+            val castUrl = extras?.getString(EXTRA_CAST_URL) ?: proxy.radioUrl(id, url) ?: url
+            return exoItem.buildUpon()
+                .setUri(castUrl)
+                .setMimeType(extras?.getString(EXTRA_CAST_MIME) ?: "audio/mpeg")
+                .setMediaMetadata(meta.buildUpon().setTitle(extras?.getString(EXTRA_NAME) ?: meta.station).build())
+                .build()
+        }
+        val mime = extras?.getString(EXTRA_MIME) ?: item.localConfiguration?.mimeType
+        val exoItem = MediaItem.Builder()
             .setMediaId(id)
             .setUri(DriveApi.mediaUrl(id))
             .setMimeType(mime)
@@ -138,15 +163,12 @@ class PlaybackService : MediaSessionService() {
         known[id] = exoItem
         if (!forCast) return exoItem
         val url = proxy.trackUrl(id, mime) ?: return exoItem
-        val art = proxy.artUrl(exoItem.mediaMetadata.extras?.getString(EXTRA_ART))
+        val art = proxy.artUrl(extras?.getString(EXTRA_ART))
+        val title = meta.title ?: extras?.getString(EXTRA_NAME)
         return exoItem.buildUpon()
             .setUri(url)
             .setMimeType(mime ?: "audio/mpeg")
-            .setMediaMetadata(
-                exoItem.mediaMetadata.buildUpon()
-                    .setArtworkUri(art?.let(android.net.Uri::parse))
-                    .build(),
-            )
+            .setMediaMetadata(meta.buildUpon().setTitle(title).setArtworkUri(art?.let(android.net.Uri::parse)).build())
             .build()
     }
 
@@ -180,7 +202,8 @@ class PlaybackService : MediaSessionService() {
 
     private fun saveQueue() {
         val p = session?.player ?: return
-        val ids = (0 until p.mediaItemCount).map { p.getMediaItemAt(it).mediaId }
+        if (p.currentMediaItem?.isRadio() == true) return
+        val ids = (0 until p.mediaItemCount).map { p.getMediaItemAt(it).mediaId }.filterNot { it.startsWith(RADIO_PREFIX) }
         graph.prefs.saveQueue(ids, p.currentMediaItemIndex, p.currentPosition)
     }
 
@@ -191,11 +214,16 @@ class PlaybackService : MediaSessionService() {
             if (reason == Player.MEDIA_ITEM_TRANSITION_REASON_REPEAT) lastCountedId = null
             graph.extras.loop.value = LoopPoints()
             countPlay()
-            session?.player?.let { graph.prefs.savePosition(it.currentMediaItemIndex, 0L) }
+            session?.player?.takeIf { mediaItem?.isRadio() != true }?.let { graph.prefs.savePosition(it.currentMediaItemIndex, 0L) }
         }
 
         override fun onIsPlayingChanged(isPlaying: Boolean) {
-            if (isPlaying) countPlay() else session?.player?.let { graph.prefs.savePosition(it.currentMediaItemIndex, it.currentPosition) }
+            if (isPlaying) {
+                countPlay()
+            } else {
+                session?.player?.takeIf { it.currentMediaItem?.isRadio() != true }
+                    ?.let { graph.prefs.savePosition(it.currentMediaItemIndex, it.currentPosition) }
+            }
         }
 
         override fun onTimelineChanged(timeline: androidx.media3.common.Timeline, reason: Int) {
@@ -212,7 +240,9 @@ class PlaybackService : MediaSessionService() {
     private fun countPlay() {
         val p = session?.player ?: return
         if (!p.isPlaying) return
-        val id = p.currentMediaItem?.mediaId ?: return
+        val item = p.currentMediaItem ?: return
+        if (item.isRadio()) return
+        val id = item.mediaId
         if (id == lastCountedId) return
         lastCountedId = id
         val now = System.currentTimeMillis()
@@ -300,14 +330,23 @@ class PlaybackService : MediaSessionService() {
         val prev = s.player
         if (prev === target) return
         val toCast = target !== exo
-        if (toCast && !proxy.start()) {
-            Log.w(TAG, "No LAN address; staying on the phone")
-            return
+        if (toCast) {
+            // Needed only for Drive songs and HTTP-only radio; HTTPS radio goes straight to the Chromecast.
+            if (!proxy.start()) Log.w(TAG, "No LAN address for the cast relay")
+            // Re-joining a receiver that kept playing on its own (e.g. radio while we were away): adopt it.
+            if (target.mediaItemCount > 0 && target.playbackState != Player.STATE_IDLE) {
+                prev.pause()
+                s.player = target
+                return
+            }
         }
         val count = prev.mediaItemCount
         var index = prev.currentMediaItemIndex
-        val pos = prev.currentPosition
-        val playWhenReady = prev.playWhenReady
+        val current = prev.currentMediaItem
+        val pos = if (current?.isRadio() == true) C.TIME_UNSET else prev.currentPosition
+        // Cast → phone happens when the Cast session ends (often because the phone left Wi-Fi):
+        // never start blasting from the phone speaker; keep the queue and wait for the user.
+        val playWhenReady = toCast && prev.playWhenReady
         var items = (0 until count).map { prev.getMediaItemAt(it) }
         if (toCast && items.size > CAST_WINDOW * 2) {
             val from = max(0, index - CAST_WINDOW)
@@ -316,14 +355,19 @@ class PlaybackService : MediaSessionService() {
             index -= from
         }
         val converted = items.map { resolve(known[it.mediaId] ?: it, toCast) }
-        prev.stop()
-        if (prev === exo) exo.clearMediaItems()
+        if (prev !== exo) {
+            // The receiver may be unreachable already; don't let a failing remote call break the hand-over.
+            runCatching { prev.stop() }
+        } else {
+            exo.stop()
+            exo.clearMediaItems()
+        }
         target.repeatMode = prev.repeatMode
         target.shuffleModeEnabled = prev.shuffleModeEnabled
         if (converted.isNotEmpty()) {
             target.setMediaItems(converted, index.coerceIn(0, converted.size - 1), pos)
             target.playWhenReady = playWhenReady
-            target.prepare()
+            if (toCast) target.prepare()
         }
         s.player = target
         if (!toCast) proxy.stop()

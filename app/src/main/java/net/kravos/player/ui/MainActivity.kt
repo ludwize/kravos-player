@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.QueueMusic
 import androidx.compose.material.icons.filled.LibraryMusic
+import androidx.compose.material.icons.filled.Radio
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
@@ -37,6 +38,8 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import net.kravos.player.App
 import net.kravos.player.ui.screens.AlbumScreen
+import net.kravos.player.ui.screens.DriveBrowserScreen
+import net.kravos.player.ui.screens.RadioScreen
 import net.kravos.player.ui.screens.ArtistScreen
 import net.kravos.player.ui.screens.FolderPickerScreen
 import net.kravos.player.ui.screens.FolderScreen
@@ -105,6 +108,7 @@ private fun Root(vm: MainViewModel) {
                     NavigationBar {
                         NavItem(vm, Screen.Library, "Library") { Icon(Icons.Default.LibraryMusic, null) }
                         NavItem(vm, Screen.Playlists, "Playlists") { Icon(Icons.AutoMirrored.Filled.QueueMusic, null) }
+                        NavItem(vm, Screen.Radio, "Radio") { Icon(Icons.Default.Radio, null) }
                         NavItem(vm, Screen.Search, "Search") { Icon(Icons.Default.Search, null) }
                         NavItem(vm, Screen.Settings, "Settings") { Icon(Icons.Default.Settings, null) }
                     }
@@ -118,6 +122,8 @@ private fun Root(vm: MainViewModel) {
                     Screen.Search -> SearchScreen(vm)
                     Screen.Settings -> SettingsScreen(vm)
                     Screen.FolderPicker -> FolderPickerScreen(vm)
+                    Screen.Radio -> RadioScreen(vm)
+                    Screen.DriveBrowser -> DriveBrowserScreen(vm)
                     is Screen.Album -> AlbumScreen(vm, s)
                     is Screen.Artist -> ArtistScreen(vm, s)
                     is Screen.Genre -> GenreScreen(vm, s)

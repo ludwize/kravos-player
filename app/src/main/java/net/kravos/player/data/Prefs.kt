@@ -4,6 +4,7 @@ import android.content.Context
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import net.kravos.player.radio.RadioStation
 import net.kravos.player.tags.LegacyCharset
 import org.json.JSONArray
 import org.json.JSONObject
@@ -36,6 +37,54 @@ class Prefs(context: Context) {
 
     private val _lastScan = MutableStateFlow(sp.getLong(K_LAST_SCAN, 0L))
     val lastScanAt: StateFlow<Long> = _lastScan.asStateFlow()
+
+    // ---- radio
+    private val _favorites = MutableStateFlow(loadFavorites())
+    val radioFavorites: StateFlow<List<RadioStation>> = _favorites.asStateFlow()
+
+    private val _castOnly = MutableStateFlow(sp.getBoolean(K_RADIO_CAST_ONLY, true))
+    val radioCastOnly: StateFlow<Boolean> = _castOnly.asStateFlow()
+
+    private val _goodOnly = MutableStateFlow(sp.getBoolean(K_RADIO_GOOD_ONLY, true))
+    val radioGoodOnly: StateFlow<Boolean> = _goodOnly.asStateFlow()
+
+    fun setRadioCastOnly(v: Boolean) {
+        sp.edit().putBoolean(K_RADIO_CAST_ONLY, v).apply()
+        _castOnly.value = v
+    }
+
+    fun setRadioGoodOnly(v: Boolean) {
+        sp.edit().putBoolean(K_RADIO_GOOD_ONLY, v).apply()
+        _goodOnly.value = v
+    }
+
+    fun isFavorite(id: String) = _favorites.value.any { it.id == id }
+
+    fun toggleFavorite(st: RadioStation) {
+        val list = _favorites.value
+        saveFavorites(if (list.any { it.id == st.id }) list.filterNot { it.id == st.id } else list + st)
+    }
+
+    fun moveFavorite(id: String, delta: Int) {
+        val list = _favorites.value.toMutableList()
+        val i = list.indexOfFirst { it.id == id }
+        val j = i + delta
+        if (i < 0 || j !in list.indices) return
+        list.add(j, list.removeAt(i))
+        saveFavorites(list)
+    }
+
+    private fun saveFavorites(list: List<RadioStation>) {
+        val arr = JSONArray()
+        list.forEach { arr.put(it.toJson()) }
+        sp.edit().putString(K_RADIO_FAVS, arr.toString()).apply()
+        _favorites.value = list
+    }
+
+    private fun loadFavorites(): List<RadioStation> = runCatching {
+        val arr = JSONArray(sp.getString(K_RADIO_FAVS, "[]"))
+        (0 until arr.length()).map { RadioStation.fromJson(arr.getJSONObject(it)) }
+    }.getOrDefault(emptyList())
 
     fun setConnected(value: Boolean) {
         sp.edit().putBoolean(K_CONNECTED, value).apply()
@@ -115,6 +164,9 @@ class Prefs(context: Context) {
         private const val K_CACHE_MB = "stream_cache_mb"
         private const val K_LEGACY = "legacy_charset"
         private const val K_LAST_SCAN = "last_scan"
+        private const val K_RADIO_FAVS = "radio_favorites"
+        private const val K_RADIO_CAST_ONLY = "radio_cast_only"
+        private const val K_RADIO_GOOD_ONLY = "radio_good_only"
         private const val K_QUEUE = "queue"
         private const val K_QUEUE_INDEX = "queue_index"
         private const val K_QUEUE_POS = "queue_pos"

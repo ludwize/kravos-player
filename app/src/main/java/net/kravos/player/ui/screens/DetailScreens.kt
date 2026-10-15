@@ -30,6 +30,8 @@ import androidx.compose.material.icons.filled.DownloadDone
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Folder
 import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Shuffle
 import androidx.compose.material.icons.filled.SkipNext
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.DropdownMenu
@@ -191,7 +193,33 @@ fun FolderScreen(vm: MainViewModel, s: Screen.Folder) {
     Column(Modifier.fillMaxSize()) {
         DetailTopBar(vm, s.name) { if (tracks.isNotEmpty()) CollectionMenu(vm, tracks) }
         LazyColumn(Modifier.fillMaxSize()) {
-            if (tracks.isNotEmpty()) item { PlayShuffleRow(vm, tracks) }
+            if (tracks.isNotEmpty() || folders.isNotEmpty()) {
+                item {
+                    Row(
+                        Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+                        horizontalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(10.dp),
+                    ) {
+                        androidx.compose.material3.Button(onClick = { vm.playLibraryFolder(s.id, shuffle = false) }) {
+                            Icon(androidx.compose.material.icons.Icons.Default.PlayArrow, null)
+                            Spacer(Modifier.width(6.dp))
+                            Text(if (folders.isNotEmpty()) "Play all" else "Play")
+                        }
+                        androidx.compose.material3.FilledTonalButton(onClick = { vm.playLibraryFolder(s.id, shuffle = true) }) {
+                            Icon(androidx.compose.material.icons.Icons.Default.Shuffle, null)
+                            Spacer(Modifier.width(6.dp))
+                            Text("Shuffle")
+                        }
+                    }
+                    if (folders.isNotEmpty()) {
+                        Text(
+                            "Includes all subfolders",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(horizontal = 16.dp),
+                        )
+                    }
+                }
+            }
             items(folders, key = { "f" + it.id }) { f ->
                 SimpleRow(f.name, null, f.coverImageId?.let { net.kravos.player.drive.DriveApi.mediaUrl(it) }, Icons.Default.Folder) {
                     vm.open(Screen.Folder(f.id, f.name))

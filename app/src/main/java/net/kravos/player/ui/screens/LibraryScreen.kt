@@ -20,6 +20,8 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Category
+import androidx.compose.material.icons.filled.Cloud
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Folder
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.PlayArrow
@@ -28,6 +30,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ScrollableTabRow
@@ -40,12 +44,16 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
+import net.kravos.player.data.Folder
+import net.kravos.player.drive.DriveApi
 import net.kravos.player.data.Track
 import net.kravos.player.ui.MainViewModel
 import net.kravos.player.ui.Screen
@@ -176,11 +184,42 @@ private fun GenresTab(vm: MainViewModel) {
 
 @Composable
 private fun FoldersTab(vm: MainViewModel) {
-    val folders by vm.rootFolders.collectAsStateWithLifecycle()
-    if (folders.isEmpty()) return EmptyState("No folders scanned yet")
+    val roots by vm.rootFolders.collectAsStateWithLifecycle()
+    var q by rememberSaveable { mutableStateOf("") }
+    val term = q.trim()
+    val found by remember(term) {
+        if (term.length < 2) flowOf(emptyList<Folder>()) else vm.dao.searchFolders("%$term%")
+    }.collectAsStateWithLifecycle(emptyList())
+    val list = if (term.length >= 2) found else roots
     LazyColumn(Modifier.fillMaxSize()) {
-        items(folders, key = { it.id }) { f ->
-            SimpleRow(f.name, null, null, Icons.Default.Folder) { vm.open(Screen.Folder(f.id, f.name)) }
+        item {
+            SimpleRow("Browse Google Drive", "Any folder, play without scanning", null, Icons.Default.Cloud) {
+                vm.open(Screen.DriveBrowser)
+            }
+        }
+        item {
+            OutlinedTextField(
+                value = q,
+                onValueChange = { q = it },
+                placeholder = { Text("Find a folder in your library") },
+                leadingIcon = { Icon(Icons.Default.Search, null) },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp),
+            )
+        }
+        if (list.isEmpty()) {
+            item { Text(if (term.length >= 2) "No matching folders" else "No folders scanned yet", Modifier.padding(16.dp)) }
+        }
+        items(list, key = { it.id }) { f ->
+            SimpleRow(
+                f.name,
+                null,
+                f.coverImageId?.let { DriveApi.mediaUrl(it) },
+                Icons.Default.Folder,
+                trailing = {
+                    IconButton(onClick = { vm.playLibraryFolder(f.id, shuffle = false) }) { Icon(Icons.Default.PlayArrow, "Play folder") }
+                },
+            ) { vm.open(Screen.Folder(f.id, f.name)) }
         }
     }
 }

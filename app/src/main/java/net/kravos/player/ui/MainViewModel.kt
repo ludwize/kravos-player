@@ -24,8 +24,11 @@ import net.kravos.player.LoopPoints
 import net.kravos.player.SleepTimer
 import net.kravos.player.data.Playlist
 import net.kravos.player.data.Track
+import net.kravos.player.drive.DriveApi
 import net.kravos.player.drive.DriveFile
 import net.kravos.player.drive.LibraryScanner
+import net.kravos.player.playback.toMediaItem
+import net.kravos.player.radio.RadioStation
 
 sealed interface Screen {
     data object Library : Screen
@@ -39,6 +42,8 @@ sealed interface Screen {
     data class PlaylistScreen(val id: Long, val name: String) : Screen
     data class Smart(val kind: SmartKind) : Screen
     data object FolderPicker : Screen
+    data object Radio : Screen
+    data object DriveBrowser : Screen
 }
 
 enum class SmartKind(val label: String) {
@@ -253,6 +258,260 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch(Dispatchers.IO) {
             val c = graph.streamCache
             runCatching { c.keys.toList().forEach { c.removeResource(it) } }
+        }
+    }
+
+    // ================================================================ radio
+
+    enum class RadioTab(val label: String) { FAVORITES("Favorites"), SERBIA("Serbia"), WORLD("World") }
+
+    data class RadioListState(
+        val loading: Boolean = false,
+        val error: String? = null,
+        val stations: List<RadioStation> = emptyList(),
+        val query: String = "",
+        val loadedOnce: Boolean = false,
+    )
+
+    var radioTab by mutableStateOf(if (graph.prefs.radioFavorites.value.isEmpty()) RadioTab.SERBIA else RadioTab.FAVORITES)
+    var radioSortByQuality by mutableStateOf(false)
+    private val _radioSerbia = MutableStateFlow(RadioListState())
+    val radioSerbia: StateFlow<RadioListState> = _radioSerbia.asStateFlow()
+    private val _radioWorld = MutableStateFlow(RadioListState())
+    val radioWorld: StateFlow<RadioListState> = _radioWorld.asStateFlow()
+    private val stationCache = HashMap<String, RadioStation>()
+    private val _radioMessage = MutableStateFlow<String?>(null)
+    val radioMessage: StateFlow<String?> = _radioMessage.asStateFlow()
+
+    fun loadRadio(tab: RadioTab, query: String = "", force: Boolean = false) {
+        val flow = when (tab) {
+            RadioTab.SERBIA -> _radioSerbia
+            RadioTab.WORLD -> _radioWorld
+            RadioTab.FAVORITES -> return
+        }
+        val cur = flow.value
+        if (!force && cur.loadedOnce && cur.query == query && cur.error == null) return
+        flow.value = cur.copy(loading = true, error = null, query = query)
+        viewModelScope.launch {
+            try {
+                val list = graph.radio.search(
+                    name = query.ifBlank { null },
+                    countryCode = if (tab == RadioTab.SERBIA) "RS" else null,
+                    order = if (tab == RadioTab.WORLD && query.isBlank()) "votes" else "clickcount",
+                    limit = if (tab == RadioTab.SERBIA) 300 else 400,
+                )
+                list.forEach { stationCache[it.id] = it }
+                if (flow.value.query == query) flow.value = RadioListState(false, null, list, query, true)
+            } catch (e: Exception) {
+                if (flow.value.query == query) {
+                    flow.value = flow.value.copy(loading = false, error = "Can't reach the radio directory (${e.message ?: "network"})", loadedOnce = true)
+                }
+            }
+        }
+    }
+
+    fun filterStations(list: List<RadioStation>): List<RadioStation> {
+        val castOnly = graph.prefs.radioCastOnly.value
+        val goodOnly = graph.prefs.radioGoodOnly.value
+        val filtered = list.filter { (!castOnly || it.castReady) && (!goodOnly || it.goodQuality) }
+        return if (radioSortByQuality) filtered.sortedWith(compareByDescending<RadioStation> { it.highQuality }.thenByDescending { it.bitrate }) else filtered
+    }
+
+    /** Plays [st]; the rest of [list] becomes the queue so next/previous switch stations. */
+    fun playStation(st: RadioStation, list: List<RadioStation>) {
+        stationCache[st.id] = st
+        viewModelScope.launch {
+            val castUrl = runCatching { graph.radio.castableUrl(st) }.getOrNull()
+            val window = list.ifEmpty { listOf(st) }
+            val idx = window.indexOfFirst { it.id == st.id }.coerceAtLeast(0)
+            val from = (idx - 50).coerceAtLeast(0)
+            val slice = window.subList(from, minOf(window.size, idx + 50))
+            val items = slice.map { s -> s.toMediaItem(if (s.id == st.id) castUrl else s.url.takeIf { s.isHttps }) }
+            player.playItems(items, idx - from)
+            if (castUrl == null) {
+                _radioMessage.value = "“${st.name}” has no HTTPS stream: casting works only while the phone is on the same Wi-Fi."
+            }
+            graph.radio.click(st.id)
+        }
+    }
+
+    fun clearRadioMessage() {
+        _radioMessage.value = null
+    }
+
+    fun toggleFavorite(st: RadioStation) {
+        stationCache[st.id] = st
+        graph.prefs.toggleFavorite(st)
+    }
+
+    fun toggleFavoriteById(id: String?) {
+        id ?: return
+        val st = graph.prefs.radioFavorites.value.firstOrNull { it.id == id } ?: stationCache[id] ?: return
+        graph.prefs.toggleFavorite(st)
+    }
+
+    fun addCustomStation(name: String, url: String) {
+        viewModelScope.launch {
+            val clean = url.trim()
+            if (!clean.startsWith("http://", true) && !clean.startsWith("https://", true)) {
+                _radioMessage.value = "The address must start with http:// or https://"
+                return@launch
+            }
+            val resolved = graph.radio.resolveStreamUrl(clean)
+            val lower = resolved.lowercase()
+            val st = RadioStation(
+                id = "custom-" + Integer.toHexString(resolved.hashCode()),
+                name = name.trim().ifEmpty { resolved.substringAfter("://").substringBefore('/') },
+                url = resolved,
+                favicon = null,
+                homepage = null,
+                codec = when {
+                    lower.contains("aac") -> "AAC"
+                    lower.contains(".ogg") || lower.contains("opus") -> "OGG"
+                    lower.contains("flac") -> "FLAC"
+                    else -> ""
+                },
+                bitrate = 0,
+                countryCode = "",
+                tags = "",
+                hls = lower.substringBefore('?').endsWith(".m3u8"),
+            )
+            if (!graph.prefs.isFavorite(st.id)) graph.prefs.toggleFavorite(st)
+            radioTab = RadioTab.FAVORITES
+            _radioMessage.value = "Added “${st.name}” to favorites"
+        }
+    }
+
+    // ================================================================ Drive browser
+
+    data class BrowserState(
+        val path: List<Pair<String, String>> = emptyList(), // (id, name); empty = top level
+        val folders: List<DriveFile> = emptyList(),
+        val files: List<DriveFile> = emptyList(),
+        val loading: Boolean = false,
+        val error: String? = null,
+        val searchQuery: String? = null,
+        val busy: String? = null,
+    )
+
+    private val _browser = MutableStateFlow(BrowserState())
+    val browser: StateFlow<BrowserState> = _browser.asStateFlow()
+
+    fun browserOpen(path: List<Pair<String, String>>) {
+        _browser.value = BrowserState(path = path, loading = path.isNotEmpty())
+        if (path.isEmpty()) return
+        val id = path.last().first
+        viewModelScope.launch {
+            try {
+                val items = if (id == SHARED) graph.drive.sharedFolders() else graph.drive.listChildren(id)
+                if (_browser.value.path == path && _browser.value.searchQuery == null) {
+                    _browser.value = BrowserState(
+                        path = path,
+                        folders = items.filter { it.isFolder },
+                        files = items.filter { it.extension in DriveApi.AUDIO_EXTENSIONS },
+                    )
+                }
+            } catch (e: Exception) {
+                if (_browser.value.path == path) _browser.value = BrowserState(path, error = LibraryScanner.describe(e))
+            }
+        }
+    }
+
+    fun browserBack(): Boolean {
+        val b = _browser.value
+        if (b.searchQuery != null) {
+            browserOpen(b.path)
+            return true
+        }
+        if (b.path.isEmpty()) return false
+        browserOpen(b.path.dropLast(1))
+        return true
+    }
+
+    fun browserSearch(query: String) {
+        val q = query.trim()
+        if (q.length < 2) return
+        val path = _browser.value.path
+        _browser.value = BrowserState(path = path, loading = true, searchQuery = q)
+        viewModelScope.launch {
+            try {
+                val esc = q.replace("\\", "\\\\").replace("'", "\\'")
+                val items = graph.drive.query(
+                    "name contains '$esc' and trashed = false and (mimeType = '${DriveApi.FOLDER_MIME}' or mimeType contains 'audio/')",
+                )
+                if (_browser.value.searchQuery == q) {
+                    _browser.value = BrowserState(
+                        path = path,
+                        folders = items.filter { it.isFolder },
+                        files = items.filter { it.extension in DriveApi.AUDIO_EXTENSIONS },
+                        searchQuery = q,
+                    )
+                }
+            } catch (e: Exception) {
+                if (_browser.value.searchQuery == q) _browser.value = BrowserState(path, error = LibraryScanner.describe(e), searchQuery = q)
+            }
+        }
+    }
+
+    /** Library metadata when we have it, otherwise a bare Drive item whose tags the player reads. */
+    private suspend fun itemsFor(files: List<DriveFile>): List<androidx.media3.common.MediaItem> {
+        val known = withContext(Dispatchers.IO) { files.map { it.id }.chunked(500).flatMap { dao.tracksByIds(it) } }.associateBy { it.id }
+        return files.map { f -> known[f.id]?.toMediaItem() ?: f.toMediaItem() }
+    }
+
+    fun playDriveFiles(files: List<DriveFile>, start: Int) {
+        viewModelScope.launch { player.playItems(itemsFor(files), start) }
+    }
+
+    /** Plays a Drive folder including all subfolders, in folder order. */
+    fun playDriveFolder(id: String, name: String, shuffle: Boolean) {
+        val before = _browser.value
+        _browser.value = before.copy(busy = "Collecting songs in “$name”…")
+        viewModelScope.launch {
+            try {
+                val files = ArrayList<DriveFile>()
+                val queue = ArrayDeque(listOf(id))
+                val seen = HashSet<String>()
+                while (queue.isNotEmpty() && files.size < 3000) {
+                    val f = queue.removeFirst()
+                    if (!seen.add(f)) continue
+                    val children = graph.drive.listChildren(f)
+                    files += children.filter { it.extension in DriveApi.AUDIO_EXTENSIONS }.sortedBy { it.name.lowercase() }
+                    children.filter { it.isFolder }.sortedBy { it.name.lowercase() }.forEach { queue.add(it.id) }
+                    _browser.value = _browser.value.copy(busy = "Collecting songs in “$name”… ${files.size}")
+                }
+                if (files.isEmpty()) {
+                    _browser.value = _browser.value.copy(busy = null, error = "No MP3/FLAC files in “$name”")
+                } else {
+                    player.playItems(itemsFor(files), 0, shuffle)
+                    _browser.value = _browser.value.copy(busy = null)
+                }
+            } catch (e: Exception) {
+                _browser.value = _browser.value.copy(busy = null, error = LibraryScanner.describe(e))
+            }
+        }
+    }
+
+    // ================================================================ library folders (scanned)
+
+    /** All tracks in a scanned folder and its subfolders, album by album. */
+    fun playLibraryFolder(id: String, shuffle: Boolean) {
+        viewModelScope.launch {
+            val tracks = withContext(Dispatchers.IO) {
+                val all = dao.allFoldersOnce()
+                val children = all.groupBy { it.parentId }
+                val order = ArrayList<String>()
+                val queue = ArrayDeque(listOf(id))
+                while (queue.isNotEmpty()) {
+                    val f = queue.removeFirst()
+                    order += f
+                    children[f]?.sortedBy { it.name.lowercase() }?.forEach { queue.add(it.id) }
+                }
+                val rank = order.withIndex().associate { it.value to it.index }
+                order.chunked(500).flatMap { dao.tracksInFolders(it) }
+                    .sortedWith(compareBy<Track>({ rank[it.folderId] ?: 0 }, { it.discNo }, { it.trackNo }, { it.fileName.lowercase() }))
+            }
+            if (tracks.isNotEmpty()) player.play(tracks, 0, shuffle)
         }
     }
 

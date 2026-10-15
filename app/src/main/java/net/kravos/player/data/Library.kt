@@ -195,6 +195,15 @@ abstract class LibraryDao {
     @Query("SELECT * FROM folders WHERE parentId IS NULL ORDER BY name COLLATE NOCASE")
     abstract fun rootFolders(): Flow<List<Folder>>
 
+    @Query("SELECT * FROM folders")
+    abstract suspend fun allFoldersOnce(): List<Folder>
+
+    @Query("SELECT * FROM folders WHERE name LIKE :q ORDER BY name COLLATE NOCASE LIMIT 200")
+    abstract fun searchFolders(q: String): Flow<List<Folder>>
+
+    @Query("SELECT * FROM tracks WHERE folderId IN (:ids)")
+    abstract suspend fun tracksInFolders(ids: List<String>): List<Track>
+
     @Query("SELECT * FROM folders WHERE parentId = :id ORDER BY name COLLATE NOCASE")
     abstract fun childFolders(id: String): Flow<List<Folder>>
 

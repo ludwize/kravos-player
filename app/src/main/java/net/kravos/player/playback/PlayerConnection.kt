@@ -23,7 +23,8 @@ data class NowPlaying(
     val title: String = "",
     val artist: String = "",
     val album: String = "",
-    val artUri: Uri? = null,
+    /** Uri, URL string or embedded picture bytes — anything Coil can load. */
+    val art: Any? = null,
     val format: String = "",
     val isPlaying: Boolean = false,
     val buffering: Boolean = false,
@@ -36,6 +37,10 @@ data class NowPlaying(
     val pitch: Float = 1f,
     val casting: Boolean = false,
     val error: String? = null,
+    val isRadio: Boolean = false,
+    val isLive: Boolean = false,
+    val stationId: String? = null,
+    val stationName: String = "",
 ) {
     val hasItem: Boolean get() = mediaId != null
 }
@@ -98,19 +103,33 @@ class PlayerConnection(private val context: Context) {
 
     private fun refresh(p: Player) {
         val item = p.currentMediaItem
-        val meta = item?.mediaMetadata
-        val extras = meta?.extras
+        val im = item?.mediaMetadata
+        val cm = p.mediaMetadata // item metadata merged with tags/ICY read from the stream
+        val extras = im?.extras
+        val radio = item?.isRadio() == true
+        val station = extras?.getString(EXTRA_NAME) ?: im?.station?.toString() ?: ""
         val dur = p.duration.takeIf { it > 0 } ?: extras?.getLong(EXTRA_DURATION) ?: 0L
+        val title = (cm.title ?: im?.title)?.toString()?.takeIf { it.isNotBlank() }
+            ?: extras?.getString(EXTRA_NAME) ?: ""
+        val artist = if (radio) {
+            if (title == station) "Live radio" else station
+        } else {
+            (cm.artist ?: im?.artist)?.toString() ?: ""
+        }
+        val art: Any? = extras?.getString(EXTRA_ART)
+            ?: im?.artworkUri
+            ?: cm.artworkUri
+            ?: cm.artworkData
         _state.value = NowPlaying(
             mediaId = item?.mediaId,
-            title = meta?.title?.toString() ?: "",
-            artist = meta?.artist?.toString() ?: "",
-            album = meta?.albumTitle?.toString() ?: "",
-            artUri = extras?.getString(EXTRA_ART)?.let(Uri::parse) ?: meta?.artworkUri,
+            title = title,
+            artist = artist,
+            album = if (radio) "" else (cm.albumTitle ?: im?.albumTitle)?.toString() ?: "",
+            art = art,
             format = extras?.getString(EXTRA_FORMAT) ?: "",
             isPlaying = p.isPlaying,
             buffering = p.playbackState == Player.STATE_BUFFERING,
-            durationMs = dur,
+            durationMs = if (radio) 0L else dur,
             index = p.currentMediaItemIndex,
             queueSize = p.mediaItemCount,
             shuffle = p.shuffleModeEnabled,
@@ -119,6 +138,10 @@ class PlayerConnection(private val context: Context) {
             pitch = p.playbackParameters.pitch,
             casting = p.deviceInfo.playbackType == DeviceInfo.PLAYBACK_TYPE_REMOTE,
             error = p.playerError?.let(::describe),
+            isRadio = radio,
+            isLive = radio || p.isCurrentMediaItemLive,
+            stationId = extras?.getString(EXTRA_STATION_ID),
+            stationName = station,
         )
     }
 
@@ -140,6 +163,18 @@ class PlayerConnection(private val context: Context) {
             c.shuffleModeEnabled = shuffle
             val start = if (shuffle) Random.nextInt(items.size) else startIndex.coerceIn(0, items.size - 1)
             c.setMediaItems(items, start, 0L)
+            c.prepare()
+            c.play()
+        }
+    }
+
+    /** Plays ready-made items (radio stations, Drive files outside the library). */
+    fun playItems(items: List<MediaItem>, startIndex: Int = 0, shuffle: Boolean = false) {
+        if (items.isEmpty()) return
+        withController { c ->
+            c.shuffleModeEnabled = shuffle
+            val start = if (shuffle) Random.nextInt(items.size) else startIndex.coerceIn(0, items.size - 1)
+            c.setMediaItems(items, start, if (items[start].isRadio()) androidx.media3.common.C.TIME_UNSET else 0L)
             c.prepare()
             c.play()
         }

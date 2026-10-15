@@ -28,7 +28,11 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.DownloadDone
 import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.MusicNote
 import androidx.compose.material.icons.filled.Pause
+import androidx.compose.material.icons.filled.Radio
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Repeat
 import androidx.compose.material.icons.filled.RepeatOne
@@ -64,6 +68,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -76,6 +82,7 @@ import androidx.mediarouter.app.MediaRouteButton
 import com.google.android.gms.cast.framework.CastButtonFactory
 import kotlinx.coroutines.delay
 import net.kravos.player.playback.NowPlaying
+import net.kravos.player.playback.displayTitle
 import net.kravos.player.ui.MainViewModel
 import net.kravos.player.ui.Screen
 import net.kravos.player.ui.components.ArtImage
@@ -95,13 +102,19 @@ fun MiniPlayer(vm: MainViewModel, np: NowPlaying, onOpen: () -> Unit) {
     }
     Surface(color = MaterialTheme.colorScheme.surfaceContainerHigh) {
         Column {
-            val frac = if (np.durationMs > 0) (pos.toFloat() / np.durationMs).coerceIn(0f, 1f) else 0f
-            LinearProgressIndicator(progress = { frac }, modifier = Modifier.fillMaxWidth().height(2.dp))
+            if (!np.isLive) {
+                val frac = if (np.durationMs > 0) (pos.toFloat() / np.durationMs).coerceIn(0f, 1f) else 0f
+                LinearProgressIndicator(progress = { frac }, modifier = Modifier.fillMaxWidth().height(2.dp))
+            }
             Row(
-                Modifier.fillMaxWidth().clickable(onClick = onOpen).padding(horizontal = 12.dp, vertical = 6.dp),
+                Modifier
+                    .fillMaxWidth()
+                    .semantics { contentDescription = "Open player" }
+                    .clickable(onClick = onOpen)
+                    .padding(horizontal = 12.dp, vertical = 6.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                ArtImage(np.artUri, size = 44.dp)
+                ArtImage(np.art, size = 44.dp, fallback = if (np.isRadio) Icons.Default.Radio else Icons.Default.MusicNote)
                 Spacer(Modifier.width(12.dp))
                 Column(Modifier.weight(1f)) {
                     Text(np.title, maxLines = 1, overflow = TextOverflow.Ellipsis, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Medium)
@@ -167,7 +180,12 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
             }
             Spacer(Modifier.height(8.dp))
             Box(Modifier.weight(1f, fill = true).fillMaxWidth(), contentAlignment = Alignment.Center) {
-                ArtImage(np.artUri, Modifier.fillMaxWidth().widthIn(max = 420.dp).aspectRatio(1f), corner = 12.dp)
+                ArtImage(
+                    np.art,
+                    Modifier.fillMaxWidth().widthIn(max = 420.dp).aspectRatio(1f),
+                    corner = 12.dp,
+                    fallback = if (np.isRadio) Icons.Default.Radio else Icons.Default.MusicNote,
+                )
             }
             Spacer(Modifier.height(16.dp))
             Text(np.title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold, maxLines = 2, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.Center)
@@ -177,7 +195,7 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                 color = MaterialTheme.colorScheme.primary,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                modifier = Modifier.clickable {
+                modifier = Modifier.clickable(enabled = !np.isRadio) {
                     vm.showPlayer = false
                     vm.open(Screen.Artist(np.artist))
                 },
@@ -191,6 +209,9 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
             )
             np.error?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
 
+            if (np.isLive) {
+                LiveBadge(np)
+            } else {
             // Seek bar
             val dur = np.durationMs.coerceAtLeast(1L)
             val shown = dragging ?: (pos.toFloat() / dur).coerceIn(0f, 1f)
@@ -211,6 +232,7 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                     Spacer(Modifier.weight(1f))
                 }
                 Text(fmtDuration(np.durationMs), style = MaterialTheme.typography.bodySmall)
+            }
             }
 
             // Transport
@@ -246,21 +268,35 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
 
             // Extras
             Row(Modifier.fillMaxWidth().padding(bottom = 8.dp), horizontalArrangement = Arrangement.SpaceEvenly) {
-                val id = np.mediaId
-                val state = id?.let { dl[it] }
-                IconButton(onClick = { id?.let { vm.toggleDownloadById(it) } }) {
-                    Icon(
-                        if (state == Download.STATE_COMPLETED) Icons.Default.DownloadDone else Icons.Default.Download,
-                        "Download",
-                        tint = if (state == Download.STATE_COMPLETED) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
-                    )
+                if (np.isRadio) {
+                    val favs by vm.graph.prefs.radioFavorites.collectAsStateWithLifecycle()
+                    val fav = np.stationId != null && favs.any { it.id == np.stationId }
+                    IconButton(onClick = { vm.toggleFavoriteById(np.stationId) }) {
+                        Icon(
+                            if (fav) Icons.Default.Star else Icons.Default.StarBorder,
+                            "Favorite",
+                            tint = if (fav) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                        )
+                    }
+                } else {
+                    val id = np.mediaId
+                    val state = id?.let { dl[it] }
+                    IconButton(onClick = { id?.let { vm.toggleDownloadById(it) } }) {
+                        Icon(
+                            if (state == Download.STATE_COMPLETED) Icons.Default.DownloadDone else Icons.Default.Download,
+                            "Download",
+                            tint = if (state == Download.STATE_COMPLETED) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                        )
+                    }
                 }
                 IconButton(onClick = { showSleep = true }) {
                     Icon(Icons.Default.Bedtime, "Sleep timer", tint = if (sleep.active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
                 }
-                IconButton(onClick = { showPractice = true }) {
-                    val active = loop.active || np.speed != 1f || np.pitch != 1f
-                    Icon(Icons.Default.Speed, "Practice", tint = if (active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
+                if (!np.isLive) {
+                    IconButton(onClick = { showPractice = true }) {
+                        val active = loop.active || np.speed != 1f || np.pitch != 1f
+                        Icon(Icons.Default.Speed, "Practice", tint = if (active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
+                    }
                 }
                 IconButton(onClick = { showQueue = true }) { Icon(Icons.AutoMirrored.Filled.QueueMusic, "Queue") }
             }
@@ -284,6 +320,30 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
     if (showQueue) QueueSheet(vm) { showQueue = false }
     if (showPractice) PracticeSheet(vm, np) { showPractice = false }
     if (showSleep) SleepDialog(vm) { showSleep = false }
+}
+
+@Composable
+private fun LiveBadge(np: NowPlaying) {
+    Column(Modifier.fillMaxWidth().padding(vertical = 14.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.size(8.dp).background(MaterialTheme.colorScheme.error, androidx.compose.foundation.shape.CircleShape))
+            Spacer(Modifier.width(6.dp))
+            Text(
+                if (np.buffering) "LIVE • connecting…" else "LIVE",
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.error,
+            )
+        }
+        if (np.casting) {
+            Text(
+                "The speaker streams this station by itself — you can leave Wi-Fi or close the app.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(top = 6.dp),
+            )
+        }
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -314,13 +374,13 @@ private fun QueueSheet(vm: MainViewModel, onDismiss: () -> Unit) {
                 ) {
                     Column(Modifier.weight(1f)) {
                         Text(
-                            item.mediaMetadata.title?.toString() ?: "",
+                            item.displayTitle(),
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis,
                             color = if (current) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
                         )
                         Text(
-                            item.mediaMetadata.artist?.toString() ?: "",
+                            (item.mediaMetadata.artist ?: item.mediaMetadata.station)?.toString() ?: "",
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis,
                             style = MaterialTheme.typography.bodySmall,

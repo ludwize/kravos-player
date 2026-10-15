@@ -13,6 +13,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Album
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.DownloadDone
+import androidx.compose.material.icons.filled.Folder
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.NewReleases
 import androidx.compose.material.icons.filled.Person
@@ -109,6 +110,9 @@ fun SearchScreen(vm: MainViewModel) {
     val tracks by remember(debounced) {
         if (debounced.length < 2) flowOf(emptyList<Track>()) else vm.dao.searchTracks(like)
     }.collectAsStateWithLifecycle(emptyList())
+    val folders by remember(debounced) {
+        if (debounced.length < 2) flowOf(emptyList<net.kravos.player.data.Folder>()) else vm.dao.searchFolders(like)
+    }.collectAsStateWithLifecycle(emptyList())
     val np by vm.player.state.collectAsStateWithLifecycle()
     val dl by vm.downloadStates.collectAsStateWithLifecycle()
     val playlists by vm.playlists.collectAsStateWithLifecycle()
@@ -137,6 +141,12 @@ fun SearchScreen(vm: MainViewModel) {
                 item { SectionHeader("Albums") }
                 items(albums.take(12), key = { "b" + it.albumKey }) { a ->
                     SimpleRow(a.album, a.albumArtist, a.artUri, Icons.Default.Album) { vm.open(Screen.Album(a.albumKey, a.album)) }
+                }
+            }
+            if (folders.isNotEmpty()) {
+                item { SectionHeader("Folders") }
+                items(folders.take(10), key = { "f" + it.id }) { f ->
+                    SimpleRow(f.name, null, null, Icons.Default.Folder) { vm.open(Screen.Folder(f.id, f.name)) }
                 }
             }
             if (tracks.isNotEmpty()) {

@@ -31,6 +31,7 @@ class CastProxyServer(private val context: Context, private val http: OkHttpClie
     private val pool = Executors.newCachedThreadPool()
     private val secret: String = ByteArray(16).also { SecureRandom().nextBytes(it) }.joinToString("") { "%02x".format(it) }
     private val mimes = ConcurrentHashMap<String, String>()
+    private val radios = ConcurrentHashMap<String, String>()
 
     @Volatile
     var baseUrl: String? = null
@@ -65,6 +66,14 @@ class CastProxyServer(private val context: Context, private val http: OkHttpClie
         val base = baseUrl ?: return null
         if (mime != null) mimes[id] = mime
         return "$base/t/$id"
+    }
+
+    /** Relay for an HTTP-only radio stream (Chromecasts refuse plain-HTTP media). */
+    fun radioUrl(key: String, url: String): String? {
+        val base = baseUrl ?: return null
+        val k = key.filter { it.isLetterOrDigit() }.take(64).ifEmpty { return null }
+        radios[k] = url
+        return "$base/r/$k"
     }
 
     fun artUrl(art: String?): String? {
@@ -110,6 +119,7 @@ class CastProxyServer(private val context: Context, private val http: OkHttpClie
         when (kind) {
             "t", "d" -> proxyDrive(out, id, headers["range"], method == "HEAD", if (kind == "t") mimes[id] else null)
             "f" -> serveFile(out, File(artDir, id), method == "HEAD")
+            "r" -> radios[id]?.let { proxyRadio(out, it, method == "HEAD") } ?: respond(out, 404, "Not Found")
             else -> respond(out, 404, "Not Found")
         }
     }
@@ -127,6 +137,18 @@ class CastProxyServer(private val context: Context, private val http: OkHttpClie
             sb.append("Access-Control-Allow-Origin: *\r\n")
             sb.append("Connection: close\r\n\r\n")
             out.write(sb.toString().toByteArray(Charsets.ISO_8859_1))
+            if (!head) r.body?.byteStream()?.use { copy(it, out) }
+            out.flush()
+        }
+    }
+
+    private fun proxyRadio(out: OutputStream, url: String, head: Boolean) {
+        val req = Request.Builder().url(url).header("User-Agent", "KravosPlayer/1.1 (Android)").build()
+        http.newCall(req).execute().use { r ->
+            if (!r.isSuccessful) return respond(out, 502, "Upstream ${r.code}")
+            val hdr = "HTTP/1.1 200 OK\r\nContent-Type: ${r.header("Content-Type") ?: "audio/mpeg"}\r\n" +
+                "Cache-Control: no-cache\r\nAccess-Control-Allow-Origin: *\r\nConnection: close\r\n\r\n"
+            out.write(hdr.toByteArray(Charsets.ISO_8859_1))
             if (!head) r.body?.byteStream()?.use { copy(it, out) }
             out.flush()
         }
