@@ -107,7 +107,7 @@ private fun Root(vm: MainViewModel) {
                     if (np.hasItem) MiniPlayer(vm, np) { vm.showPlayer = true }
                     NavigationBar {
                         NavItem(vm, Screen.Library, "Library") { Icon(Icons.Default.LibraryMusic, null) }
-                        NavItem(vm, Screen.Playlists, "Playlists") { Icon(Icons.AutoMirrored.Filled.QueueMusic, null) }
+                        NavItem(vm, Screen.Playlists, "Lists") { Icon(Icons.AutoMirrored.Filled.QueueMusic, null) }
                         NavItem(vm, Screen.Radio, "Radio") { Icon(Icons.Default.Radio, null) }
                         NavItem(vm, Screen.Search, "Search") { Icon(Icons.Default.Search, null) }
                         NavItem(vm, Screen.Settings, "Settings") { Icon(Icons.Default.Settings, null) }
@@ -154,6 +154,6 @@ private fun androidx.compose.foundation.layout.RowScope.NavItem(
         selected = vm.root == screen,
         onClick = { if (vm.root == screen && vm.stack.size == 1) Unit else vm.selectRoot(screen) },
         icon = icon,
-        label = { Text(label) },
+        label = { Text(label, maxLines = 1, softWrap = false, overflow = androidx.compose.ui.text.style.TextOverflow.Clip) },
     )
 }
