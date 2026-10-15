@@ -2,6 +2,6 @@ Starting: Intent { cmp=net.kravos.player/.ui.MainActivity }
 Status: ok
 LaunchState: COLD
 Activity: com.google.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity
-TotalTime: 4068
-WaitTime: 4135
+TotalTime: 4666
+WaitTime: 4694
 Complete

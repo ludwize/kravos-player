@@ -1,300 +1,300 @@
-951:10-15 11:39:15.853   524   553 W ActivityTaskManager: Activity pause timeout for ActivityRecord{4a338db u0 net.kravos.player/.ui.MainActivity t8}
-964:10-15 11:39:15.915   524   914 D ConnectivityService: requestNetwork for uid/pid:10192/2618 activeRequest: null callbackRequest: 66 [NetworkRequest [ REQUEST id=67, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
-970:10-15 11:39:15.935  1067  1067 D CarrierSvcBindHelper: onPackageModified: net.kravos.player
-977:10-15 11:39:16.000  1067  1353 D ImsResolver: maybeAddedImsService, packageName: net.kravos.player
-978:10-15 11:39:16.034   524   605 D CoreBackPreview: Window{9fbfca8 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@f727f92, mPriority=0, mIsAnimationCallback=false}
-1099:10-15 11:39:16.931  1853  1853 I CastDynamiteModuleImpl: vk created by ClassLoader dalvik.system.DelegateLastClassLoader[DexPathList[[zip file "/data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk"],nativeLibraryDirectories=[/data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk!/lib/x86_64, /data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk!/lib/arm64-v8a, /system/lib64, /system_ext/lib64]]].
-1128:10-15 11:39:17.014  1122  1158 I Launcher.IconCache: Database bulk icon loading failed, using fallback bulk icon loading for: ComponentInfo{net.kravos.player/net.kravos.player.ui.MainActivity}
-1153:10-15 11:39:17.077   524   775 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=67, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
-1164:10-15 11:39:17.094   524   775 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=67, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
-1165:10-15 11:39:17.095   524   775 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=67, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
-1166:10-15 11:39:17.095   524   775 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=67, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
-1174:10-15 11:39:17.124   855   855 I SafetyLabelChangedBroadcastReceiver: received broadcast packageName: net.kravos.player, current user: UserHandle{0}, packageChangeEvent: NEW_INSTALL, intent user: UserHandle{0}
-1236:10-15 11:39:17.381   524   548 V WindowManager: Sent Transition #7 createdAt=10-15 11:39:15.085 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=net.kravos.player/.ui.MainActivity } baseActivity=ComponentInfo{net.kravos.player/net.kravos.player.ui.MainActivity} topActivity=ComponentInfo{com.google.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity} origActivity=null realActivity=ComponentInfo{net.kravos.player/net.kravos.player.ui.MainActivity} numActivities=2 lastActiveTime=65646 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{7ee9c08 Task{a67d68d #8 type=standard A=10192:net.kravos.player}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{83b926e com.android.permissioncontroller.permission.ui.GrantPermissionsActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-1300:10-15 11:39:17.641   524  2780 W InputManager-JNI: Input channel object 'afedaec Splash Screen net.kravos.player (client)' was disposed without first being removed with the input manager!
-1521:10-15 11:39:18.399  2618  2618 V ActivityThread: getPackageInfo() caused update to cached ApplicationInfo for package net.kravos.player
-1627:10-15 11:39:18.629  2618  2618 I ExoPlayerImpl: Init 5d42dc9 [AndroidXMedia3/1.5.1] [emu64xa, sdk_gphone64_x86_64, Google, 34]
-2045:10-15 11:39:19.697  2618  2618 I MediaSessionImpl: Init edecd01 [AndroidXMedia3/1.5.1] [emu64xa, sdk_gphone64_x86_64, Google, 34]
-2046:10-15 11:39:19.698  2618  2618 W MediaSessionCompat: Couldn't find a unique registered media button receiver in the given context.
-2047:10-15 11:39:19.699   524   836 I MediaSessionStack: addSession to bottom of stack | record: net.kravos.player/androidx.media3.session.id. (userId=0)
-2063:10-15 11:39:19.717  1041  1041 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-2065:10-15 11:39:19.722  1041  1041 I MediaPlayerList: Adding wrapped media player: net.kravos.player at key: 1
-2174:10-15 11:39:19.762  1041  1041 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-2175:10-15 11:39:19.763  1041  1041 I MediaPlayerList: Adding wrapped media player: net.kravos.player at key: 1
-2292:10-15 11:39:20.127  1770  1770 W YTPL.mediasession: MediaSession created
-2297:10-15 11:39:20.141   524  2833 I MediaSessionStack: addSession to bottom of stack | record: com.google.android.apps.youtube.music/YouTube playerlib (userId=0)
-2300:10-15 11:39:20.159  1041  1041 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-2302:10-15 11:39:20.159  1041  1041 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-2542:10-15 11:39:20.685  2618  2618 I CastDynamiteModuleImpl: vk created by ClassLoader dalvik.system.DelegateLastClassLoader[DexPathList[[zip file "/data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk"],nativeLibraryDirectories=[/data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk!/lib/x86_64, /data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk!/lib/arm64-v8a, /system/lib64, /system_ext/lib64]]].
-2785:10-15 11:39:21.605  2618  3046 D ProfileInstaller: Installing profile for net.kravos.player
-2791:10-15 11:39:21.629  2618  2618 I MediaController: Init b2bdc84 [AndroidXMedia3/1.5.1] [emu64xa, sdk_gphone64_x86_64, Google, 34]
-3112:10-15 11:39:23.191  1853  1853 I ExoPlayerImpl: Init b4f6ddc [AndroidXMedia3/1.0.0-alpha03] [emu64xa, sdk_gphone64_x86_64, Google, 34]
-3217:10-15 11:39:23.656  1853  1853 W MediaSessionCompat: Couldn't find a unique registered media button receiver in the given context.
-3219:10-15 11:39:23.674   524  2372 I MediaSessionStack: addSession to bottom of stack | record: com.google.android.googlequicksearchbox/PodcastPlayer (userId=0)
-3221:10-15 11:39:23.691  1041  1041 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-3223:10-15 11:39:23.692  1041  1041 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-3228:10-15 11:39:23.709  1041  1041 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-3232:10-15 11:39:23.713  1041  1041 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-3982:10-15 11:39:25.307   524   561 D SystemServerTimingAsync: ssm.onUnlockedUser-0_com.android.server.media.MediaSessionService
-3983:10-15 11:39:25.307   524   561 V SystemServerTimingAsync: ssm.onUnlockedUser-0_com.android.server.media.MediaSessionService took to complete: 0ms
-4779:10-15 11:39:27.573  1422  2115 I CastDatabase: Opening the database
-4786:10-15 11:39:27.590  1422  1422 I CastSocket: Adding new CastClientAuthKeyManager. [CONTEXT service_id=161 ]
-4911:10-15 11:39:28.201  2618  2618 I MediaRouterProxy: Set up output switcher flags: true (from module), true (from CastOptions)
-4913:10-15 11:39:28.210  1422  2115 I SQLiteCastDBHelper: Creating cast database
-4915:10-15 11:39:28.234  1422  2115 I SQLiteCastStore: 0 CastNetworkInfo instances loaded, 0 CastDeviceInfo instances loaded, 0 paired guest mode devices loaded.
-5215:10-15 11:39:28.728  1658  1658 I AiAiEcho: AppFetcherImplV2 updateApps package:[net.kravos.player], userId:[0], reason:[package is added.].
-5635:10-15 11:39:30.780  3441  3441 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-5637:10-15 11:39:30.817  3441  3441 I AndroidRuntime: Using default boot image
-5638:10-15 11:39:30.817  3441  3441 I AndroidRuntime: Leaving lock profiling enabled
-5966:10-15 11:39:30.937   524  3483 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaSessionService
-5967:10-15 11:39:30.937   524  3483 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaSessionService took to complete: 0ms
-6054:10-15 11:39:30.990  1658  1658 I AiAiEcho: AppFetcherImpl onPackageChanged net.kravos.player.
-6056:10-15 11:39:30.991  1658  2993 I AiAiEcho: AppIndexer Package:[net.kravos.player] UserProfile:[0] Enabled:[true].
-6057:10-15 11:39:30.991  1658  2993 I AiAiEcho: AppFetcherImplV2 updateApps package:[net.kravos.player], userId:[0], reason:[package is updated.].
-6183:10-15 11:39:31.517  3441  3441 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-6667:10-15 11:39:33.445  3441  3441 D AndroidRuntime: Shutting down VM
-7321:10-15 11:39:34.658  3665  3665 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-7323:10-15 11:39:34.672  3665  3665 I AndroidRuntime: Using default boot image
-7325:10-15 11:39:34.674  3665  3665 I AndroidRuntime: Leaving lock profiling enabled
-7446:10-15 11:39:35.124  3665  3665 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-7676:10-15 11:39:35.584  1857  1857 W YT.MDX.acet: CastAppId for type 0 not found. Defaulting to mainCastAppId.
-7678:10-15 11:39:35.599  1857  1857 W YT.MDX.acet: CastAppId for type 0 not found. Defaulting to mainCastAppId.
-7679:10-15 11:39:35.601  1857  1857 W YT.MDX.acet: CastAppId for type 0 not found. Defaulting to mainCastAppId.
-7941:10-15 11:39:36.348  3665  3665 D AndroidRuntime: Shutting down VM
-7955:10-15 11:39:36.370  3665  3870 I AndroidRuntime: NOTE: attach of thread 'binder:3665_3' failed
-8472:10-15 11:39:37.483   855   855 V GrantPermissionsViewModel: Logged buttons presented and clicked permissionGroupName=android.permission-group.NOTIFICATIONS uid=10192 selectedPrecision=0 package=net.kravos.player presentedButtons=9 clickedButton=1 isPermissionRationaleShown=false sessionId=-5397632073923761500 targetSdk=35
-8473:10-15 11:39:37.490   855   855 V GrantPermissionsViewModel: Permission grant result requestId=-5397632073923761500 callingUid=10192 callingPackage=net.kravos.player permission=android.permission.POST_NOTIFICATIONS isImplicit=false result=4 isPermissionRationaleShown=false
-8498:10-15 11:39:37.584   524  1844 I ImeTracker: net.kravos.player:511f7b20: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-8499:10-15 11:39:37.588   524  1844 I ImeTracker: net.kravos.player:511f7b20: onCancelled at PHASE_SERVER_SHOULD_HIDE
-8514:10-15 11:39:37.649  1559  1559 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, false)
-9803:10-15 11:39:41.190  4095  4095 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-9823:10-15 11:39:41.222  4095  4095 I AndroidRuntime: Using default boot image
-9824:10-15 11:39:41.222  4095  4095 I AndroidRuntime: Leaving lock profiling enabled
-9991:10-15 11:39:41.571  4095  4095 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-11031:10-15 11:39:43.646  4095  4095 D AndroidRuntime: Shutting down VM
-11440:10-15 11:39:45.931   524   553 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{4a338db u0 net.kravos.player/.ui.MainActivity t8}
-11679:10-15 11:39:46.542   524   548 V WindowManager:     info={id=9 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ba6e5c6 Task{34048b7 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x92ed854 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{7ee9c08 Task{a67d68d #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x9a483fa sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{109f5d3 token=android.os.Binder@98953c2})/@0x2071f04 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-14623:10-15 11:39:48.139  3934  3991 W IndexDataConverter: Skipping index for null-key item IndexData.Builder {title: Cast,package: com.android.settings}
-15675:10-15 11:39:49.122  4395  4395 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-15679:10-15 11:39:49.139  4395  4395 I AndroidRuntime: Using default boot image
-15680:10-15 11:39:49.139  4395  4395 I AndroidRuntime: Leaving lock profiling enabled
-15734:10-15 11:39:49.709  4395  4395 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-16255:10-15 11:39:50.995  4395  4395 D AndroidRuntime: Shutting down VM
-16476:10-15 11:39:52.314   524   548 V WindowManager:     info={id=10 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ba6e5c6 Task{34048b7 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x92ed854 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{7ee9c08 Task{a67d68d #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x9a483fa sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{109f5d3 token=android.os.Binder@98953c2})/@0x2071f04 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-16881:10-15 11:39:54.801  1422  1422 I CastMediaRouteProvider: Published 0 routes
-16905:10-15 11:39:55.091  1422  2611 I CastDatabase: Saving the database
-16947:10-15 11:39:55.810  4531  4531 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-16948:10-15 11:39:55.821  4531  4531 I AndroidRuntime: Using default boot image
-16949:10-15 11:39:55.821  4531  4531 I AndroidRuntime: Leaving lock profiling enabled
-16955:10-15 11:39:55.894  1422  2611 I SQLiteCastStore: [CastNetworkInfo] saved: 0, skipped: 0, [CastDeviceInfo]: saved 0, skipped 0, [Paired Guest Mode DeviceInfo] saved: 0, skipped: 0. [ProbedNetworks]: saved 0, skipped: 0, [ProbedSocketAddress]: saved 0, skipped: 0, [Network-Device pairs]: saved: 0
-16985:10-15 11:39:56.344  4531  4531 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-17037:10-15 11:39:56.591  1505  3920 I BlockstoreStorage: Clearing Blockstore Data for package net.kravos.player [CONTEXT service_id=258 ]
-17237:10-15 11:39:57.682  4531  4531 D AndroidRuntime: Shutting down VM
-17436:10-15 11:39:59.216   524   548 V WindowManager:     info={id=11 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ba6e5c6 Task{34048b7 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x92ed854 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{7ee9c08 Task{a67d68d #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x9a483fa sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{109f5d3 token=android.os.Binder@98953c2})/@0x2071f04 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-18405:10-15 11:40:02.699  4681  4681 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-18406:10-15 11:40:02.709  4681  4681 I AndroidRuntime: Using default boot image
-18407:10-15 11:40:02.709  4681  4681 I AndroidRuntime: Leaving lock profiling enabled
-18503:10-15 11:40:03.207  4681  4681 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-19042:10-15 11:40:04.435  4681  4681 D AndroidRuntime: Shutting down VM
-19446:10-15 11:40:06.304   524   548 V WindowManager:     info={id=12 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ba6e5c6 Task{34048b7 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x92ed854 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{7ee9c08 Task{a67d68d #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x9a483fa sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{109f5d3 token=android.os.Binder@98953c2})/@0x2071f04 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-20080:10-15 11:40:08.984  4823  4823 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-20082:10-15 11:40:08.992  4823  4823 I AndroidRuntime: Using default boot image
-20083:10-15 11:40:08.992  4823  4823 I AndroidRuntime: Leaving lock profiling enabled
-20158:10-15 11:40:09.317  4823  4823 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-20499:10-15 11:40:10.417  4823  4823 D AndroidRuntime: Shutting down VM
-21331:10-15 11:40:14.929  4928  4928 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-21332:10-15 11:40:14.956  4928  4928 I AndroidRuntime: Using default boot image
-21333:10-15 11:40:14.956  4928  4928 I AndroidRuntime: Leaving lock profiling enabled
-21446:10-15 11:40:15.285  4928  4928 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-21607:10-15 11:40:16.373  4928  4928 D AndroidRuntime: Shutting down VM
-23375:10-15 11:40:25.347  5084  5084 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-23376:10-15 11:40:25.365  5084  5084 I AndroidRuntime: Using default boot image
-23377:10-15 11:40:25.365  5084  5084 I AndroidRuntime: Leaving lock profiling enabled
-23429:10-15 11:40:26.234  5084  5084 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-23576:10-15 11:40:27.287  1422  1422 I CastMediaRouteProvider: Published 0 routes
-23861:10-15 11:40:28.286  5084  5084 D AndroidRuntime: Shutting down VM
-24133:10-15 11:40:29.483   524   548 V WindowManager:     info={id=13 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ba6e5c6 Task{34048b7 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x92ed854 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{7ee9c08 Task{a67d68d #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x9a483fa sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{109f5d3 token=android.os.Binder@98953c2})/@0x2071f04 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-30471:10-15 11:40:43.597  5357  5357 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-30473:10-15 11:40:43.607  5357  5357 I AndroidRuntime: Using default boot image
-30474:10-15 11:40:43.607  5357  5357 I AndroidRuntime: Leaving lock profiling enabled
-30768:10-15 11:40:44.339  5357  5357 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-31326:10-15 11:40:45.641  5357  5357 D AndroidRuntime: Shutting down VM
-31536:10-15 11:40:46.940   524   842 I MediaFocusControl: requestAudioFocus() from uid/pid 10192/2618 AA=USAGE_MEDIA/CONTENT_TYPE_MUSIC clientId=android.media.AudioManager@2e0e262V1.c@8866ff3 callingPack=net.kravos.player req=1 flags=0x0 sdk=35
-31548:10-15 11:40:47.044   524   940 I MediaSessionStack: onPlaybackStateChanged - Pushing session to top | record: net.kravos.player/androidx.media3.session.id. (userId=0)
-31602:10-15 11:40:47.454   524   940 I ActivityManager: Background started FGS: Allowed [callingPackage: net.kravos.player; callingUid: 10192; uidState: TOP ; uidBFSL: [BFSL]; intent: Intent { act=androidx.media3.session.MediaSessionService cmp=net.kravos.player/.playback.PlaybackService }; code:PROC_STATE_TOP; tempAllowListReason:<null>; targetSdkVersion:35; callerTargetSdkVersion:35; startForegroundCount:0; bindFromPackage:null: isBindService:true]
-31605:10-15 11:40:47.476   524  2359 I ActivityManager: Background started FGS: Allowed [callingPackage: net.kravos.player; callingUid: 10192; uidState: TOP ; uidBFSL: [BFSL]; intent: Intent { act=androidx.media3.session.MediaSessionService cmp=net.kravos.player/.playback.PlaybackService }; code:PROC_STATE_TOP; tempAllowListReason:<null>; targetSdkVersion:35; callerTargetSdkVersion:35; startForegroundCount:0; bindFromPackage:null: isBindService:false]; startForegroundDelayMs:92355
-31638:10-15 11:40:47.723   524   524 V ActivityThread: getPackageInfo() caused update to cached ApplicationInfo for package net.kravos.player
-31640:10-15 11:40:47.725   524   524 D nativeloader: Configuring clns-18 for other apk . target_sdk_version=35, uses_libraries=, library_path=/data/app/~~XeOWGetatmIfCqq3-CBiPQ==/net.kravos.player-I4pIuLllFdZzrRnYgc-yTQ==/lib/x86_64:/data/app/~~XeOWGetatmIfCqq3-CBiPQ==/net.kravos.player-I4pIuLllFdZzrRnYgc-yTQ==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
-31711:10-15 11:40:47.955   853   853 D MediaResumeListener: Checking for service component for net.kravos.player
-31732:10-15 11:40:48.031  1422  1422 I CastMediaRouteProvider: Published 0 routes
-32032:10-15 11:40:48.791   524   524 D MediaSessionService: Media button session is changed to net.kravos.player/androidx.media3.session.id. (userId=0)
-32036:10-15 11:40:48.812  1041  1041 I MediaPlayerList: onMediaKeyEventSessionChanged: token=net.kravos.player
-32048:10-15 11:40:48.837  1041  1041 D MediaPlayerList: setActivePlayer(): setting player to net.kravos.player
-32053:10-15 11:40:48.871  1041  1041 I MediaPlayerList: onMediaKeyEventSessionChanged: token=net.kravos.player
-32064:10-15 11:40:48.882  1041  1041 D MediaPlayerList: setActivePlayer(): setting player to net.kravos.player
-32067:10-15 11:40:48.889   524  2376 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:com.google.android.bluetooth targetPackage:net.kravos.player reason:MediaSessionRecord:android.support.v4.media.session.command.GET_EXTRA_BINDER [WIU] [FGS]
-32093:10-15 11:40:48.930  1041  1041 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-32160:10-15 11:40:48.981  1041  1041 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-32763:10-15 11:40:51.681  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=2807, buffered position=19411, speed=1.0, updated=162225, actions=7339687, custom actions=[], active item id=0, error=null}
-32764:10-15 11:40:51.685  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=2807, buffered position=19411, speed=1.0, updated=162225, actions=7339687, custom actions=[], active item id=0, error=null}
-34292:10-15 11:40:53.682  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-34346:10-15 11:40:53.691  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-34364:10-15 11:40:53.692  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-34417:10-15 11:40:53.696  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-34496:10-15 11:40:54.000   524   836 W ActivityManager: Scheduling restart of crashed service com.google.android.gms/.cast.media.CastMediaRoute2ProviderService_Persistent in 70994ms for connection
-34673:10-15 11:40:54.437  5570  5656 I CastDatabase: Opening the database
-34674:10-15 11:40:54.463  5570  5656 I SQLiteCastStore: 0 CastNetworkInfo instances loaded, 0 CastDeviceInfo instances loaded, 0 paired guest mode devices loaded.
-34675:10-15 11:40:54.470  5570  5570 I CastSocket: Adding new CastClientAuthKeyManager. [CONTEXT service_id=161 ]
-34704:10-15 11:40:54.681  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=5814, buffered position=22522, speed=1.0, updated=165226, actions=7339687, custom actions=[], active item id=0, error=null}
-34705:10-15 11:40:54.685  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=5814, buffered position=22522, speed=1.0, updated=165226, actions=7339687, custom actions=[], active item id=0, error=null}
-34929:10-15 11:40:55.831  5570  5570 I CastMediaRouteProvider: Published 0 routes
-34947:10-15 11:40:55.932  5570  5570 I CastMediaRouteProvider: Published 0 routes
-34979:10-15 11:40:56.016  5570  5570 I CastMediaRouteProvider: Published 0 routes
-35207:10-15 11:40:56.686  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-35261:10-15 11:40:56.692  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-35279:10-15 11:40:56.694  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-35333:10-15 11:40:56.699  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-35678:10-15 11:40:57.683  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=8810, buffered position=25494, speed=1.0, updated=168228, actions=7339687, custom actions=[], active item id=0, error=null}
-35679:10-15 11:40:57.684  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=8810, buffered position=25494, speed=1.0, updated=168228, actions=7339687, custom actions=[], active item id=0, error=null}
-35810:10-15 11:40:59.684  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-35863:10-15 11:40:59.691  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-35881:10-15 11:40:59.692  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-35934:10-15 11:40:59.698  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-35949:10-15 11:41:00.685  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=11812, buffered position=28512, speed=1.0, updated=171229, actions=7339687, custom actions=[], active item id=0, error=null}
-35950:10-15 11:41:00.686  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=11812, buffered position=28512, speed=1.0, updated=171229, actions=7339687, custom actions=[], active item id=0, error=null}
-36410:10-15 11:41:02.686  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-36464:10-15 11:41:02.692  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-36468:10-15 11:41:02.692  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-36523:10-15 11:41:02.700  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-36914:10-15 11:41:03.689  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=14813, buffered position=31438, speed=1.0, updated=174233, actions=7339687, custom actions=[], active item id=0, error=null}
-36915:10-15 11:41:03.692  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=14813, buffered position=31438, speed=1.0, updated=174233, actions=7339687, custom actions=[], active item id=0, error=null}
-36966:10-15 11:41:05.694  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-37019:10-15 11:41:05.699  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-37023:10-15 11:41:05.699  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-37076:10-15 11:41:05.704  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-37095:10-15 11:41:06.691  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=17816, buffered position=34503, speed=1.0, updated=177235, actions=7339687, custom actions=[], active item id=0, error=null}
-37096:10-15 11:41:06.693  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=17816, buffered position=34503, speed=1.0, updated=177235, actions=7339687, custom actions=[], active item id=0, error=null}
-37104:10-15 11:41:08.693  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-37157:10-15 11:41:08.700  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-37175:10-15 11:41:08.702  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-37228:10-15 11:41:08.709  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-37235:10-15 11:41:09.693  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=20825, buffered position=37568, speed=1.0, updated=180237, actions=7339687, custom actions=[], active item id=0, error=null}
-37236:10-15 11:41:09.694  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=20825, buffered position=37568, speed=1.0, updated=180237, actions=7339687, custom actions=[], active item id=0, error=null}
-37243:10-15 11:41:10.140  5998  5998 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-37244:10-15 11:41:10.148  5998  5998 I AndroidRuntime: Using default boot image
-37245:10-15 11:41:10.148  5998  5998 I AndroidRuntime: Leaving lock profiling enabled
-37260:10-15 11:41:10.475  5998  5998 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-38309:10-15 11:41:11.658  5998  5998 D AndroidRuntime: Shutting down VM
-38370:10-15 11:41:11.697  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-38423:10-15 11:41:11.703  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-38441:10-15 11:41:11.707  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-38511:10-15 11:41:11.723  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-39345:10-15 11:41:12.733  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=23864, buffered position=40401, speed=1.0, updated=183276, actions=7339687, custom actions=[], active item id=0, error=null}
-39347:10-15 11:41:12.754  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=23864, buffered position=40401, speed=1.0, updated=183276, actions=7339687, custom actions=[], active item id=0, error=null}
-41125:10-15 11:41:14.741  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-41194:10-15 11:41:14.763  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-41221:10-15 11:41:14.771  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-41299:10-15 11:41:14.794  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-42480:10-15 11:41:15.736  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=26865, buffered position=43558, speed=1.0, updated=186280, actions=7339687, custom actions=[], active item id=0, error=null}
-42485:10-15 11:41:15.746  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=26865, buffered position=43558, speed=1.0, updated=186280, actions=7339687, custom actions=[], active item id=0, error=null}
-44783:10-15 11:41:17.746  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-44838:10-15 11:41:17.754  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-44856:10-15 11:41:17.756  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-44909:10-15 11:41:17.761  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-45946:10-15 11:41:18.738  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=29865, buffered position=46623, speed=1.0, updated=189282, actions=7339687, custom actions=[], active item id=0, error=null}
-45963:10-15 11:41:18.747  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=29865, buffered position=46623, speed=1.0, updated=189282, actions=7339687, custom actions=[], active item id=0, error=null}
-47801:10-15 11:41:20.747  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-47854:10-15 11:41:20.754  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-47872:10-15 11:41:20.757  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-47925:10-15 11:41:20.762  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-47939:10-15 11:41:21.137  6116  6116 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-47940:10-15 11:41:21.142  6116  6116 I AndroidRuntime: Using default boot image
-47941:10-15 11:41:21.142  6116  6116 I AndroidRuntime: Leaving lock profiling enabled
-47955:10-15 11:41:21.288  6116  6116 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-47998:10-15 11:41:21.741  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=32869, buffered position=49502, speed=1.0, updated=192285, actions=7339687, custom actions=[], active item id=0, error=null}
-47999:10-15 11:41:21.742  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=32869, buffered position=49502, speed=1.0, updated=192285, actions=7339687, custom actions=[], active item id=0, error=null}
-48025:10-15 11:41:22.373  6116  6116 D AndroidRuntime: Shutting down VM
-48086:10-15 11:41:23.745  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-48139:10-15 11:41:23.749  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-48157:10-15 11:41:23.751  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-48210:10-15 11:41:23.756  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-48214:10-15 11:41:23.844   524  2780 W ProcessStats: Tracking association SourceState{f054021 net.kravos.player/10192 BTop #12848} whose proc state 2 is better than process ProcessState{df0fe55 com.google.android.gms/10131 pkg=com.google.android.gms} proc state 9 (14697 skipped)
-48250:10-15 11:41:24.746  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=35871, buffered position=52614, speed=1.0, updated=195289, actions=7339687, custom actions=[], active item id=0, error=null}
-48251:10-15 11:41:24.747  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=35871, buffered position=52614, speed=1.0, updated=195289, actions=7339687, custom actions=[], active item id=0, error=null}
-48270:10-15 11:41:25.197  5570  5570 I CastMediaRouteProvider: Published 0 routes
-48277:10-15 11:41:26.749  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-48330:10-15 11:41:26.753  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-48348:10-15 11:41:26.755  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-48401:10-15 11:41:26.758  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-48428:10-15 11:41:27.748  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=38876, buffered position=55493, speed=1.0, updated=198293, actions=7339687, custom actions=[], active item id=0, error=null}
-48429:10-15 11:41:27.751  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=38876, buffered position=55493, speed=1.0, updated=198293, actions=7339687, custom actions=[], active item id=0, error=null}
-48446:10-15 11:41:29.752  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-48499:10-15 11:41:29.763  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-48517:10-15 11:41:29.773  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-48570:10-15 11:41:29.793  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-48576:10-15 11:41:30.751  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=41884, buffered position=58511, speed=1.0, updated=201296, actions=7339687, custom actions=[], active item id=0, error=null}
-48577:10-15 11:41:30.753  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=41884, buffered position=58511, speed=1.0, updated=201296, actions=7339687, custom actions=[], active item id=0, error=null}
-48711:10-15 11:41:32.754  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-48764:10-15 11:41:32.760  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-48782:10-15 11:41:32.762  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-48835:10-15 11:41:32.767  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-48840:10-15 11:41:33.755  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=44888, buffered position=61483, speed=1.0, updated=204299, actions=7339687, custom actions=[], active item id=0, error=null}
-48841:10-15 11:41:33.756  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=44888, buffered position=61483, speed=1.0, updated=204299, actions=7339687, custom actions=[], active item id=0, error=null}
-48900:10-15 11:41:34.338   524   560 W ProcessStats: Tracking association SourceState{f054021 net.kravos.player/10192 BTop #12932} whose proc state 2 is better than process ProcessState{df0fe55 com.google.android.gms/10131 pkg=com.google.android.gms} proc state 9 (355 skipped)
-48906:10-15 11:41:34.605  6190  6190 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-48907:10-15 11:41:34.611  6190  6190 I AndroidRuntime: Using default boot image
-48908:10-15 11:41:34.611  6190  6190 I AndroidRuntime: Leaving lock profiling enabled
-48922:10-15 11:41:34.820  6190  6190 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-48964:10-15 11:41:35.758  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-49017:10-15 11:41:35.765  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-49035:10-15 11:41:35.770  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-49088:10-15 11:41:35.775  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-49102:10-15 11:41:35.945  6190  6190 D AndroidRuntime: Shutting down VM
-49179:10-15 11:41:36.758  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=47882, buffered position=64548, speed=1.0, updated=207302, actions=7339687, custom actions=[], active item id=0, error=null}
-49180:10-15 11:41:36.761  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=47882, buffered position=64548, speed=1.0, updated=207302, actions=7339687, custom actions=[], active item id=0, error=null}
-49213:10-15 11:41:37.079   524   548 V WindowManager:     info={id=14 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ba6e5c6 Task{34048b7 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x92ed854 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{7ee9c08 Task{a67d68d #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x9a483fa sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{109f5d3 token=android.os.Binder@98953c2})/@0x2071f04 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-49423:10-15 11:41:38.762  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-49476:10-15 11:41:38.767  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-49494:10-15 11:41:38.771  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-49547:10-15 11:41:38.773  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-49610:10-15 11:41:39.763  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=50863, buffered position=67474, speed=1.0, updated=210306, actions=7339687, custom actions=[], active item id=0, error=null}
-49611:10-15 11:41:39.766  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=50863, buffered position=67474, speed=1.0, updated=210306, actions=7339687, custom actions=[], active item id=0, error=null}
-49626:10-15 11:41:41.769  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-49679:10-15 11:41:41.781  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-49697:10-15 11:41:41.785  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-49750:10-15 11:41:41.803  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-49763:10-15 11:41:42.763  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=53863, buffered position=70492, speed=1.0, updated=213308, actions=7339687, custom actions=[], active item id=0, error=null}
-49764:10-15 11:41:42.765  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=53863, buffered position=70492, speed=1.0, updated=213308, actions=7339687, custom actions=[], active item id=0, error=null}
-49782:10-15 11:41:44.766  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-49835:10-15 11:41:44.774  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-49853:10-15 11:41:44.776  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-49906:10-15 11:41:44.780  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-49911:10-15 11:41:45.764  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=56864, buffered position=73604, speed=1.0, updated=216309, actions=7339687, custom actions=[], active item id=0, error=null}
-49912:10-15 11:41:45.765  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=56864, buffered position=73604, speed=1.0, updated=216309, actions=7339687, custom actions=[], active item id=0, error=null}
-49920:10-15 11:41:47.767  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-49973:10-15 11:41:47.772  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-49991:10-15 11:41:47.774  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-50044:10-15 11:41:47.778  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-50054:10-15 11:41:48.494  6285  6285 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-50055:10-15 11:41:48.505  6285  6285 I AndroidRuntime: Using default boot image
-50056:10-15 11:41:48.505  6285  6285 I AndroidRuntime: Leaving lock profiling enabled
-50099:10-15 11:41:48.727  6285  6285 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-50136:10-15 11:41:48.786  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=59875, buffered position=76622, speed=1.0, updated=219313, actions=7339687, custom actions=[], active item id=0, error=null}
-50137:10-15 11:41:48.788  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=59875, buffered position=76622, speed=1.0, updated=219313, actions=7339687, custom actions=[], active item id=0, error=null}
-50163:10-15 11:41:49.791  6285  6285 D AndroidRuntime: Shutting down VM
-50226:10-15 11:41:50.789  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-50279:10-15 11:41:50.796  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-50297:10-15 11:41:50.799  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-50350:10-15 11:41:50.804  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-50354:10-15 11:41:51.783  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=62887, buffered position=79594, speed=1.0, updated=222328, actions=7339687, custom actions=[], active item id=0, error=null}
-50355:10-15 11:41:51.785  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=62887, buffered position=79594, speed=1.0, updated=222328, actions=7339687, custom actions=[], active item id=0, error=null}
-50371:10-15 11:41:53.786  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-50424:10-15 11:41:53.793  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-50442:10-15 11:41:53.794  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-50495:10-15 11:41:53.799  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-50499:10-15 11:41:54.784  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=65885, buffered position=82613, speed=1.0, updated=225329, actions=7339687, custom actions=[], active item id=0, error=null}
-50500:10-15 11:41:54.786  1041  1041 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=65885, buffered position=82613, speed=1.0, updated=225329, actions=7339687, custom actions=[], active item id=0, error=null}
-50750:10-15 11:41:56.790  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-50803:10-15 11:41:56.812  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-50821:10-15 11:41:56.815  1041  1041 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-50878:10-15 11:41:56.827  1041  1041 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+597:10-15 11:51:31.110  2768  2768 D nativeloader: Configuring clns-6 for other apk /data/app/~~Uor04DXz5lIZzsvZyH013w==/net.kravos.player-PqobE1ckjChR4CQ5Jed0Lg==/base.apk. target_sdk_version=35, uses_libraries=, library_path=/data/app/~~Uor04DXz5lIZzsvZyH013w==/net.kravos.player-PqobE1ckjChR4CQ5Jed0Lg==/lib/x86_64:/data/app/~~Uor04DXz5lIZzsvZyH013w==/net.kravos.player-PqobE1ckjChR4CQ5Jed0Lg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/net.kravos.player
+601:10-15 11:51:31.113  2768  2768 V GraphicsEnvironment: ANGLE GameManagerService for net.kravos.player: false
+602:10-15 11:51:31.113  2768  2768 V GraphicsEnvironment: net.kravos.player is not listed in per-application setting
+692:10-15 11:51:31.426   526   810 I SdkSandboxManager: No SDKs used. Skipping SDK data reconcilation for CallingInfo{mUid=10192, mPackageName='net.kravos.player, mAppProcessToken='null'}
+935:10-15 11:51:32.341   838   887 V WindowManagerShell: Transition requested: android.os.BinderProxy@8e644eb TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=net.kravos.player/.ui.MainActivity } baseActivity=ComponentInfo{net.kravos.player/net.kravos.player.ui.MainActivity} topActivity=ComponentInfo{com.google.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity} origActivity=null realActivity=ComponentInfo{net.kravos.player/net.kravos.player.ui.MainActivity} numActivities=2 lastActiveTime=47681 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@bcd2248} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{279b8e1 com.android.permissioncontroller.permission.ui.GrantPermissionsActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+957:10-15 11:51:32.506  2768  2768 I MediaController: Init b4caff [AndroidXMedia3/1.5.1] [emu64xa, sdk_gphone64_x86_64, Google, 34]
+1019:10-15 11:51:32.695  1048  1048 D CarrierSvcBindHelper: onPackageAdded: net.kravos.player
+1091:10-15 11:51:33.148   526   821 D ConnectivityService: requestNetwork for uid/pid:10192/2768 activeRequest: null callbackRequest: 72 [NetworkRequest [ REQUEST id=73, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+1093:10-15 11:51:33.172   526   765 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=73, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
+1094:10-15 11:51:33.174   526   765 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=73, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
+1095:10-15 11:51:33.174   526   765 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=73, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
+1096:10-15 11:51:33.174   526   765 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=73, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
+1109:10-15 11:51:33.313   526   550 W ActivityTaskManager: Activity top resumed state loss timeout for ActivityRecord{4307ee5 u0 net.kravos.player/.ui.MainActivity t8}
+1111:10-15 11:51:33.318   526   550 W ActivityTaskManager: Activity pause timeout for ActivityRecord{4307ee5 u0 net.kravos.player/.ui.MainActivity t8}
+1181:10-15 11:51:33.555   526   602 D ConnectivityService: requestNetwork for uid/pid:10192/2768 activeRequest: null callbackRequest: 74 [NetworkRequest [ REQUEST id=75, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647
+1183:10-15 11:51:33.556   526   765 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=75, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
+1184:10-15 11:51:33.556   526   765 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=75, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
+1185:10-15 11:51:33.557   526   765 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=75, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
+1186:10-15 11:51:33.557   526   765 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=75, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED Uid: 10192 RequestorUid: 10192 RequestorPkg: net.kravos.player UnderlyingNetworks: Null] ]
+1372:10-15 11:51:34.007   526  2458 D CoreBackPreview: Window{4952097 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@5e0f1e3, mPriority=0, mIsAnimationCallback=false}
+1461:10-15 11:51:34.352   526  2023 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:com.google.android.bluetooth targetPackage:com.google.android.googlequicksearchbox reason:MediaSessionRecord:android.support.v4.media.session.command.GET_EXTRA_BINDER [WIU] [FGS]
+1487:10-15 11:51:34.484  1048  1334 D ImsResolver: maybeAddedImsService, packageName: net.kravos.player
+1626:10-15 11:51:34.960  1095  1114 I Launcher.IconCache: Database bulk icon loading failed, using fallback bulk icon loading for: ComponentInfo{net.kravos.player/net.kravos.player.ui.MainActivity}
+1644:10-15 11:51:35.060   839   839 I SafetyLabelChangedBroadcastReceiver: received broadcast packageName: net.kravos.player, current user: UserHandle{0}, packageChangeEvent: NEW_INSTALL, intent user: UserHandle{0}
+1653:10-15 11:51:35.208   526   547 V WindowManager: Sent Transition #7 createdAt=10-15 11:51:32.267 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=net.kravos.player/.ui.MainActivity } baseActivity=ComponentInfo{net.kravos.player/net.kravos.player.ui.MainActivity} topActivity=ComponentInfo{com.google.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity} origActivity=null realActivity=ComponentInfo{net.kravos.player/net.kravos.player.ui.MainActivity} numActivities=2 lastActiveTime=47681 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{a991add Task{96dfdba #8 type=standard A=10192:net.kravos.player}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{253abf0 com.android.permissioncontroller.permission.ui.GrantPermissionsActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+2306:10-15 11:51:36.808  1428  1428 I CastSocket: Adding new CastClientAuthKeyManager. [CONTEXT service_id=161 ]
+2361:10-15 11:51:37.152  1428  2611 I CastDatabase: Opening the database
+2386:10-15 11:51:37.325  2768  2768 I MediaController: Release b4caff [AndroidXMedia3/1.5.1] [emu64xa, sdk_gphone64_x86_64, Google, 34] [media3.common, media3.session, media3.database]
+2389:10-15 11:51:37.339  1428  2611 I SQLiteCastDBHelper: Creating cast database
+2454:10-15 11:51:37.361   526  1949 W InputManager-JNI: Input channel object '4952097 net.kravos.player/net.kravos.player.ui.MainActivity (client)' was disposed without first being removed with the input manager!
+2481:10-15 11:51:37.393  1428  2611 I SQLiteCastStore: 0 CastNetworkInfo instances loaded, 0 CastDeviceInfo instances loaded, 0 paired guest mode devices loaded.
+2509:10-15 11:51:37.437   526  2421 I WindowManager: setOnBackInvokedCallback(): No window state for package:net.kravos.player
+2562:10-15 11:51:37.535  2768  2768 I MediaController: Init 3c58d7e [AndroidXMedia3/1.5.1] [emu64xa, sdk_gphone64_x86_64, Google, 34]
+2807:10-15 11:51:37.887  2768  2768 I ExoPlayerImpl: Init 2b93ed7 [AndroidXMedia3/1.5.1] [emu64xa, sdk_gphone64_x86_64, Google, 34]
+3166:10-15 11:51:38.372   526   557 D SystemServerTimingAsync: ssm.onUnlockedUser-0_com.android.server.media.MediaSessionService
+3167:10-15 11:51:38.372   526   557 V SystemServerTimingAsync: ssm.onUnlockedUser-0_com.android.server.media.MediaSessionService took to complete: 0ms
+3315:10-15 11:51:38.568  2768  2768 I MediaSessionImpl: Init d5731cf [AndroidXMedia3/1.5.1] [emu64xa, sdk_gphone64_x86_64, Google, 34]
+3317:10-15 11:51:38.570  2768  2768 W MediaSessionCompat: Couldn't find a unique registered media button receiver in the given context.
+3318:10-15 11:51:38.571   526  2526 I MediaSessionStack: addSession to bottom of stack | record: net.kravos.player/androidx.media3.session.id. (userId=0)
+3349:10-15 11:51:38.606  1021  1021 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
+3350:10-15 11:51:38.608  1021  1021 I MediaPlayerList: Adding wrapped media player: net.kravos.player at key: 2
+3358:10-15 11:51:38.610  1021  1021 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
+3359:10-15 11:51:38.610  1021  1021 I MediaPlayerList: Adding wrapped media player: net.kravos.player at key: 2
+3385:10-15 11:51:38.669  1048  1048 D CarrierSvcBindHelper: onPackageModified: net.kravos.player
+3445:10-15 11:51:38.851  1048  1334 D ImsResolver: maybeAddedImsService, packageName: net.kravos.player
+3646:10-15 11:51:39.033  1656  1656 I AiAiEcho: AppFetcherImplV2 updateApps package:[net.kravos.player], userId:[0], reason:[package is added.].
+3791:10-15 11:51:39.142  2768  2768 I CastDynamiteModuleImpl: vk created by ClassLoader dalvik.system.DelegateLastClassLoader[DexPathList[[zip file "/data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk"],nativeLibraryDirectories=[/data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk!/lib/x86_64, /data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk!/lib/arm64-v8a, /system/lib64, /system_ext/lib64]]].
+3896:10-15 11:51:39.345   526   910 D CoreBackPreview: Window{bca29f2 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@40bc6cb, mPriority=0, mIsAnimationCallback=false}
+4016:10-15 11:51:39.528   526  2526 I WindowManager: finishDrawing of relaunch: Window{bca29f2 u0 net.kravos.player/net.kravos.player.ui.MainActivity} 7967ms
+4085:10-15 11:51:39.695   526   907 D CoreBackPreview: Window{9259656 u0 Splash Screen net.kravos.player}: Setting back callback null
+4086:10-15 11:51:39.695   526  1168 W InputManager-JNI: Input channel object '9259656 Splash Screen net.kravos.player (client)' was disposed without first being removed with the input manager!
+4286:10-15 11:51:40.223  2768  3392 D ProfileInstaller: Installing profile for net.kravos.player
+4295:10-15 11:51:40.240  2768  2768 I MediaController: Init c04c6d2 [AndroidXMedia3/1.5.1] [emu64xa, sdk_gphone64_x86_64, Google, 34]
+4442:10-15 11:51:40.432  2768  2768 I MediaRouterProxy: Set up output switcher flags: true (from module), true (from CastOptions)
+5768:10-15 11:51:42.594  1656  1656 I AiAiEcho: AppFetcherImpl onPackageChanged net.kravos.player.
+5769:10-15 11:51:42.595  1656  3317 I AiAiEcho: AppIndexer Package:[net.kravos.player] UserProfile:[0] Enabled:[true].
+5770:10-15 11:51:42.595  1656  3317 I AiAiEcho: AppFetcherImplV2 updateApps package:[net.kravos.player], userId:[0], reason:[package is updated.].
+6474:10-15 11:51:43.454   526  3810 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaSessionService
+6475:10-15 11:51:43.454   526  3810 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaSessionService took to complete: 0ms
+7098:10-15 11:51:44.690  1991  1991 W YT.MDX.acet: CastAppId for type 0 not found. Defaulting to mainCastAppId.
+7104:10-15 11:51:44.738  1991  1991 W YT.MDX.acet: CastAppId for type 0 not found. Defaulting to mainCastAppId.
+7105:10-15 11:51:44.739  1991  1991 W YT.MDX.acet: CastAppId for type 0 not found. Defaulting to mainCastAppId.
+7876:10-15 11:51:46.815  1481  3368 I BlockstoreStorage: Clearing Blockstore Data for package net.kravos.player [CONTEXT service_id=258 ]
+8185:10-15 11:51:47.238  4036  4036 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+8191:10-15 11:51:47.292  4036  4036 I AndroidRuntime: Using default boot image
+8192:10-15 11:51:47.292  4036  4036 I AndroidRuntime: Leaving lock profiling enabled
+8734:10-15 11:51:47.847  4036  4036 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+9401:10-15 11:51:49.933  4036  4036 D AndroidRuntime: Shutting down VM
+10218:10-15 11:51:51.514  4280  4280 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+10220:10-15 11:51:51.532  4280  4280 I AndroidRuntime: Using default boot image
+10221:10-15 11:51:51.532  4280  4280 I AndroidRuntime: Leaving lock profiling enabled
+10395:10-15 11:51:51.919  4280  4280 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+10891:10-15 11:51:53.060  4280  4280 D AndroidRuntime: Shutting down VM
+11151:10-15 11:51:54.206   839   839 V GrantPermissionsViewModel: Logged buttons presented and clicked permissionGroupName=android.permission-group.NOTIFICATIONS uid=10192 selectedPrecision=0 package=net.kravos.player presentedButtons=9 clickedButton=1 isPermissionRationaleShown=false sessionId=7645209005233100989 targetSdk=35
+11152:10-15 11:51:54.210   839   839 V GrantPermissionsViewModel: Permission grant result requestId=7645209005233100989 callingUid=10192 callingPackage=net.kravos.player permission=android.permission.POST_NOTIFICATIONS isImplicit=false result=4 isPermissionRationaleShown=false
+11171:10-15 11:51:54.313   526  2344 I ImeTracker: net.kravos.player:617f9968: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+11172:10-15 11:51:54.313   526  2344 I ImeTracker: net.kravos.player:617f9968: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11177:10-15 11:51:54.324  1531  1531 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, false)
+12065:10-15 11:51:54.658  1428  1428 I CastMediaRouteProvider: Published 0 routes
+13889:10-15 11:51:54.892  4043  4162 W IndexDataConverter: Skipping index for null-key item IndexData.Builder {title: Cast,package: com.android.settings}
+14380:10-15 11:51:54.949  1428  3172 I CastDatabase: Saving the database
+14440:10-15 11:51:54.952  1428  3172 I SQLiteCastStore: [CastNetworkInfo] saved: 0, skipped: 0, [CastDeviceInfo]: saved 0, skipped 0, [Paired Guest Mode DeviceInfo] saved: 0, skipped: 0. [ProbedNetworks]: saved 0, skipped: 0, [ProbedSocketAddress]: saved 0, skipped: 0, [Network-Device pairs]: saved: 0
+16228:10-15 11:51:58.016  4586  4586 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+16230:10-15 11:51:58.026  4586  4586 I AndroidRuntime: Using default boot image
+16231:10-15 11:51:58.026  4586  4586 I AndroidRuntime: Leaving lock profiling enabled
+16271:10-15 11:51:58.325  4586  4586 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+16591:10-15 11:51:59.639  4586  4586 D AndroidRuntime: Shutting down VM
+16984:10-15 11:52:02.083   526   547 V WindowManager:     info={id=9 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ab0d23 Task{c161d1d #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x94809e6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{a991add Task{96dfdba #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x8f6c5a1 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ae605a0 token=android.os.Binder@101bea3})/@0xdb94b3c sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
+17582:10-15 11:52:03.995  4678  4678 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+17583:10-15 11:52:04.002  4678  4678 I AndroidRuntime: Using default boot image
+17584:10-15 11:52:04.002  4678  4678 I AndroidRuntime: Leaving lock profiling enabled
+17602:10-15 11:52:04.261  4678  4678 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+17827:10-15 11:52:05.356  4678  4678 D AndroidRuntime: Shutting down VM
+18619:10-15 11:52:07.461  1428  1428 I CastMediaRouteProvider: Published 0 routes
+19600:10-15 11:52:09.703  4829  4829 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+19601:10-15 11:52:09.714  4829  4829 I AndroidRuntime: Using default boot image
+19602:10-15 11:52:09.714  4829  4829 I AndroidRuntime: Leaving lock profiling enabled
+19671:10-15 11:52:10.028  4829  4829 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+20237:10-15 11:52:11.181  4829  4829 D AndroidRuntime: Shutting down VM
+20651:10-15 11:52:12.308   526   547 V WindowManager:     info={id=10 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ab0d23 Task{c161d1d #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x94809e6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{a991add Task{96dfdba #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x8f6c5a1 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ae605a0 token=android.os.Binder@101bea3})/@0xdb94b3c sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
+23708:10-15 11:52:15.547  5014  5014 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+23709:10-15 11:52:15.556  5014  5014 I AndroidRuntime: Using default boot image
+23710:10-15 11:52:15.556  5014  5014 I AndroidRuntime: Leaving lock profiling enabled
+23827:10-15 11:52:15.871  5014  5014 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+24321:10-15 11:52:16.930  5014  5014 D AndroidRuntime: Shutting down VM
+24848:10-15 11:52:18.295   526   547 V WindowManager:     info={id=11 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ab0d23 Task{c161d1d #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x94809e6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{a991add Task{96dfdba #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x8f6c5a1 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ae605a0 token=android.os.Binder@101bea3})/@0xdb94b3c sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
+25874:10-15 11:52:21.297  5138  5138 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+25875:10-15 11:52:21.309  5138  5138 I AndroidRuntime: Using default boot image
+25876:10-15 11:52:21.309  5138  5138 I AndroidRuntime: Leaving lock profiling enabled
+25970:10-15 11:52:21.664  5138  5138 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+26223:10-15 11:52:22.443   526  2433 W ActivityManager: Scheduling restart of crashed service com.google.android.gms/.cast.media.CastMediaRoute2ProviderService_Persistent in 220984ms for connection
+26325:10-15 11:52:22.760  5138  5138 D AndroidRuntime: Shutting down VM
+26459:10-15 11:52:23.009  5192  5255 I CastDatabase: Opening the database
+26460:10-15 11:52:23.009  5192  5192 I CastSocket: Adding new CastClientAuthKeyManager. [CONTEXT service_id=161 ]
+26464:10-15 11:52:23.048  5192  5255 I SQLiteCastStore: 0 CastNetworkInfo instances loaded, 0 CastDeviceInfo instances loaded, 0 paired guest mode devices loaded.
+26871:10-15 11:52:24.272  5192  5192 I CastMediaRouteProvider: Published 0 routes
+27064:10-15 11:52:24.511  5192  5192 I CastMediaRouteProvider: Published 0 routes
+27741:10-15 11:52:27.042  5564  5564 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+27742:10-15 11:52:27.047  5564  5564 I AndroidRuntime: Using default boot image
+27743:10-15 11:52:27.047  5564  5564 I AndroidRuntime: Leaving lock profiling enabled
+27759:10-15 11:52:27.214  5564  5564 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+28023:10-15 11:52:28.302  5564  5564 D AndroidRuntime: Shutting down VM
+30977:10-15 11:52:36.496  5753  5753 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+30978:10-15 11:52:36.501  5753  5753 I AndroidRuntime: Using default boot image
+30979:10-15 11:52:36.501  5753  5753 I AndroidRuntime: Leaving lock profiling enabled
+31145:10-15 11:52:36.746  5753  5753 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+32081:10-15 11:52:37.872  5753  5753 D AndroidRuntime: Shutting down VM
+33516:10-15 11:52:39.437   526   547 V WindowManager:     info={id=12 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ab0d23 Task{c161d1d #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x94809e6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{a991add Task{96dfdba #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x8f6c5a1 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ae605a0 token=android.os.Binder@101bea3})/@0xdb94b3c sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
+43105:10-15 11:52:52.022  5893  5893 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+43106:10-15 11:52:52.025  5893  5893 I AndroidRuntime: Using default boot image
+43107:10-15 11:52:52.025  5893  5893 I AndroidRuntime: Leaving lock profiling enabled
+43123:10-15 11:52:52.180  5893  5893 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+43202:10-15 11:52:53.269  5893  5893 D AndroidRuntime: Shutting down VM
+43289:10-15 11:52:54.196   526  1949 I MediaFocusControl: requestAudioFocus() from uid/pid 10192/2768 AA=USAGE_MEDIA/CONTENT_TYPE_MUSIC clientId=android.media.AudioManager@3abc56V1.c@ee894d7 callingPack=net.kravos.player req=1 flags=0x0 sdk=35
+43294:10-15 11:52:54.221   526  1949 I MediaSessionStack: onPlaybackStateChanged - Pushing session to top | record: net.kravos.player/androidx.media3.session.id. (userId=0)
+43297:10-15 11:52:54.323   526  1949 I ActivityManager: Background started FGS: Allowed [callingPackage: net.kravos.player; callingUid: 10192; uidState: TOP ; uidBFSL: [BFSL]; intent: Intent { act=androidx.media3.session.MediaSessionService cmp=net.kravos.player/.playback.PlaybackService }; code:PROC_STATE_TOP; tempAllowListReason:<null>; targetSdkVersion:35; callerTargetSdkVersion:35; startForegroundCount:0; bindFromPackage:null: isBindService:true]
+43299:10-15 11:52:54.324   526  1949 I ActivityManager: Background started FGS: Allowed [callingPackage: net.kravos.player; callingUid: 10192; uidState: TOP ; uidBFSL: [BFSL]; intent: Intent { act=androidx.media3.session.MediaSessionService cmp=net.kravos.player/.playback.PlaybackService }; code:PROC_STATE_TOP; tempAllowListReason:<null>; targetSdkVersion:35; callerTargetSdkVersion:35; startForegroundCount:0; bindFromPackage:null: isBindService:false]; startForegroundDelayMs:81790
+43305:10-15 11:52:54.533   526   526 V ActivityThread: getPackageInfo() caused update to cached ApplicationInfo for package net.kravos.player
+43307:10-15 11:52:54.534   526   526 D nativeloader: Configuring clns-18 for other apk . target_sdk_version=35, uses_libraries=, library_path=/data/app/~~Uor04DXz5lIZzsvZyH013w==/net.kravos.player-PqobE1ckjChR4CQ5Jed0Lg==/lib/x86_64:/data/app/~~Uor04DXz5lIZzsvZyH013w==/net.kravos.player-PqobE1ckjChR4CQ5Jed0Lg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+43315:10-15 11:52:54.560   838   838 D MediaResumeListener: Checking for service component for net.kravos.player
+43322:10-15 11:52:54.581  5192  5192 I CastMediaRouteProvider: Published 0 routes
+43602:10-15 11:52:55.573   526   526 D MediaSessionService: Media button session is changed to net.kravos.player/androidx.media3.session.id. (userId=0)
+43607:10-15 11:52:55.578  1021  1021 I MediaPlayerList: onMediaKeyEventSessionChanged: token=net.kravos.player
+43634:10-15 11:52:55.599  1021  1021 D MediaPlayerList: setActivePlayer(): setting player to net.kravos.player
+43635:10-15 11:52:55.603   526  1949 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:com.google.android.bluetooth targetPackage:net.kravos.player reason:MediaSessionRecord:android.support.v4.media.session.command.GET_EXTRA_BINDER [WIU] [FGS]
+43638:10-15 11:52:55.608  1021  1021 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
+43646:10-15 11:52:55.610  1021  1021 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
+43654:10-15 11:52:55.642  1021  1021 I MediaPlayerList: onMediaKeyEventSessionChanged: token=net.kravos.player
+43656:10-15 11:52:55.651  1021  1021 D MediaPlayerList: setActivePlayer(): setting player to net.kravos.player
+43777:10-15 11:52:58.584  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=2995, buffered position=19318, speed=1.0, updated=133925, actions=7339687, custom actions=[], active item id=0, error=null}
+43778:10-15 11:52:58.587  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=2995, buffered position=19318, speed=1.0, updated=133925, actions=7339687, custom actions=[], active item id=0, error=null}
+43800:10-15 11:53:00.589  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+43853:10-15 11:53:00.594  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+43890:10-15 11:53:00.599  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+43943:10-15 11:53:00.603  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+43950:10-15 11:53:01.585  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=5997, buffered position=22197, speed=1.0, updated=136926, actions=7339687, custom actions=[], active item id=0, error=null}
+43951:10-15 11:53:01.586  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=5997, buffered position=22197, speed=1.0, updated=136926, actions=7339687, custom actions=[], active item id=0, error=null}
+43954:10-15 11:53:03.588  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+44007:10-15 11:53:03.592  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+44025:10-15 11:53:03.593  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+44078:10-15 11:53:03.597  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+44083:10-15 11:53:04.586  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=8998, buffered position=25122, speed=1.0, updated=139927, actions=7339687, custom actions=[], active item id=0, error=null}
+44084:10-15 11:53:04.588  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=8998, buffered position=25122, speed=1.0, updated=139927, actions=7339687, custom actions=[], active item id=0, error=null}
+44088:10-15 11:53:06.589  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+44141:10-15 11:53:06.591  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+44145:10-15 11:53:06.592  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+44198:10-15 11:53:06.595  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+44216:10-15 11:53:07.587  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=11993, buffered position=28187, speed=1.0, updated=142928, actions=7339687, custom actions=[], active item id=0, error=null}
+44217:10-15 11:53:07.588  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=11993, buffered position=28187, speed=1.0, updated=142928, actions=7339687, custom actions=[], active item id=0, error=null}
+44220:10-15 11:53:09.590  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+44273:10-15 11:53:09.593  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+44277:10-15 11:53:09.593  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+44330:10-15 11:53:09.596  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+44348:10-15 11:53:10.589  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=14995, buffered position=31345, speed=1.0, updated=145930, actions=7339687, custom actions=[], active item id=0, error=null}
+44349:10-15 11:53:10.590  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=14995, buffered position=31345, speed=1.0, updated=145930, actions=7339687, custom actions=[], active item id=0, error=null}
+44355:10-15 11:53:12.591  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+44408:10-15 11:53:12.594  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+44426:10-15 11:53:12.595  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+44479:10-15 11:53:12.597  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+45002:10-15 11:53:13.590  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=18000, buffered position=34039, speed=1.0, updated=148930, actions=7339687, custom actions=[], active item id=0, error=null}
+45003:10-15 11:53:13.591  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=18000, buffered position=34039, speed=1.0, updated=148930, actions=7339687, custom actions=[], active item id=0, error=null}
+45013:10-15 11:53:14.229  2768  2768 W MediaSessionLegacyStub: Failed to load bitmap: java.io.IOException: java.util.concurrent.ExecutionException: java.net.SocketTimeoutException: failed to connect to www.okradio.net/94.127.7.180 (port 443) from /10.0.2.16 (port 33036) after 20000ms
+45066:10-15 11:53:15.592  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+45119:10-15 11:53:15.597  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+45137:10-15 11:53:15.599  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+45190:10-15 11:53:15.606  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+45196:10-15 11:53:16.592  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=21002, buffered position=37336, speed=1.0, updated=151932, actions=7339687, custom actions=[], active item id=0, error=null}
+45197:10-15 11:53:16.595  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=21002, buffered position=37336, speed=1.0, updated=151932, actions=7339687, custom actions=[], active item id=0, error=null}
+45211:10-15 11:53:17.613  6045  6045 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+45212:10-15 11:53:17.619  6045  6045 I AndroidRuntime: Using default boot image
+45213:10-15 11:53:17.620  6045  6045 I AndroidRuntime: Leaving lock profiling enabled
+45226:10-15 11:53:17.814  6045  6045 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+45287:10-15 11:53:18.597  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+45340:10-15 11:53:18.601  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+45358:10-15 11:53:18.603  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+45411:10-15 11:53:18.605  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+45428:10-15 11:53:18.900  6045  6045 D AndroidRuntime: Shutting down VM
+45567:10-15 11:53:19.594  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=24000, buffered position=40308, speed=1.0, updated=154934, actions=7339687, custom actions=[], active item id=0, error=null}
+45568:10-15 11:53:19.599  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=24000, buffered position=40308, speed=1.0, updated=154934, actions=7339687, custom actions=[], active item id=0, error=null}
+45583:10-15 11:53:21.596  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+45636:10-15 11:53:21.599  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+45640:10-15 11:53:21.600  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+45693:10-15 11:53:21.601  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+45713:10-15 11:53:22.594  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=27000, buffered position=43280, speed=1.0, updated=157934, actions=7339687, custom actions=[], active item id=0, error=null}
+45714:10-15 11:53:22.595  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=27000, buffered position=43280, speed=1.0, updated=157934, actions=7339687, custom actions=[], active item id=0, error=null}
+45720:10-15 11:53:24.580  5192  5192 I CastMediaRouteProvider: Published 0 routes
+45721:10-15 11:53:24.595  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+45774:10-15 11:53:24.597  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+45792:10-15 11:53:24.598  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+45845:10-15 11:53:24.601  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+46148:10-15 11:53:25.602  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=30004, buffered position=46112, speed=1.0, updated=160934, actions=7339687, custom actions=[], active item id=0, error=null}
+46149:10-15 11:53:25.608  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=30004, buffered position=46112, speed=1.0, updated=160934, actions=7339687, custom actions=[], active item id=0, error=null}
+46507:10-15 11:53:27.608  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+46560:10-15 11:53:27.612  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+46564:10-15 11:53:27.612  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+46617:10-15 11:53:27.615  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+46648:10-15 11:53:28.209  6146  6146 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+46649:10-15 11:53:28.214  6146  6146 I AndroidRuntime: Using default boot image
+46650:10-15 11:53:28.214  6146  6146 I AndroidRuntime: Leaving lock profiling enabled
+46663:10-15 11:53:28.311  6146  6146 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+46707:10-15 11:53:28.605  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=33003, buffered position=49270, speed=1.0, updated=163939, actions=7339687, custom actions=[], active item id=0, error=null}
+46708:10-15 11:53:28.607  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=33003, buffered position=49270, speed=1.0, updated=163939, actions=7339687, custom actions=[], active item id=0, error=null}
+46756:10-15 11:53:29.362  6146  6146 D AndroidRuntime: Shutting down VM
+46827:10-15 11:53:30.608  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+46880:10-15 11:53:30.611  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+46884:10-15 11:53:30.616  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+46937:10-15 11:53:30.618  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+46989:10-15 11:53:31.660  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=36071, buffered position=52242, speed=1.0, updated=166999, actions=7339687, custom actions=[], active item id=0, error=null}
+46990:10-15 11:53:31.662  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=36071, buffered position=52242, speed=1.0, updated=166999, actions=7339687, custom actions=[], active item id=0, error=null}
+47006:10-15 11:53:33.663  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+47059:10-15 11:53:33.666  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+47077:10-15 11:53:33.668  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+47130:10-15 11:53:33.669  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+47134:10-15 11:53:34.660  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=39073, buffered position=55121, speed=1.0, updated=170001, actions=7339687, custom actions=[], active item id=0, error=null}
+47135:10-15 11:53:34.661  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=39073, buffered position=55121, speed=1.0, updated=170001, actions=7339687, custom actions=[], active item id=0, error=null}
+47157:10-15 11:53:36.660  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+47210:10-15 11:53:36.664  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+47214:10-15 11:53:36.664  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+47267:10-15 11:53:36.668  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+47292:10-15 11:53:37.661  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=42071, buffered position=58419, speed=1.0, updated=173002, actions=7339687, custom actions=[], active item id=0, error=null}
+47293:10-15 11:53:37.662  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=42071, buffered position=58419, speed=1.0, updated=173002, actions=7339687, custom actions=[], active item id=0, error=null}
+47332:10-15 11:53:39.662  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+47385:10-15 11:53:39.665  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+47389:10-15 11:53:39.665  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+47442:10-15 11:53:39.669  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+47464:10-15 11:53:40.662  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=45069, buffered position=61344, speed=1.0, updated=176003, actions=7339687, custom actions=[], active item id=0, error=null}
+47465:10-15 11:53:40.663  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=45069, buffered position=61344, speed=1.0, updated=176003, actions=7339687, custom actions=[], active item id=0, error=null}
+47472:10-15 11:53:41.555  6210  6210 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+47473:10-15 11:53:41.558  6210  6210 I AndroidRuntime: Using default boot image
+47474:10-15 11:53:41.558  6210  6210 I AndroidRuntime: Leaving lock profiling enabled
+47487:10-15 11:53:41.667  6210  6210 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+47530:10-15 11:53:42.665  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+47583:10-15 11:53:42.669  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+47587:10-15 11:53:42.670  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+47640:10-15 11:53:42.672  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+47668:10-15 11:53:42.831  6210  6210 D AndroidRuntime: Shutting down VM
+47745:10-15 11:53:43.665  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=48072, buffered position=64316, speed=1.0, updated=179004, actions=7339687, custom actions=[], active item id=0, error=null}
+47746:10-15 11:53:43.666  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=48072, buffered position=64316, speed=1.0, updated=179004, actions=7339687, custom actions=[], active item id=0, error=null}
+47845:10-15 11:53:43.866   526   547 V WindowManager:     info={id=13 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{ab0d23 Task{c161d1d #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x94809e6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{a991add Task{96dfdba #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x8f6c5a1 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ae605a0 token=android.os.Binder@101bea3})/@0xdb94b3c sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
+47881:10-15 11:53:45.667  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+47934:10-15 11:53:45.669  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+47938:10-15 11:53:45.669  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+47991:10-15 11:53:45.672  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+48010:10-15 11:53:46.665  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=51070, buffered position=67288, speed=1.0, updated=182006, actions=7339687, custom actions=[], active item id=0, error=null}
+48011:10-15 11:53:46.666  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=51070, buffered position=67288, speed=1.0, updated=182006, actions=7339687, custom actions=[], active item id=0, error=null}
+48013:10-15 11:53:48.667  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+48066:10-15 11:53:48.670  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+48070:10-15 11:53:48.670  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+48123:10-15 11:53:48.672  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+48156:10-15 11:53:49.666  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=54076, buffered position=70214, speed=1.0, updated=185007, actions=7339687, custom actions=[], active item id=0, error=null}
+48157:10-15 11:53:49.667  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=54076, buffered position=70214, speed=1.0, updated=185007, actions=7339687, custom actions=[], active item id=0, error=null}
+48164:10-15 11:53:51.668  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+48217:10-15 11:53:51.672  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+48221:10-15 11:53:51.672  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+48274:10-15 11:53:51.675  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+48293:10-15 11:53:52.667  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=57071, buffered position=73418, speed=1.0, updated=188008, actions=7339687, custom actions=[], active item id=0, error=null}
+48294:10-15 11:53:52.669  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=57071, buffered position=73418, speed=1.0, updated=188008, actions=7339687, custom actions=[], active item id=0, error=null}
+48500:10-15 11:53:54.671  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+48553:10-15 11:53:54.674  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+48571:10-15 11:53:54.675  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+48624:10-15 11:53:54.677  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+48633:10-15 11:53:54.964  6270  6270 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+48634:10-15 11:53:54.967  6270  6270 I AndroidRuntime: Using default boot image
+48635:10-15 11:53:54.967  6270  6270 I AndroidRuntime: Leaving lock profiling enabled
+48648:10-15 11:53:55.069  6270  6270 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+48708:10-15 11:53:55.669  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=60071, buffered position=76297, speed=1.0, updated=191009, actions=7339687, custom actions=[], active item id=0, error=null}
+48709:10-15 11:53:55.671  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=60071, buffered position=76297, speed=1.0, updated=191009, actions=7339687, custom actions=[], active item id=0, error=null}
+48726:10-15 11:53:56.140  6270  6270 D AndroidRuntime: Shutting down VM
+48793:10-15 11:53:57.671  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+48846:10-15 11:53:57.674  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+48850:10-15 11:53:57.675  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+48903:10-15 11:53:57.680  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+48922:10-15 11:53:58.672  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=63083, buffered position=79362, speed=1.0, updated=194013, actions=7339687, custom actions=[], active item id=0, error=null}
+48923:10-15 11:53:58.673  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=63083, buffered position=79362, speed=1.0, updated=194013, actions=7339687, custom actions=[], active item id=0, error=null}
+48939:10-15 11:54:00.674  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+48992:10-15 11:54:00.677  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+48996:10-15 11:54:00.677  1021  1021 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
+49049:10-15 11:54:00.678  1021  1021 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+49067:10-15 11:54:01.673  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=66078, buffered position=82427, speed=1.0, updated=197014, actions=7339687, custom actions=[], active item id=0, error=null}
+49068:10-15 11:54:01.674  1021  1021 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=66078, buffered position=82427, speed=1.0, updated=197014, actions=7339687, custom actions=[], active item id=0, error=null}
