@@ -488,7 +488,7 @@ private fun PracticeSheet(vm: MainViewModel, np: NowPlaying, onDismiss: () -> Un
 }
 
 fun fmtSpeed(s: Float): String {
-    val t = "%.2f".format(s).trimEnd('0').trimEnd('.')
+    val t = "%.2f".format(java.util.Locale.US, s).trimEnd('0').trimEnd('.')
     return "$t×"
 }
 
