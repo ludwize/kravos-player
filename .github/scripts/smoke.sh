@@ -135,6 +135,25 @@ sleep 3
 adb exec-out screencap -p > "$OUT/18-podcast-remembered.png"
 adb shell dumpsys media_session > "$OUT/media_session_podcast.txt" 2>&1
 
+# Typed search through the directory, subscribe, and the home page listing the subscription.
+tap_text "Back"
+sleep 2
+adb shell input tap $((W / 2)) $((H * 19 / 100))
+sleep 1
+adb shell input text balkan
+sleep 1
+adb shell input keyevent KEYCODE_ENTER
+sleep 10
+adb exec-out screencap -p > "$OUT/21-podcast-search.png"
+wait_tap "Subscribe" 20
+sleep 1
+adb exec-out screencap -p > "$OUT/22-podcast-subscribed.png"
+adb shell input keyevent KEYCODE_BACK
+sleep 1
+tap_text "Back"
+sleep 4
+adb exec-out screencap -p > "$OUT/23-podcast-home-subscribed.png"
+
 # Start the playback service directly through a MediaController-less path: just check the process is alive.
 PID=$(adb shell pidof $PKG | tr -d '\r')
 echo "pid=$PID" > "$OUT/status.txt"

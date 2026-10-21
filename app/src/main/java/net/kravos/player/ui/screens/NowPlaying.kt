@@ -2,6 +2,7 @@ package net.kravos.player.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,6 +20,7 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.QueueMusic
 import androidx.compose.material.icons.filled.ArrowDownward
@@ -513,13 +515,12 @@ private fun PodcastSpeedSheet(vm: MainViewModel, np: NowPlaying, onDismiss: () -
                     onValueChange = { speed = (it * 20).roundToInt() / 20f },
                     onValueChangeFinished = { vm.setPodcastSpeed(np.showId, speed, forAll) },
                     valueRange = 0.5f..3f,
-                    steps = 49,
                     modifier = Modifier.weight(1f),
                 )
                 Text(fmtSpeed(speed), Modifier.width(64.dp), textAlign = TextAlign.End, style = MaterialTheme.typography.titleMedium)
             }
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                listOf(0.8f, 1f, 1.25f, 1.5f, 1.75f, 2f).forEach { s ->
+            Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                listOf(0.8f, 1f, 1.25f, 1.5f, 1.75f, 2f, 2.5f, 3f).forEach { s ->
                     AssistChip(onClick = { speed = s; vm.setPodcastSpeed(np.showId, s, forAll) }, label = { Text(fmtSpeed(s)) })
                 }
             }
