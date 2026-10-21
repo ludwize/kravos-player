@@ -24,6 +24,11 @@ Built in the spirit of CloudPlayer's paid tier, plus a practice mode for learnin
 - **Drive browser**: walk the whole Drive (My Drive / Shared with me), search by name, play any file or a
   whole folder including subfolders without scanning, add a folder to the library with one tap.
   The library Folders tab can search folders and play/shuffle a folder with all its subfolders.
+- **Podcasts**: search Apple's podcast directory or browse the Serbian / world top charts, subscribe, or add any show by
+  its RSS address. Every episode remembers where you stopped (Continue listening on the Podcasts home), speed is
+  remembered per show (or one speed for all), with back 10 s / forward 30 s. Sleep timer and Chromecast work the same as
+  for music; HTTPS episodes are fetched by the Chromecast itself. The tab remembers where you were (a show, the search
+  page, scroll position) when you switch to Library or Radio and come back.
 - **Sleep timer** with fade-out, or stop at the end of the current song.
 - **Practice mode**: tempo 0.5×–1.5× without pitch change, pitch shift ±12 semitones, and an A–B loop
   with ¼-second nudges.

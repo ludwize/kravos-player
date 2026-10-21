@@ -42,7 +42,7 @@ tap_text "Allow"
 adb exec-out screencap -p > "$OUT/01-library.png"
 tap_text "Settings"
 adb exec-out screencap -p > "$OUT/02-settings.png"
-tap_text "Playlists"
+tap_text "Lists"
 adb exec-out screencap -p > "$OUT/03-playlists.png"
 tap_text "Search"
 adb exec-out screencap -p > "$OUT/04-search.png"
@@ -84,6 +84,31 @@ adb exec-out screencap -p > "$OUT/11-folders.png"
 tap_text "Browse Google Drive"
 sleep 2
 adb exec-out screencap -p > "$OUT/12-drive-browser.png"
+
+# Podcasts: charts load, a show opens, an episode plays, and leaving + returning keeps the place.
+tap_text "Podcasts"
+sleep 3
+adb exec-out screencap -p > "$OUT/13-podcasts-home.png"
+tap_text "Find podcasts"
+sleep 10
+adb exec-out screencap -p > "$OUT/14-podcast-charts.png"
+tap_text "Open show"
+sleep 12
+adb exec-out screencap -p > "$OUT/15-podcast-show.png"
+tap_text "Play episode"
+sleep 20
+adb exec-out screencap -p > "$OUT/16-podcast-playing.png"
+tap_text "Open player"
+sleep 3
+adb exec-out screencap -p > "$OUT/17-podcast-nowplaying.png"
+adb shell input keyevent KEYCODE_BACK
+sleep 2
+tap_text "Radio"
+sleep 2
+tap_text "Podcasts"
+sleep 3
+adb exec-out screencap -p > "$OUT/18-podcast-remembered.png"
+adb shell dumpsys media_session > "$OUT/media_session_podcast.txt" 2>&1
 
 # Start the playback service directly through a MediaController-less path: just check the process is alive.
 PID=$(adb shell pidof $PKG | tr -d '\r')

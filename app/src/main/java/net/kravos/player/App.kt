@@ -30,6 +30,8 @@ import net.kravos.player.drive.DriveApi
 import net.kravos.player.drive.LibraryScanner
 import net.kravos.player.playback.PlayerConnection
 import net.kravos.player.playback.RoutingDataSource
+import net.kravos.player.podcast.PodcastApi
+import net.kravos.player.podcast.PodcastStore
 import net.kravos.player.radio.RadioApi
 import okhttp3.OkHttpClient
 import java.io.File
@@ -140,6 +142,9 @@ class AppGraph(val app: App) {
     }
 
     val radio: RadioApi by lazy { RadioApi(plainHttp) }
+
+    val podcasts = PodcastStore(app)
+    val podcastApi: PodcastApi by lazy { PodcastApi(plainHttp, File(app.cacheDir, "podcasts")) }
 
     val downloads: Downloads by lazy {
         Downloads(app, Downloads.newManager(app), scope) { runCatching { downloadCache.cacheSpace }.getOrDefault(0L) }

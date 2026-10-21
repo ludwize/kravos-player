@@ -1,6 +1,7 @@
 package net.kravos.player.ui
 
 import android.app.Application
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -9,7 +10,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.exoplayer.offline.Download
 import com.google.android.gms.auth.api.identity.AuthorizationResult
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -17,7 +20,10 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Semaphore
+import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
 import net.kravos.player.App
 import net.kravos.player.LoopPoints
@@ -27,7 +33,10 @@ import net.kravos.player.data.Track
 import net.kravos.player.drive.DriveApi
 import net.kravos.player.drive.DriveFile
 import net.kravos.player.drive.LibraryScanner
+import net.kravos.player.playback.POD_PREFIX
 import net.kravos.player.playback.toMediaItem
+import net.kravos.player.podcast.Episode
+import net.kravos.player.podcast.Podcast
 import net.kravos.player.radio.RadioStation
 
 sealed interface Screen {
@@ -43,7 +52,36 @@ sealed interface Screen {
     data class Smart(val kind: SmartKind) : Screen
     data object FolderPicker : Screen
     data object Radio : Screen
+    data object Podcasts : Screen
     data object DriveBrowser : Screen
+}
+
+/** Where you are inside the Podcasts tab; kept when you switch to another tab and come back. */
+sealed interface PodScreen {
+    data object Home : PodScreen
+    data object Search : PodScreen
+    data class Show(val podcast: Podcast) : PodScreen
+}
+
+data class ShowState(
+    val podcast: Podcast,
+    val episodes: List<Episode> = emptyList(),
+    val loading: Boolean = false,
+    val error: String? = null,
+    val offline: Boolean = false,
+    val loadedAt: Long = 0L,
+)
+
+data class PodListState(
+    val loading: Boolean = false,
+    val error: String? = null,
+    val items: List<Podcast> = emptyList(),
+    val loaded: Boolean = false,
+)
+
+enum class PodChart(val label: String, val countries: List<String>) {
+    SERBIA("Serbia", listOf("rs")),
+    WORLD("World", listOf("us", "gb")),
 }
 
 enum class SmartKind(val label: String) {
@@ -79,6 +117,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             stack.removeAt(stack.lastIndex)
             return true
         }
+        if (current == Screen.Podcasts && podBack()) return true
         return false
     }
 
@@ -515,7 +554,188 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    // ================================================================ podcasts
+
+    val podcasts = graph.podcasts
+
+    val podStack = mutableStateListOf<PodScreen>().apply {
+        add(PodScreen.Home)
+        graph.podcasts.lastShow()?.let { add(PodScreen.Show(it)) }
+    }
+    val podCurrent: PodScreen get() = podStack.last()
+
+    private val podListStates = HashMap<String, LazyListState>()
+
+    /** One scroll position per Podcasts sub-screen, so coming back shows the same spot. */
+    fun podListState(key: String): LazyListState = podListStates.getOrPut(key) { LazyListState() }
+
+    fun podOpenShow(p: Podcast) {
+        podStack.add(PodScreen.Show(p))
+        graph.podcasts.setLastShow(p)
+    }
+
+    fun podOpenSearch() {
+        if (podCurrent != PodScreen.Search) podStack.add(PodScreen.Search)
+        graph.podcasts.setLastShow(null)
+    }
+
+    fun podBack(): Boolean {
+        if (podStack.size <= 1) return false
+        podStack.removeAt(podStack.lastIndex)
+        graph.podcasts.setLastShow((podStack.last() as? PodScreen.Show)?.podcast)
+        return true
+    }
+
+    fun podHome() {
+        while (podStack.size > 1) podStack.removeAt(podStack.lastIndex)
+        graph.podcasts.setLastShow(null)
+    }
+
+    private val _shows = MutableStateFlow<Map<String, ShowState>>(emptyMap())
+    val shows: StateFlow<Map<String, ShowState>> = _shows.asStateFlow()
+    private val _podMessage = MutableStateFlow<String?>(null)
+    val podMessage: StateFlow<String?> = _podMessage.asStateFlow()
+    private var lastSubsRefresh = 0L
+
+    fun clearPodMessage() {
+        _podMessage.value = null
+    }
+
+    private fun setShow(s: ShowState) = _shows.update { it + (s.podcast.id to s) }
+
+    private suspend fun fetchShow(p: Podcast) {
+        val before = _shows.value[p.id]
+        setShow((before ?: ShowState(p)).copy(loading = true, error = null))
+        // Show what we saved last time straight away; the network fills in anything newer.
+        if (before == null || before.episodes.isEmpty()) {
+            graph.podcastApi.cached(p)?.let { c -> setShow(ShowState(c.podcast, c.episodes, loading = true)) }
+        }
+        try {
+            val r = graph.podcastApi.load(p)
+            graph.podcasts.refreshSubscribed(r.podcast)
+            setShow(ShowState(r.podcast, r.episodes, false, null, r.fromCache, System.currentTimeMillis()))
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            val now = _shows.value[p.id] ?: ShowState(p)
+            setShow(now.copy(loading = false, error = "Can't load this feed (${e.message ?: "network"})"))
+        }
+    }
+
+    fun loadShow(p: Podcast, force: Boolean = false) {
+        val cur = _shows.value[p.id]
+        val fresh = cur != null && cur.error == null && cur.episodes.isNotEmpty() &&
+            System.currentTimeMillis() - cur.loadedAt < FEED_FRESH_MS
+        if (!force && (fresh || cur?.loading == true)) return
+        viewModelScope.launch { fetchShow(p) }
+    }
+
+    /** Refreshes every subscribed show (a few at a time) so "Latest episodes" is current. */
+    fun refreshSubscriptions(force: Boolean = false) {
+        val now = System.currentTimeMillis()
+        if (!force && now - lastSubsRefresh < FEED_FRESH_MS) return
+        lastSubsRefresh = now
+        val subs = graph.podcasts.subs.value
+        val gate = Semaphore(4)
+        subs.forEach { p -> viewModelScope.launch { gate.withPermit { fetchShow(p) } } }
+    }
+
+    // ---- directory: search and charts
+
+    var podQuery by mutableStateOf("")
+    var podChart by mutableStateOf(PodChart.SERBIA)
+    private val _podSearch = MutableStateFlow(PodListState())
+    val podSearchState: StateFlow<PodListState> = _podSearch.asStateFlow()
+    private val _podCharts = MutableStateFlow<Map<PodChart, PodListState>>(emptyMap())
+    val podCharts: StateFlow<Map<PodChart, PodListState>> = _podCharts.asStateFlow()
+    private var podSearchJob: Job? = null
+
+    fun podSearch(query: String) {
+        val q = query.trim()
+        podSearchJob?.cancel()
+        if (q.length < 2) {
+            _podSearch.value = PodListState()
+            return
+        }
+        _podSearch.value = _podSearch.value.copy(loading = true, error = null)
+        podSearchJob = viewModelScope.launch {
+            try {
+                _podSearch.value = PodListState(false, null, graph.podcastApi.search(q), true)
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                _podSearch.value = PodListState(false, "Search failed (${e.message ?: "network"})", emptyList(), true)
+            }
+        }
+    }
+
+    fun loadChart(chart: PodChart, force: Boolean = false) {
+        val cur = _podCharts.value[chart]
+        if (!force && cur != null && (cur.loading || (cur.loaded && cur.error == null))) return
+        _podCharts.update { it + (chart to PodListState(loading = true)) }
+        viewModelScope.launch {
+            var error: String? = null
+            var list: List<Podcast> = emptyList()
+            for (country in chart.countries) {
+                try {
+                    list = graph.podcastApi.top(country)
+                    error = null
+                    if (list.isNotEmpty()) break
+                } catch (e: CancellationException) {
+                    throw e
+                } catch (e: Exception) {
+                    error = "Can't load the chart (${e.message ?: "network"})"
+                }
+            }
+            _podCharts.update { it + (chart to PodListState(false, error, list, true)) }
+        }
+    }
+
+    fun podAddByUrl(url: String) {
+        val clean = url.trim()
+        if (!clean.startsWith("http://", true) && !clean.startsWith("https://", true)) {
+            _podMessage.value = "The address must start with http:// or https://"
+            return
+        }
+        viewModelScope.launch {
+            try {
+                val r = graph.podcastApi.loadByUrl(clean)
+                if (!graph.podcasts.isSubscribed(r.podcast.id)) graph.podcasts.toggleSubscription(r.podcast)
+                setShow(ShowState(r.podcast, r.episodes, loadedAt = System.currentTimeMillis()))
+                podOpenShow(r.podcast)
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                _podMessage.value = "Can't read that feed (${e.message ?: "network"})"
+            }
+        }
+    }
+
+    // ---- playing
+
+    fun playEpisode(ep: Episode) {
+        if (player.state.value.mediaId == POD_PREFIX + ep.key) {
+            player.togglePlay()
+            return
+        }
+        player.playItems(listOf(ep.toMediaItem()), 0, false, graph.podcasts.resumePosition(ep.key))
+    }
+
+    fun playEpisodeNext(ep: Episode) = player.playNextItems(listOf(ep.toMediaItem()))
+    fun enqueueEpisode(ep: Episode) = player.enqueueItems(listOf(ep.toMediaItem()))
+
+    fun setEpisodePlayed(key: String, played: Boolean) {
+        if (played) graph.podcasts.markPlayed(key) else graph.podcasts.markUnplayed(key)
+    }
+
+    /** Speed applies to podcasts only; the service resets it to 1× for music and radio. */
+    fun setPodcastSpeed(showId: String?, speed: Float, forAll: Boolean) {
+        if (forAll) graph.podcasts.setSpeedForAll(speed) else showId?.let { graph.podcasts.setSpeed(it, speed) }
+        player.setSpeedPitch(speed, 0)
+    }
+
     companion object {
         const val SHARED = "__shared__"
+        private const val FEED_FRESH_MS = 10 * 60_000L
     }
 }

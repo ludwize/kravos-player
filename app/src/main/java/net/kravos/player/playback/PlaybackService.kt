@@ -13,12 +13,14 @@ import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.MimeTypes
+import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DefaultDataSource
 import androidx.media3.datasource.okhttp.OkHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
+import androidx.media3.extractor.DefaultExtractorsFactory
 import androidx.media3.session.CacheBitmapLoader
 import androidx.media3.datasource.DataSourceBitmapLoader
 import androidx.media3.session.MediaSession
@@ -59,13 +61,20 @@ class PlaybackService : MediaSessionService() {
     /** Exo-ready versions of every item we've seen, so we can switch back from Cast without losing metadata. */
     private val known = HashMap<String, MediaItem>()
     private var lastCountedId: String? = null
+    private var lastWasPodcast = false
 
     override fun onCreate() {
         super.onCreate()
         proxy = CastProxyServer(this, graph.http, File(filesDir, "art"))
 
         exo = ExoPlayer.Builder(this)
-            .setMediaSourceFactory(DefaultMediaSourceFactory(graph.playerDataSourceFactory))
+            // Constant-bitrate seeking: many podcast MP3s have no seek table and would otherwise restart on seek.
+            .setMediaSourceFactory(
+                DefaultMediaSourceFactory(
+                    graph.playerDataSourceFactory,
+                    DefaultExtractorsFactory().setConstantBitrateSeekingEnabled(true),
+                ),
+            )
             .setAudioAttributes(
                 AudioAttributes.Builder().setUsage(C.USAGE_MEDIA).setContentType(C.AUDIO_CONTENT_TYPE_MUSIC).build(),
                 true,
@@ -107,12 +116,14 @@ class PlaybackService : MediaSessionService() {
         val p = session?.player
         if (p == null || !p.playWhenReady || p.mediaItemCount == 0 || p.playbackState == Player.STATE_ENDED) {
             saveQueue()
+            saveProgress()
             stopSelf()
         }
     }
 
     override fun onDestroy() {
         saveQueue()
+        saveProgress()
         handler.removeCallbacksAndMessages(null)
         scope.cancel()
         session?.release()
@@ -125,6 +136,9 @@ class PlaybackService : MediaSessionService() {
     }
 
     // ------------------------------------------------------------ media items
+
+    /** The version of [item] that still carries our extras (Cast hands items back without them). */
+    private fun full(item: MediaItem): MediaItem = if (item.mediaMetadata.extras == null) known[item.mediaId] ?: item else item
 
     private fun resolve(input: MediaItem, forCast: Boolean): MediaItem {
         // Items coming back from the Cast receiver lose our extras; use the version we built earlier.
@@ -152,6 +166,17 @@ class PlaybackService : MediaSessionService() {
                 .setMimeType(extras?.getString(EXTRA_CAST_MIME) ?: "audio/mpeg")
                 .setMediaMetadata(meta.buildUpon().setTitle(extras?.getString(EXTRA_NAME) ?: meta.station).build())
                 .build()
+        }
+        if (item.isPodcast()) {
+            val url = extras?.getString(EXTRA_URL) ?: item.localConfiguration?.uri?.toString() ?: return item
+            val exoItem = MediaItem.Builder().setMediaId(id).setUri(url).setMediaMetadata(meta).build()
+            known[id] = exoItem
+            if (!forCast) return exoItem
+            // HTTPS file: the Chromecast downloads it itself and keeps going without the phone.
+            // Plain HTTP: relay through the phone (with Range, so seeking works).
+            val castMime = extras?.getString(EXTRA_CAST_MIME) ?: "audio/mpeg"
+            val castUrl = if (url.startsWith("https://", true)) url else proxy.podcastUrl(id, url, castMime) ?: url
+            return exoItem.buildUpon().setUri(castUrl).setMimeType(castMime).build()
         }
         val mime = extras?.getString(EXTRA_MIME) ?: item.localConfiguration?.mimeType
         val exoItem = MediaItem.Builder()
@@ -202,8 +227,9 @@ class PlaybackService : MediaSessionService() {
 
     private fun saveQueue() {
         val p = session?.player ?: return
-        if (p.currentMediaItem?.isRadio() == true) return
-        val ids = (0 until p.mediaItemCount).map { p.getMediaItemAt(it).mediaId }.filterNot { it.startsWith(RADIO_PREFIX) }
+        if (p.currentMediaItem?.isRadio() == true || p.currentMediaItem?.isPodcast() == true) return
+        val ids = (0 until p.mediaItemCount).map { p.getMediaItemAt(it).mediaId }
+            .filterNot { it.startsWith(RADIO_PREFIX) || it.startsWith(POD_PREFIX) }
         graph.prefs.saveQueue(ids, p.currentMediaItemIndex, p.currentPosition)
     }
 
@@ -214,16 +240,38 @@ class PlaybackService : MediaSessionService() {
             if (reason == Player.MEDIA_ITEM_TRANSITION_REASON_REPEAT) lastCountedId = null
             graph.extras.loop.value = LoopPoints()
             countPlay()
-            session?.player?.takeIf { mediaItem?.isRadio() != true }?.let { graph.prefs.savePosition(it.currentMediaItemIndex, 0L) }
+            onPodcastTransition(mediaItem, reason)
+            session?.player?.takeIf { mediaItem?.isRadio() != true && mediaItem?.isPodcast() != true }
+                ?.let { graph.prefs.savePosition(it.currentMediaItemIndex, 0L) }
         }
 
         override fun onIsPlayingChanged(isPlaying: Boolean) {
+            handler.removeCallbacks(podTick)
             if (isPlaying) {
                 countPlay()
+                if (session?.player?.currentMediaItem?.isPodcast() == true) handler.postDelayed(podTick, POD_SAVE_MS)
             } else {
-                session?.player?.takeIf { it.currentMediaItem?.isRadio() != true }
+                saveProgress()
+                session?.player?.takeIf { it.currentMediaItem?.isRadio() != true && it.currentMediaItem?.isPodcast() != true }
                     ?.let { graph.prefs.savePosition(it.currentMediaItemIndex, it.currentPosition) }
             }
+        }
+
+        override fun onPositionDiscontinuity(oldPosition: Player.PositionInfo, newPosition: Player.PositionInfo, reason: Int) {
+            val old = oldPosition.mediaItem?.let(::full) ?: return
+            if (!old.isPodcast()) return
+            val ep = old.toEpisode() ?: return
+            if (reason == Player.DISCONTINUITY_REASON_AUTO_TRANSITION) {
+                graph.podcasts.markPlayed(ep.key)
+            } else if (oldPosition.mediaItemIndex != newPosition.mediaItemIndex || oldPosition.mediaItem?.mediaId != newPosition.mediaItem?.mediaId) {
+                graph.podcasts.save(ep, oldPosition.positionMs, ep.durationMs)
+            }
+        }
+
+        override fun onPlaybackStateChanged(playbackState: Int) {
+            if (playbackState != Player.STATE_ENDED) return
+            val item = session?.player?.currentMediaItem?.let(::full) ?: return
+            if (item.isPodcast()) item.toEpisode()?.let { graph.podcasts.markPlayed(it.key) }
         }
 
         override fun onTimelineChanged(timeline: androidx.media3.common.Timeline, reason: Int) {
@@ -241,12 +289,54 @@ class PlaybackService : MediaSessionService() {
         val p = session?.player ?: return
         if (!p.isPlaying) return
         val item = p.currentMediaItem ?: return
-        if (item.isRadio()) return
+        if (item.isRadio() || item.isPodcast()) return
         val id = item.mediaId
         if (id == lastCountedId) return
         lastCountedId = id
         val now = System.currentTimeMillis()
         scope.launch(Dispatchers.IO) { runCatching { graph.db.dao().markPlayed(id, now) } }
+    }
+
+    // ------------------------------------------------------------ podcasts
+
+    private val podTick = object : Runnable {
+        override fun run() {
+            saveProgress()
+            if (session?.player?.isPlaying == true) handler.postDelayed(this, POD_SAVE_MS)
+        }
+    }
+
+    /** Remembers where the current podcast episode is; no-op for music and radio. */
+    private fun saveProgress() {
+        val p = session?.player ?: return
+        val item = p.currentMediaItem?.let(::full) ?: return
+        if (!item.isPodcast()) return
+        val ep = item.toEpisode() ?: return
+        val dur = p.duration.takeIf { it > 0 } ?: ep.durationMs
+        graph.podcasts.save(ep, p.currentPosition, dur)
+    }
+
+    /** Podcasts play at the speed chosen for that show; everything else at normal speed. */
+    private fun onPodcastTransition(mediaItem: MediaItem?, reason: Int) {
+        val p = session?.player ?: return
+        val item = mediaItem?.let(::full)
+        val isPod = item?.isPodcast() == true
+        if (isPod) {
+            val show = item?.mediaMetadata?.extras?.getString(EXTRA_SHOW_ID)
+            val speed = graph.podcasts.speedFor(show)
+            val cur = p.playbackParameters
+            if ((cur.speed != speed || cur.pitch != 1f) && p.isCommandAvailable(Player.COMMAND_SET_SPEED_AND_PITCH)) {
+                p.playbackParameters = PlaybackParameters(speed, 1f)
+            }
+            // Reached through the queue: pick up where this episode was left.
+            if (reason == Player.MEDIA_ITEM_TRANSITION_REASON_AUTO || reason == Player.MEDIA_ITEM_TRANSITION_REASON_SEEK) {
+                val resume = item?.let { graph.podcasts.resumePosition(it.mediaId.removePrefix(POD_PREFIX)) } ?: 0L
+                if (resume > 0 && p.currentPosition < 2_000L) p.seekTo(resume)
+            }
+        } else if (lastWasPodcast && p.isCommandAvailable(Player.COMMAND_SET_SPEED_AND_PITCH)) {
+            p.playbackParameters = PlaybackParameters.DEFAULT
+        }
+        lastWasPodcast = isPod
     }
 
     // ------------------------------------------------------------ A-B loop
@@ -378,5 +468,6 @@ class PlaybackService : MediaSessionService() {
         private const val FADE_MS = 8000L
         private const val FADE_STEPS = 16
         private const val CAST_WINDOW = 50
+        private const val POD_SAVE_MS = 10_000L
     }
 }

@@ -29,7 +29,10 @@ import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.DownloadDone
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.MusicNote
+import androidx.compose.material.icons.filled.Forward30
 import androidx.compose.material.icons.filled.Pause
+import androidx.compose.material.icons.filled.Podcasts
+import androidx.compose.material.icons.filled.Replay10
 import androidx.compose.material.icons.filled.Radio
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.StarBorder
@@ -55,6 +58,7 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberModalBottomSheetState
@@ -114,7 +118,7 @@ fun MiniPlayer(vm: MainViewModel, np: NowPlaying, onOpen: () -> Unit) {
                     .padding(horizontal = 12.dp, vertical = 6.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                ArtImage(np.art, size = 44.dp, fallback = if (np.isRadio) Icons.Default.Radio else Icons.Default.MusicNote)
+                ArtImage(np.art, size = 44.dp, fallback = if (np.isRadio) Icons.Default.Radio else if (np.isPodcast) Icons.Default.Podcasts else Icons.Default.MusicNote)
                 Spacer(Modifier.width(12.dp))
                 Column(Modifier.weight(1f)) {
                     Text(np.title, maxLines = 1, overflow = TextOverflow.Ellipsis, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Medium)
@@ -155,6 +159,7 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
     var showQueue by remember { mutableStateOf(false) }
     var showPractice by remember { mutableStateOf(false) }
     var showSleep by remember { mutableStateOf(false) }
+    var showSpeed by remember { mutableStateOf(false) }
     val pos by produceState(0L, np.mediaId) {
         while (true) {
             value = vm.player.position()
@@ -184,7 +189,7 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                     np.art,
                     Modifier.fillMaxWidth().widthIn(max = 420.dp).aspectRatio(1f),
                     corner = 12.dp,
-                    fallback = if (np.isRadio) Icons.Default.Radio else Icons.Default.MusicNote,
+                    fallback = if (np.isRadio) Icons.Default.Radio else if (np.isPodcast) Icons.Default.Podcasts else Icons.Default.MusicNote,
                 )
             }
             Spacer(Modifier.height(16.dp))
@@ -195,7 +200,7 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                 color = MaterialTheme.colorScheme.primary,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                modifier = Modifier.clickable(enabled = !np.isRadio) {
+                modifier = Modifier.clickable(enabled = !np.isRadio && !np.isPodcast) {
                     vm.showPlayer = false
                     vm.open(Screen.Artist(np.artist))
                 },
@@ -241,8 +246,12 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                IconButton(onClick = { vm.player.toggleShuffle() }) {
-                    Icon(Icons.Default.Shuffle, "Shuffle", tint = if (np.shuffle) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+                if (np.isPodcast) {
+                    IconButton(onClick = { vm.player.seekBy(-10_000L) }) { Icon(Icons.Default.Replay10, "Back 10 seconds") }
+                } else {
+                    IconButton(onClick = { vm.player.toggleShuffle() }) {
+                        Icon(Icons.Default.Shuffle, "Shuffle", tint = if (np.shuffle) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
                 }
                 IconButton(onClick = { vm.player.previous() }, modifier = Modifier.size(56.dp)) {
                     Icon(Icons.Default.SkipPrevious, "Previous", Modifier.size(36.dp))
@@ -257,12 +266,16 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                 IconButton(onClick = { vm.player.next() }, modifier = Modifier.size(56.dp)) {
                     Icon(Icons.Default.SkipNext, "Next", Modifier.size(36.dp))
                 }
-                IconButton(onClick = { vm.player.cycleRepeat() }) {
-                    Icon(
-                        if (np.repeat == Player.REPEAT_MODE_ONE) Icons.Default.RepeatOne else Icons.Default.Repeat,
-                        "Repeat",
-                        tint = if (np.repeat != Player.REPEAT_MODE_OFF) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
+                if (np.isPodcast) {
+                    IconButton(onClick = { vm.player.seekBy(30_000L) }) { Icon(Icons.Default.Forward30, "Forward 30 seconds") }
+                } else {
+                    IconButton(onClick = { vm.player.cycleRepeat() }) {
+                        Icon(
+                            if (np.repeat == Player.REPEAT_MODE_ONE) Icons.Default.RepeatOne else Icons.Default.Repeat,
+                            "Repeat",
+                            tint = if (np.repeat != Player.REPEAT_MODE_OFF) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
                 }
             }
 
@@ -278,6 +291,10 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                             tint = if (fav) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
                         )
                     }
+                } else if (np.isPodcast) {
+                    TextButton(onClick = { showSpeed = true }) {
+                        Text(fmtSpeed(np.speed), color = if (np.speed != 1f) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
+                    }
                 } else {
                     val id = np.mediaId
                     val state = id?.let { dl[it] }
@@ -292,7 +309,7 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                 IconButton(onClick = { showSleep = true }) {
                     Icon(Icons.Default.Bedtime, "Sleep timer", tint = if (sleep.active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
                 }
-                if (!np.isLive) {
+                if (!np.isLive && !np.isPodcast) {
                     IconButton(onClick = { showPractice = true }) {
                         val active = loop.active || np.speed != 1f || np.pitch != 1f
                         Icon(Icons.Default.Speed, "Practice", tint = if (active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
@@ -308,7 +325,7 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                     }
                 }
                 Text(
-                    if (sleep.endOfTrack) "Sleep: after this song" else "Sleep in ${fmtDuration(left).ifEmpty { "0:00" }}",
+                    if (sleep.endOfTrack) (if (np.isPodcast) "Sleep: after this episode" else "Sleep: after this song") else "Sleep in ${fmtDuration(left).ifEmpty { "0:00" }}",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.padding(bottom = 8.dp),
@@ -319,7 +336,8 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
 
     if (showQueue) QueueSheet(vm) { showQueue = false }
     if (showPractice) PracticeSheet(vm, np) { showPractice = false }
-    if (showSleep) SleepDialog(vm) { showSleep = false }
+    if (showSleep) SleepDialog(vm, np.isPodcast) { showSleep = false }
+    if (showSpeed) PodcastSpeedSheet(vm, np) { showSpeed = false }
 }
 
 @Composable
@@ -469,6 +487,61 @@ private fun PracticeSheet(vm: MainViewModel, np: NowPlaying, onDismiss: () -> Un
     }
 }
 
+fun fmtSpeed(s: Float): String {
+    val t = "%.2f".format(s).trimEnd('0').trimEnd('.')
+    return "$t×"
+}
+
+/** Playback speed for podcasts only: remembered per show, or one speed for all shows. */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun PodcastSpeedSheet(vm: MainViewModel, np: NowPlaying, onDismiss: () -> Unit) {
+    var speed by remember { mutableFloatStateOf(np.speed) }
+    var forAll by remember { mutableStateOf(false) }
+    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
+        Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp)) {
+            Text("Playback speed", style = MaterialTheme.typography.titleMedium)
+            Text(
+                if (forAll) "Applies to every podcast." else "Remembered for “${np.artist}”.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            Spacer(Modifier.height(12.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Slider(
+                    value = speed,
+                    onValueChange = { speed = (it * 20).roundToInt() / 20f },
+                    onValueChangeFinished = { vm.setPodcastSpeed(np.showId, speed, forAll) },
+                    valueRange = 0.5f..3f,
+                    steps = 49,
+                    modifier = Modifier.weight(1f),
+                )
+                Text(fmtSpeed(speed), Modifier.width(64.dp), textAlign = TextAlign.End, style = MaterialTheme.typography.titleMedium)
+            }
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                listOf(0.8f, 1f, 1.25f, 1.5f, 1.75f, 2f).forEach { s ->
+                    AssistChip(onClick = { speed = s; vm.setPodcastSpeed(np.showId, s, forAll) }, label = { Text(fmtSpeed(s)) })
+                }
+            }
+            Row(
+                Modifier.fillMaxWidth().padding(top = 8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text("Use for all podcasts", Modifier.weight(1f))
+                Switch(checked = forAll, onCheckedChange = { forAll = it; vm.setPodcastSpeed(np.showId, speed, it) })
+            }
+            if (np.casting) {
+                Text(
+                    "Speed changes on a Chromecast depend on the speaker.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            Spacer(Modifier.height(28.dp))
+        }
+    }
+}
+
 @Composable
 private fun LoopPointRow(label: String, value: Long, onSet: () -> Unit, enabled: Boolean = true, onNudge: (Long) -> Unit) {
     Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(vertical = 2.dp)) {
@@ -481,7 +554,7 @@ private fun LoopPointRow(label: String, value: Long, onSet: () -> Unit, enabled:
 }
 
 @Composable
-private fun SleepDialog(vm: MainViewModel, onDismiss: () -> Unit) {
+private fun SleepDialog(vm: MainViewModel, podcast: Boolean, onDismiss: () -> Unit) {
     AlertDialog(
         onDismissRequest = onDismiss,
         title = { Text("Sleep timer") },
@@ -493,7 +566,7 @@ private fun SleepDialog(vm: MainViewModel, onDismiss: () -> Unit) {
                         Modifier.fillMaxWidth().clickable { vm.setSleep(m); onDismiss() }.padding(vertical = 10.dp),
                     )
                 }
-                Text("End of current song", Modifier.fillMaxWidth().clickable { vm.setSleep(null, endOfTrack = true); onDismiss() }.padding(vertical = 10.dp))
+                Text(if (podcast) "End of this episode" else "End of current song", Modifier.fillMaxWidth().clickable { vm.setSleep(null, endOfTrack = true); onDismiss() }.padding(vertical = 10.dp))
                 Text("Off", Modifier.fillMaxWidth().clickable { vm.setSleep(null); onDismiss() }.padding(vertical = 10.dp), color = MaterialTheme.colorScheme.error)
             }
         },

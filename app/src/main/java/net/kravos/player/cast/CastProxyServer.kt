@@ -32,6 +32,7 @@ class CastProxyServer(private val context: Context, private val http: OkHttpClie
     private val secret: String = ByteArray(16).also { SecureRandom().nextBytes(it) }.joinToString("") { "%02x".format(it) }
     private val mimes = ConcurrentHashMap<String, String>()
     private val radios = ConcurrentHashMap<String, String>()
+    private val podcasts = ConcurrentHashMap<String, Pair<String, String>>()
 
     @Volatile
     var baseUrl: String? = null
@@ -74,6 +75,14 @@ class CastProxyServer(private val context: Context, private val http: OkHttpClie
         val k = key.filter { it.isLetterOrDigit() }.take(64).ifEmpty { return null }
         radios[k] = url
         return "$base/r/$k"
+    }
+
+    /** Relay (with Range support, so seeking works) for a podcast file served over plain HTTP. */
+    fun podcastUrl(key: String, url: String, mime: String): String? {
+        val base = baseUrl ?: return null
+        val k = key.filter { it.isLetterOrDigit() }.take(64).ifEmpty { return null }
+        podcasts[k] = url to mime
+        return "$base/p/$k"
     }
 
     fun artUrl(art: String?): String? {
@@ -120,12 +129,17 @@ class CastProxyServer(private val context: Context, private val http: OkHttpClie
             "t", "d" -> proxyDrive(out, id, headers["range"], method == "HEAD", if (kind == "t") mimes[id] else null)
             "f" -> serveFile(out, File(artDir, id), method == "HEAD")
             "r" -> radios[id]?.let { proxyRadio(out, it, method == "HEAD") } ?: respond(out, 404, "Not Found")
+            "p" -> podcasts[id]?.let { (url, mime) -> proxyRanged(out, url, headers["range"], method == "HEAD", mime) } ?: respond(out, 404, "Not Found")
             else -> respond(out, 404, "Not Found")
         }
     }
 
-    private fun proxyDrive(out: OutputStream, id: String, range: String?, head: Boolean, mime: String?) {
-        val req = Request.Builder().url(DriveApi.mediaUrl(id)).apply { if (range != null) header("Range", range) }.build()
+    private fun proxyDrive(out: OutputStream, id: String, range: String?, head: Boolean, mime: String?) =
+        proxyRanged(out, DriveApi.mediaUrl(id), range, head, mime)
+
+    private fun proxyRanged(out: OutputStream, url: String, range: String?, head: Boolean, mime: String?) {
+        val req = Request.Builder().url(url).header("User-Agent", "KravosPlayer/1.2 (Android)")
+            .apply { if (range != null) header("Range", range) }.build()
         http.newCall(req).execute().use { r ->
             if (r.code != 200 && r.code != 206) return respond(out, if (r.code == 416) 416 else 502, "Upstream ${r.code}")
             val sb = StringBuilder()

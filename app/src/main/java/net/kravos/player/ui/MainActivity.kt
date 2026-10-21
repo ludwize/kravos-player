@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.QueueMusic
 import androidx.compose.material.icons.filled.LibraryMusic
+import androidx.compose.material.icons.filled.Podcasts
 import androidx.compose.material.icons.filled.Radio
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
@@ -49,6 +50,7 @@ import net.kravos.player.ui.screens.MiniPlayer
 import net.kravos.player.ui.screens.NowPlayingScreen
 import net.kravos.player.ui.screens.PlaylistDetailScreen
 import net.kravos.player.ui.screens.PlaylistsScreen
+import net.kravos.player.ui.screens.PodcastsScreen
 import net.kravos.player.ui.screens.SearchScreen
 import net.kravos.player.ui.screens.SettingsScreen
 import net.kravos.player.ui.screens.SmartScreen
@@ -97,7 +99,7 @@ class MainActivity : AppCompatActivity() {
 @Composable
 private fun Root(vm: MainViewModel) {
     val np by vm.player.state.collectAsStateWithLifecycle()
-    BackHandler(enabled = vm.showPlayer || vm.stack.size > 1) { vm.back() }
+    BackHandler(enabled = vm.showPlayer || vm.stack.size > 1 || (vm.current == Screen.Podcasts && vm.podStack.size > 1)) { vm.back() }
 
     Box(Modifier.fillMaxSize()) {
         Scaffold(
@@ -109,6 +111,7 @@ private fun Root(vm: MainViewModel) {
                         NavItem(vm, Screen.Library, "Library") { Icon(Icons.Default.LibraryMusic, null) }
                         NavItem(vm, Screen.Playlists, "Lists") { Icon(Icons.AutoMirrored.Filled.QueueMusic, null) }
                         NavItem(vm, Screen.Radio, "Radio") { Icon(Icons.Default.Radio, null) }
+                        NavItem(vm, Screen.Podcasts, "Podcasts") { Icon(Icons.Default.Podcasts, null) }
                         NavItem(vm, Screen.Search, "Search") { Icon(Icons.Default.Search, null) }
                         NavItem(vm, Screen.Settings, "Settings") { Icon(Icons.Default.Settings, null) }
                     }
@@ -123,6 +126,7 @@ private fun Root(vm: MainViewModel) {
                     Screen.Settings -> SettingsScreen(vm)
                     Screen.FolderPicker -> FolderPickerScreen(vm)
                     Screen.Radio -> RadioScreen(vm)
+                    Screen.Podcasts -> PodcastsScreen(vm)
                     Screen.DriveBrowser -> DriveBrowserScreen(vm)
                     is Screen.Album -> AlbumScreen(vm, s)
                     is Screen.Artist -> ArtistScreen(vm, s)
@@ -152,7 +156,14 @@ private fun androidx.compose.foundation.layout.RowScope.NavItem(
 ) {
     NavigationBarItem(
         selected = vm.root == screen,
-        onClick = { if (vm.root == screen && vm.stack.size == 1) Unit else vm.selectRoot(screen) },
+        onClick = {
+            if (vm.root == screen && vm.stack.size == 1) {
+                // Tapping the Podcasts tab again leaves the show you were in and goes to its home.
+                if (screen == Screen.Podcasts) vm.podHome()
+            } else {
+                vm.selectRoot(screen)
+            }
+        },
         icon = icon,
         label = { Text(label, maxLines = 1, softWrap = false, overflow = androidx.compose.ui.text.style.TextOverflow.Clip) },
     )

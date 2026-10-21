@@ -41,6 +41,8 @@ data class NowPlaying(
     val isLive: Boolean = false,
     val stationId: String? = null,
     val stationName: String = "",
+    val isPodcast: Boolean = false,
+    val showId: String? = null,
 ) {
     val hasItem: Boolean get() = mediaId != null
 }
@@ -107,6 +109,7 @@ class PlayerConnection(private val context: Context) {
         val cm = p.mediaMetadata // item metadata merged with tags/ICY read from the stream
         val extras = im?.extras
         val radio = item?.isRadio() == true
+        val podcast = item?.isPodcast() == true
         val station = extras?.getString(EXTRA_NAME) ?: im?.station?.toString() ?: ""
         val dur = p.duration.takeIf { it > 0 } ?: extras?.getLong(EXTRA_DURATION) ?: 0L
         val title = (cm.title ?: im?.title)?.toString()?.takeIf { it.isNotBlank() }
@@ -124,7 +127,7 @@ class PlayerConnection(private val context: Context) {
             mediaId = item?.mediaId,
             title = title,
             artist = artist,
-            album = if (radio) "" else (cm.albumTitle ?: im?.albumTitle)?.toString() ?: "",
+            album = if (radio || podcast) "" else (cm.albumTitle ?: im?.albumTitle)?.toString() ?: "",
             art = art,
             format = extras?.getString(EXTRA_FORMAT) ?: "",
             isPlaying = p.isPlaying,
@@ -142,6 +145,8 @@ class PlayerConnection(private val context: Context) {
             isLive = radio || p.isCurrentMediaItemLive,
             stationId = extras?.getString(EXTRA_STATION_ID),
             stationName = station,
+            isPodcast = podcast,
+            showId = extras?.getString(EXTRA_SHOW_ID),
         )
     }
 
@@ -168,15 +173,43 @@ class PlayerConnection(private val context: Context) {
         }
     }
 
-    /** Plays ready-made items (radio stations, Drive files outside the library). */
-    fun playItems(items: List<MediaItem>, startIndex: Int = 0, shuffle: Boolean = false) {
+    /**
+     * Plays ready-made items (radio stations, Drive files outside the library, podcast episodes).
+     * [startPositionMs] is where to begin the first item, e.g. where a podcast episode was left.
+     */
+    fun playItems(items: List<MediaItem>, startIndex: Int = 0, shuffle: Boolean = false, startPositionMs: Long? = null) {
         if (items.isEmpty()) return
         withController { c ->
             c.shuffleModeEnabled = shuffle
             val start = if (shuffle) Random.nextInt(items.size) else startIndex.coerceIn(0, items.size - 1)
-            c.setMediaItems(items, start, if (items[start].isRadio()) androidx.media3.common.C.TIME_UNSET else 0L)
+            val pos = startPositionMs ?: if (items[start].isRadio()) androidx.media3.common.C.TIME_UNSET else 0L
+            c.setMediaItems(items, start, pos)
             c.prepare()
             c.play()
+        }
+    }
+
+    fun playNextItems(items: List<MediaItem>) {
+        if (items.isEmpty()) return
+        withController { c ->
+            if (c.mediaItemCount == 0) {
+                c.setMediaItems(items)
+                c.prepare()
+            } else {
+                c.addMediaItems(c.currentMediaItemIndex + 1, items)
+            }
+        }
+    }
+
+    fun enqueueItems(items: List<MediaItem>) {
+        if (items.isEmpty()) return
+        withController { c ->
+            if (c.mediaItemCount == 0) {
+                c.setMediaItems(items)
+                c.prepare()
+            } else {
+                c.addMediaItems(items)
+            }
         }
     }
 
@@ -219,6 +252,13 @@ class PlayerConnection(private val context: Context) {
     fun next() = withController { it.seekToNext() }
     fun previous() = withController { it.seekToPrevious() }
     fun seekTo(ms: Long) = withController { it.seekTo(ms) }
+
+    /** Jump back/forward, e.g. -10 s / +30 s while listening to a podcast. */
+    fun seekBy(deltaMs: Long) = withController { c ->
+        val dur = c.duration
+        val target = c.currentPosition + deltaMs
+        c.seekTo(if (dur > 0) target.coerceIn(0L, dur) else target.coerceAtLeast(0L))
+    }
     fun skipTo(index: Int) = withController { c ->
         if (index in 0 until c.mediaItemCount) {
             c.seekToDefaultPosition(index)
