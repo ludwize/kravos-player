@@ -35,6 +35,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import net.kravos.player.App
@@ -165,6 +166,7 @@ private fun androidx.compose.foundation.layout.RowScope.NavItem(
             }
         },
         icon = icon,
-        label = { Text(label, maxLines = 1, softWrap = false, overflow = androidx.compose.ui.text.style.TextOverflow.Clip) },
+        // Six tabs on a 360 dp phone: 10 sp keeps "Podcasts" and "Settings" from being cut off.
+        label = { Text(label, fontSize = 10.sp, maxLines = 1, softWrap = false, overflow = androidx.compose.ui.text.style.TextOverflow.Clip) },
     )
 }

@@ -38,6 +38,21 @@ EOF
   sleep 3
 }
 
+# Waits until a node with this text/description shows up (network-backed screens), then taps it.
+wait_tap() {
+  local end=$((SECONDS + $2))
+  while [ $SECONDS -lt $end ]; do
+    adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
+    adb pull /sdcard/ui.xml "$OUT/ui.xml" >/dev/null 2>&1
+    if grep -q "text=\"$1\"\|content-desc=\"$1\"" "$OUT/ui.xml"; then
+      tap_text "$1"
+      return
+    fi
+    sleep 3
+  done
+  echo "not found: $1 (waited $2 s)" >> "$OUT/steps.txt"
+}
+
 tap_text "Allow"
 adb exec-out screencap -p > "$OUT/01-library.png"
 tap_text "Settings"
@@ -90,17 +105,27 @@ tap_text "Podcasts"
 sleep 3
 adb exec-out screencap -p > "$OUT/13-podcasts-home.png"
 tap_text "Find podcasts"
-sleep 10
-adb exec-out screencap -p > "$OUT/14-podcast-charts.png"
-tap_text "Open show"
-sleep 12
+wait_tap "Open show" 60
+sleep 2
 adb exec-out screencap -p > "$OUT/15-podcast-show.png"
-tap_text "Play episode"
-sleep 20
+wait_tap "Play episode" 60
+sleep 15
 adb exec-out screencap -p > "$OUT/16-podcast-playing.png"
 tap_text "Open player"
 sleep 3
 adb exec-out screencap -p > "$OUT/17-podcast-nowplaying.png"
+tap_text "Forward 30 seconds"
+sleep 4
+adb shell dumpsys media_session > "$OUT/media_session_podcast_seek.txt" 2>&1
+tap_text "1×"
+sleep 2
+adb exec-out screencap -p > "$OUT/19-podcast-speed.png"
+tap_text "1.5×"
+sleep 2
+adb shell input keyevent KEYCODE_BACK
+sleep 2
+adb exec-out screencap -p > "$OUT/20-podcast-speed-set.png"
+adb shell dumpsys media_session > "$OUT/media_session_podcast_speed.txt" 2>&1
 adb shell input keyevent KEYCODE_BACK
 sleep 2
 tap_text "Radio"
