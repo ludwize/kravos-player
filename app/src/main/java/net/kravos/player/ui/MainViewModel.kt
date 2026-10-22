@@ -34,6 +34,7 @@ import net.kravos.player.drive.DriveApi
 import net.kravos.player.drive.DriveFile
 import net.kravos.player.drive.LibraryScanner
 import net.kravos.player.playback.POD_PREFIX
+import net.kravos.player.playback.toEpisode
 import net.kravos.player.playback.toMediaItem
 import net.kravos.player.podcast.Episode
 import net.kravos.player.podcast.Podcast
@@ -723,6 +724,20 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     fun playEpisodeNext(ep: Episode) = player.playNextItems(listOf(ep.toMediaItem()))
     fun enqueueEpisode(ep: Episode) = player.enqueueItems(listOf(ep.toMediaItem()))
+
+    // ---- offline episodes
+
+    val podcastDownloads: StateFlow<Map<String, Episode>> = graph.downloads.podcastEpisodes
+
+    fun downloadEpisode(ep: Episode) = graph.downloads.downloadEpisode(ep)
+    fun removeEpisodeDownload(key: String) = graph.downloads.remove(listOf(POD_PREFIX + key))
+
+    /** Download button on the player for the episode that's playing. */
+    fun toggleCurrentEpisodeDownload() {
+        val ep = player.controller?.currentMediaItem?.toEpisode() ?: return
+        val state = graph.downloads.states.value[POD_PREFIX + ep.key]
+        if (state == null || state == Download.STATE_FAILED) downloadEpisode(ep) else removeEpisodeDownload(ep.key)
+    }
 
     fun setEpisodePlayed(key: String, played: Boolean) {
         if (played) graph.podcasts.markPlayed(key) else graph.podcasts.markUnplayed(key)

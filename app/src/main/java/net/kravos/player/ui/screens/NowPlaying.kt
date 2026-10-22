@@ -29,6 +29,7 @@ import androidx.compose.material.icons.filled.Bedtime
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.DownloadDone
+import androidx.compose.material.icons.filled.Downloading
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.MusicNote
 import androidx.compose.material.icons.filled.Forward30
@@ -296,6 +297,18 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                 } else if (np.isPodcast) {
                     TextButton(onClick = { showSpeed = true }) {
                         Text(fmtSpeed(np.speed), color = if (np.speed != 1f) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
+                    }
+                    val state = np.mediaId?.let { dl[it] }
+                    IconButton(onClick = { vm.toggleCurrentEpisodeDownload() }) {
+                        Icon(
+                            when (state) {
+                                Download.STATE_COMPLETED -> Icons.Default.DownloadDone
+                                null, Download.STATE_FAILED -> Icons.Default.Download
+                                else -> Icons.Default.Downloading
+                            },
+                            "Download",
+                            tint = if (state == Download.STATE_COMPLETED) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                        )
                     }
                 } else {
                     val id = np.mediaId

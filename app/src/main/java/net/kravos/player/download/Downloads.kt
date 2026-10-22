@@ -23,6 +23,9 @@ import net.kravos.player.App
 import net.kravos.player.R
 import net.kravos.player.data.Track
 import net.kravos.player.drive.DriveApi
+import net.kravos.player.playback.POD_PREFIX
+import net.kravos.player.podcast.Episode
+import org.json.JSONObject
 import java.util.concurrent.Executors
 
 /** Offline copies of tracks, kept in a separate never-evicted cache. */
@@ -32,10 +35,16 @@ class Downloads(
     val manager: DownloadManager,
     private val scope: CoroutineScope,
     private val cacheBytes: () -> Long,
+    /** Episode URLs that have (or are getting) an offline copy; the player reads those from the offline cache. */
+    private val offlineUris: MutableSet<String>,
 ) {
     /** trackId -> [Download] state constant. */
     private val _states = MutableStateFlow<Map<String, Int>>(emptyMap())
     val states: StateFlow<Map<String, Int>> = _states.asStateFlow()
+
+    /** Downloaded podcast episodes, by download id ("pod:<key>"), rebuilt from the download index. */
+    private val _episodes = MutableStateFlow<Map<String, Episode>>(emptyMap())
+    val podcastEpisodes: StateFlow<Map<String, Episode>> = _episodes.asStateFlow()
 
     private val _bytes = MutableStateFlow(0L)
     val bytes: StateFlow<Long> = _bytes.asStateFlow()
@@ -45,27 +54,43 @@ class Downloads(
             override fun onInitialized(downloadManager: DownloadManager) = reload()
             override fun onDownloadChanged(downloadManager: DownloadManager, download: Download, finalException: Exception?) {
                 _states.value = _states.value + (download.request.id to download.state)
+                track(download)
                 if (download.state == Download.STATE_COMPLETED) _bytes.value = cacheBytes()
             }
             override fun onDownloadRemoved(downloadManager: DownloadManager, download: Download) {
                 _states.value = _states.value - download.request.id
+                if (download.request.id.startsWith(POD_PREFIX)) {
+                    offlineUris.remove(download.request.uri.toString())
+                    _episodes.value = _episodes.value - download.request.id
+                }
                 _bytes.value = cacheBytes()
             }
         })
         reload()
     }
 
+    private fun episodeOf(d: Download): Episode? =
+        runCatching { Episode.fromJson(JSONObject(String(d.request.data))) }.getOrNull()
+
+    private fun track(d: Download) {
+        if (!d.request.id.startsWith(POD_PREFIX)) return
+        offlineUris.add(d.request.uri.toString())
+        if (!_episodes.value.containsKey(d.request.id)) episodeOf(d)?.let { _episodes.value = _episodes.value + (d.request.id to it) }
+    }
+
     private fun reload() {
         scope.launch {
-            val map = withContext(Dispatchers.IO) {
-                val m = HashMap<String, Int>()
+            val all = withContext(Dispatchers.IO) {
+                val list = ArrayList<Download>()
                 runCatching {
                     manager.downloadIndex.getDownloads().use { c ->
-                        while (c.moveToNext()) m[c.download.request.id] = c.download.state
+                        while (c.moveToNext()) list += c.download
                     }
                 }
-                m
+                list
             }
+            val map = HashMap<String, Int>()
+            all.forEach { map[it.request.id] = it.state; track(it) }
             _states.value = map
             _bytes.value = withContext(Dispatchers.IO) { cacheBytes() }
         }
@@ -79,6 +104,15 @@ class Downloads(
                 .build()
             DownloadService.sendAddDownload(context, KravosDownloadService::class.java, req, false)
         }
+    }
+
+    /** Keeps a podcast episode for offline listening (same never-evicted store as songs). */
+    fun downloadEpisode(ep: Episode) {
+        val req = DownloadRequest.Builder(POD_PREFIX + ep.key, Uri.parse(ep.url))
+            .setData(ep.toJson().toString().toByteArray())
+            .build()
+        offlineUris.add(ep.url)
+        DownloadService.sendAddDownload(context, KravosDownloadService::class.java, req, false)
     }
 
     fun remove(ids: Collection<String>) {

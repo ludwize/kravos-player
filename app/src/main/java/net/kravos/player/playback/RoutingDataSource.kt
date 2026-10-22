@@ -13,7 +13,11 @@ import net.kravos.player.drive.DriveApi
  * straight to the network: an endless radio stream must never be written into the song cache.
  */
 @OptIn(UnstableApi::class)
-class RoutingDataSource(private val drive: DataSource, private val other: DataSource) : DataSource {
+class RoutingDataSource(
+    private val drive: DataSource,
+    private val other: DataSource,
+    private val isOffline: (Uri) -> Boolean,
+) : DataSource {
     private var current: DataSource? = null
 
     override fun addTransferListener(transferListener: TransferListener) {
@@ -22,7 +26,8 @@ class RoutingDataSource(private val drive: DataSource, private val other: DataSo
     }
 
     override fun open(dataSpec: DataSpec): Long {
-        val target = if (dataSpec.uri.host == DriveApi.HOST) drive else other
+        // Drive files and downloaded podcast episodes go through the offline/stream caches.
+        val target = if (dataSpec.uri.host == DriveApi.HOST || isOffline(dataSpec.uri)) drive else other
         current = target
         return target.open(dataSpec)
     }
@@ -40,7 +45,11 @@ class RoutingDataSource(private val drive: DataSource, private val other: DataSo
         c?.close()
     }
 
-    class Factory(private val drive: DataSource.Factory, private val other: DataSource.Factory) : DataSource.Factory {
-        override fun createDataSource(): DataSource = RoutingDataSource(drive.createDataSource(), other.createDataSource())
+    class Factory(
+        private val drive: DataSource.Factory,
+        private val other: DataSource.Factory,
+        private val isOffline: (Uri) -> Boolean,
+    ) : DataSource.Factory {
+        override fun createDataSource(): DataSource = RoutingDataSource(drive.createDataSource(), other.createDataSource(), isOffline)
     }
 }

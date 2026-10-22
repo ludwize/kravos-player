@@ -27,6 +27,8 @@ import androidx.compose.material.icons.automirrored.filled.QueueMusic
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.LibraryAdd
 import androidx.compose.material.icons.filled.LibraryAddCheck
@@ -69,6 +71,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.media3.exoplayer.offline.Download
 import kotlinx.coroutines.delay
 import net.kravos.player.playback.POD_PREFIX
 import net.kravos.player.podcast.Episode
@@ -81,6 +84,7 @@ import net.kravos.player.ui.PodListState
 import net.kravos.player.ui.PodScreen
 import net.kravos.player.ui.ShowState
 import net.kravos.player.ui.components.ArtImage
+import net.kravos.player.ui.components.DownloadBadge
 import net.kravos.player.ui.components.EmptyState
 import net.kravos.player.ui.components.SectionHeader
 import net.kravos.player.ui.components.TextInputDialog
@@ -116,9 +120,11 @@ private fun PodHome(vm: MainViewModel) {
     val listen by vm.podcasts.listen.collectAsStateWithLifecycle()
     val shows by vm.shows.collectAsStateWithLifecycle()
     val np by vm.player.state.collectAsStateWithLifecycle()
+    val offline by vm.podcastDownloads.collectAsStateWithLifecycle()
     var adding by remember { mutableStateOf(false) }
 
     LaunchedEffect(subs.size) { vm.refreshSubscriptions() }
+    val downloaded = remember(offline) { offline.values.sortedByDescending { it.publishedAt } }
 
     val continueList = remember(listen) { listen.inProgress.values.sortedByDescending { it.updatedAt } }
     val latest = remember(shows, subs, listen) {
@@ -138,7 +144,7 @@ private fun PodHome(vm: MainViewModel) {
                 IconButton(onClick = { adding = true }) { Icon(Icons.Default.Add, "Add podcast by RSS address") }
             },
         )
-        if (subs.isEmpty() && continueList.isEmpty()) {
+        if (subs.isEmpty() && continueList.isEmpty() && downloaded.isEmpty()) {
             EmptyState("No podcasts yet. Find a show and subscribe, or add one by its RSS address (＋).") {
                 Button(onClick = { vm.podOpenSearch() }) { Text("Find podcasts") }
             }
@@ -153,6 +159,10 @@ private fun PodHome(vm: MainViewModel) {
                 if (latest.isNotEmpty()) {
                     item(key = "h-latest") { SectionHeader("Latest episodes") }
                     items(latest, key = { "l-" + it.key }) { ep -> EpisodeRow(vm, ep, listen, np.mediaId, showName = true) }
+                }
+                if (downloaded.isNotEmpty()) {
+                    item(key = "h-offline") { SectionHeader("Downloaded") }
+                    items(downloaded, key = { "d-" + it.key }) { ep -> EpisodeRow(vm, ep, listen, np.mediaId, showName = true) }
                 }
                 if (subs.isNotEmpty()) {
                     item(key = "h-shows") { SectionHeader("Your shows") }
@@ -392,6 +402,8 @@ private fun EpisodeRow(vm: MainViewModel, ep: Episode, listen: ListenState, play
     val progress: Progress? = listen.inProgress[ep.key]
     val played = ep.key in listen.played
     val current = playingId == POD_PREFIX + ep.key
+    val dl by vm.downloadStates.collectAsStateWithLifecycle()
+    val dlState = dl[POD_PREFIX + ep.key]
 
     Row(
         Modifier
@@ -416,13 +428,17 @@ private fun EpisodeRow(vm: MainViewModel, ep: Episode, listen: ListenState, play
                     else -> MaterialTheme.colorScheme.onSurface
                 },
             )
-            Text(
-                episodeSubtitle(ep, progress, played, showName),
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                DownloadBadge(dlState)
+                if (dlState != null) Spacer(Modifier.width(4.dp))
+                Text(
+                    episodeSubtitle(ep, progress, played, showName),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
             if (progress != null) {
                 LinearProgressIndicator(
                     progress = { progress.fraction },
@@ -443,6 +459,19 @@ private fun EpisodeRow(vm: MainViewModel, ep: Episode, listen: ListenState, play
                     leadingIcon = { Icon(Icons.AutoMirrored.Filled.QueueMusic, null) },
                     onClick = { menu = false; vm.enqueueEpisode(ep) },
                 )
+                if (dlState == null || dlState == Download.STATE_FAILED) {
+                    DropdownMenuItem(
+                        text = { Text("Download") },
+                        leadingIcon = { Icon(Icons.Default.Download, null) },
+                        onClick = { menu = false; vm.downloadEpisode(ep) },
+                    )
+                } else {
+                    DropdownMenuItem(
+                        text = { Text(if (dlState == Download.STATE_COMPLETED) "Remove download" else "Cancel download") },
+                        leadingIcon = { Icon(Icons.Default.Delete, null) },
+                        onClick = { menu = false; vm.removeEpisodeDownload(ep.key) },
+                    )
+                }
                 DropdownMenuItem(
                     text = { Text(if (played) "Mark as not played" else "Mark as played") },
                     leadingIcon = { Icon(Icons.Default.Check, null) },

@@ -25,7 +25,8 @@ Built in the spirit of CloudPlayer's paid tier, plus a practice mode for learnin
   whole folder including subfolders without scanning, add a folder to the library with one tap.
   The library Folders tab can search folders and play/shuffle a folder with all its subfolders.
 - **Podcasts**: search Apple's podcast directory or browse the Serbian / world top charts, subscribe, or add any show by
-  its RSS address. Every episode remembers where you stopped (Continue listening on the Podcasts home), speed is
+  its RSS address. Episodes can be downloaded for offline listening (same never-evicted store and Wi-Fi-only rule as
+  songs; Downloaded section on the Podcasts home). Every episode remembers where you stopped (Continue listening on the Podcasts home), speed is
   remembered per show (or one speed for all), with back 10 s / forward 30 s. Sleep timer and Chromecast work the same as
   for music; HTTPS episodes are fetched by the Chromecast itself. The tab remembers where you were (a show, the search
   page, scroll position) when you switch to Library or Radio and come back.

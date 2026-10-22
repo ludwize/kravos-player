@@ -138,7 +138,7 @@ class AppGraph(val app: App) {
 
     /** What the player uses: Drive through the caches, radio straight from the station. */
     val playerDataSourceFactory: DataSource.Factory by lazy {
-        RoutingDataSource.Factory(playbackDataSourceFactory, radioDataSourceFactory)
+        RoutingDataSource.Factory(playbackDataSourceFactory, radioDataSourceFactory) { it.toString() in offlinePodcastUris }
     }
 
     val radio: RadioApi by lazy { RadioApi(plainHttp) }
@@ -146,8 +146,11 @@ class AppGraph(val app: App) {
     val podcasts = PodcastStore(app)
     val podcastApi: PodcastApi by lazy { PodcastApi(plainHttp, File(app.cacheDir, "podcasts")) }
 
+    /** Podcast episode URLs with an offline copy (thread-safe: read by the player's loader threads). */
+    val offlinePodcastUris: MutableSet<String> = java.util.concurrent.ConcurrentHashMap.newKeySet()
+
     val downloads: Downloads by lazy {
-        Downloads(app, Downloads.newManager(app), scope) { runCatching { downloadCache.cacheSpace }.getOrDefault(0L) }
+        Downloads(app, Downloads.newManager(app), scope, { runCatching { downloadCache.cacheSpace }.getOrDefault(0L) }, offlinePodcastUris)
     }
 
     val player = PlayerConnection(app)

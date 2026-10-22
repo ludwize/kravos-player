@@ -116,6 +116,9 @@ sleep 3
 adb exec-out screencap -p > "$OUT/17-podcast-nowplaying.png"
 tap_text "Forward 30 seconds"
 sleep 4
+tap_text "Download"
+sleep 20
+adb exec-out screencap -p > "$OUT/17b-podcast-downloading.png"
 adb shell dumpsys media_session > "$OUT/media_session_podcast_seek.txt" 2>&1
 tap_text "1×"
 sleep 2
