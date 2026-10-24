@@ -1,13 +1,5 @@
-search_balkan.json: 200 text/javascript; charset=utf-8 len=13282 final=https://itunes.apple.com/search?media=podcast&entity=podcast&limit=8&term=balkan
-search_sr.json: 200 text/javascript; charset=utf-8 len=15908 final=https://itunes.apple.com/search?media=podcast&entity=podcast&limit=8&term=%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%81%D1%82
-search_sr_latin.json: 200 text/javascript; charset=utf-8 len=12769 final=https://itunes.apple.com/search?media=podcast&entity=podcast&limit=8&country=RS&term=podkast
-top_rs.json: 200 application/json; charset=utf-8 len=5233 final=https://rss.marketingtools.apple.com/api/v2/rs/podcasts/top/10/podcasts.json
-top_us.json: ERROR The read operation timed out
-top_rs_itunes_rss.json: 200 text/javascript; charset=UTF-8 len=19278 final=https://itunes.apple.com/rs/rss/toppodcasts/limit=10/json
-lookup.json: 200 text/javascript; charset=utf-8 len=8024 final=https://itunes.apple.com/lookup?entity=podcast&id=1491801273,1571294971,1669889519,1531300158,300172145
-feed0.xml: 200 application/rss+xml; charset=utf-8 len=40000 final=https://anchor.fm/s/829a0e5c/podcast/rss
-feed0.url: https://anchor.fm/s/829a0e5c/podcast/rss
-feed1.xml: 200 text/xml len=40000 final=https://www.spreaker.com/show/4732036/episodes/feed
-feed1.url: https://www.spreaker.com/show/4732036/episodes/feed
-feed2.xml: 200 text/xml; charset=UTF-8 len=40000 final=https://feed.podbean.com/balkanperpectives/feed.xml
-feed2.url: https://feed.podbean.com/balkanperpectives/feed.xml
+search_rogan.json: 200 text/javascript; charset=utf-8 len=8459 clen=8459 final=https://itunes.apple.com/search?media=podcast&entity=podcast&limit=5&term=joe%20rogan%20experience
+rogan0: The Joe Rogan Experience https://feeds.megaphone.fm/GLT1412515089
+rogan0.xml: 200 application/xml; charset=utf-8 len=400000 clen=None final=https://feeds.megaphone.fm/GLT1412515089
+rogan1: The Joe Rogan AI Experience https://rss.buzzsprout.com/2170846.rss
+rogan1.xml: 200 text/xml; charset=utf-8 len=48504 clen=48504 final=https://rss.buzzsprout.com/2170846.rss
