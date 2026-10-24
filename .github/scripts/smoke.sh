@@ -108,6 +108,11 @@ tap_text "Find podcasts"
 wait_tap "Open show" 60
 sleep 2
 adb exec-out screencap -p > "$OUT/15-podcast-show.png"
+wait_tap "Episode details" 60
+sleep 4
+adb exec-out screencap -p > "$OUT/15b-podcast-episode-details.png"
+adb shell input keyevent KEYCODE_BACK
+sleep 2
 wait_tap "Play episode" 60
 sleep 15
 adb exec-out screencap -p > "$OUT/16-podcast-playing.png"
@@ -118,6 +123,11 @@ tap_text "Forward 30 seconds"
 sleep 4
 tap_text "Download"
 sleep 20
+tap_text "Episode notes"
+sleep 3
+adb exec-out screencap -p > "$OUT/17c-podcast-notes-player.png"
+adb shell input keyevent KEYCODE_BACK
+sleep 2
 adb exec-out screencap -p > "$OUT/17b-podcast-downloading.png"
 adb shell dumpsys media_session > "$OUT/media_session_podcast_seek.txt" 2>&1
 tap_text "1×"

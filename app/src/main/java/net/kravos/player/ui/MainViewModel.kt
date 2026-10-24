@@ -725,6 +725,23 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     fun playEpisodeNext(ep: Episode) = player.playNextItems(listOf(ep.toMediaItem()))
     fun enqueueEpisode(ep: Episode) = player.enqueueItems(listOf(ep.toMediaItem()))
 
+    /**
+     * Show notes for an episode. Rows built from "Continue listening" or downloads don't carry them,
+     * so look in the loaded shows, then in the feed saved on disk (works offline).
+     */
+    suspend fun episodeNotes(ep: Episode): String {
+        if (ep.description.isNotBlank()) return ep.description
+        _shows.value[ep.feedId]?.episodes?.firstOrNull { it.key == ep.key }?.description
+            ?.takeIf { it.isNotBlank() }?.let { return it }
+        val seed = graph.podcasts.subs.value.firstOrNull { it.id == ep.feedId }
+            ?: Podcast(ep.feedId, ep.showTitle, "", "", ep.art)
+        val saved = graph.podcastApi.cached(seed) ?: return ""
+        return saved.episodes.firstOrNull { it.key == ep.key }?.description.orEmpty()
+    }
+
+    /** The episode that's playing now (for the player's notes button). */
+    fun currentEpisode(): Episode? = player.controller?.currentMediaItem?.toEpisode()
+
     // ---- offline episodes
 
     val podcastDownloads: StateFlow<Map<String, Episode>> = graph.downloads.podcastEpisodes

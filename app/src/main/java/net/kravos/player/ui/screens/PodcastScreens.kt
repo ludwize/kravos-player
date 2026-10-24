@@ -413,7 +413,13 @@ private fun EpisodeRow(vm: MainViewModel, ep: Episode, listen: ListenState, play
             .padding(start = 16.dp, end = 4.dp, top = 8.dp, bottom = 8.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        ArtImage(ep.art, size = 52.dp, fallback = Icons.Default.Podcasts)
+        // Tapping the picture opens the episode details (notes); tapping the row plays it.
+        ArtImage(
+            ep.art,
+            Modifier.semantics { contentDescription = "Episode details" }.clickable { notes = true },
+            size = 52.dp,
+            fallback = Icons.Default.Podcasts,
+        )
         Spacer(Modifier.width(12.dp))
         Column(Modifier.weight(1f)) {
             Text(
@@ -477,35 +483,15 @@ private fun EpisodeRow(vm: MainViewModel, ep: Episode, listen: ListenState, play
                     leadingIcon = { Icon(Icons.Default.Check, null) },
                     onClick = { menu = false; vm.setEpisodePlayed(ep.key, !played) },
                 )
-                if (ep.description.isNotBlank()) {
-                    DropdownMenuItem(
-                        text = { Text("Show notes") },
-                        leadingIcon = { Icon(Icons.Default.Info, null) },
-                        onClick = { menu = false; notes = true },
-                    )
-                }
+                DropdownMenuItem(
+                    text = { Text("Episode details") },
+                    leadingIcon = { Icon(Icons.Default.Info, null) },
+                    onClick = { menu = false; notes = true },
+                )
             }
         }
     }
-    if (notes) {
-        AlertDialog(
-            onDismissRequest = { notes = false },
-            title = { Text(ep.title, maxLines = 3, overflow = TextOverflow.Ellipsis) },
-            text = {
-                Column(Modifier.height(320.dp).verticalScroll(rememberScrollState())) {
-                    Text(plainText(ep.description), style = MaterialTheme.typography.bodyMedium)
-                }
-            },
-            confirmButton = { TextButton(onClick = { notes = false }) { Text("Close") } },
-            dismissButton = {
-                TextButton(onClick = { notes = false; vm.playEpisode(ep) }) {
-                    Icon(Icons.Default.PlayArrow, null, Modifier.size(18.dp))
-                    Spacer(Modifier.width(4.dp))
-                    Text("Play")
-                }
-            },
-        )
-    }
+    if (notes) EpisodeNotesSheet(vm, ep) { notes = false }
 }
 
 private fun episodeSubtitle(ep: Episode, progress: Progress?, played: Boolean, showName: Boolean): String {

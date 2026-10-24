@@ -181,7 +181,8 @@ class PodcastApi(baseHttp: OkHttpClient, private val dir: File) {
                 durationMs = parseDuration(it.duration),
                 publishedAt = dates.parse(it.pubDate),
                 art = it.art ?: art ?: seed.art,
-                description = it.description.take(3000),
+                // Rich show notes (content:encoded, with links) win over the plain description.
+                description = it.html.ifBlank { it.description }.take(MAX_NOTES),
             )
         }
 
@@ -217,6 +218,7 @@ class PodcastApi(baseHttp: OkHttpClient, private val dir: File) {
                             val t = xpp.readText().trim()
                             if (it != null) { if (it.description.isBlank()) it.description = t } else if (summary.isBlank()) summary = t
                         }
+                        name == "content:encoded" && it != null -> if (it.html.isBlank()) it.html = xpp.readText().trim()
                         name == "pubDate" && it != null -> it.pubDate = xpp.readText().trim()
                         name == "itunes:duration" && it != null -> it.duration = xpp.readText().trim()
                         name == "guid" && it != null -> it.guid = xpp.readText().trim()
@@ -257,6 +259,7 @@ class PodcastApi(baseHttp: OkHttpClient, private val dir: File) {
         var duration = ""
         var art: String? = null
         var description = ""
+        var html = ""
     }
 
     private fun XmlPullParser.attr(name: String): String? {
@@ -309,6 +312,7 @@ class PodcastApi(baseHttp: OkHttpClient, private val dir: File) {
         const val USER_AGENT = "KravosPlayer/1.2 (Android)"
         private const val MAX_FEED_BYTES = 12L * 1024 * 1024
         private const val MAX_EPISODES = 500
+        private const val MAX_NOTES = 12_000
 
         /** itunes:duration is "3600", "59:12" or "1:02:03". */
         fun parseDuration(s: String): Long {

@@ -33,6 +33,7 @@ import androidx.compose.material.icons.filled.Downloading
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.MusicNote
 import androidx.compose.material.icons.filled.Forward30
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.Podcasts
 import androidx.compose.material.icons.filled.Replay10
@@ -163,6 +164,7 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
     var showPractice by remember { mutableStateOf(false) }
     var showSleep by remember { mutableStateOf(false) }
     var showSpeed by remember { mutableStateOf(false) }
+    var notesFor by remember { mutableStateOf<net.kravos.player.podcast.Episode?>(null) }
     val pos by produceState(0L, np.mediaId) {
         while (true) {
             value = vm.player.position()
@@ -298,6 +300,9 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
                     TextButton(onClick = { showSpeed = true }) {
                         Text(fmtSpeed(np.speed), color = if (np.speed != 1f) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface)
                     }
+                    IconButton(onClick = { notesFor = vm.currentEpisode() }) {
+                        Icon(Icons.Default.Info, "Episode notes")
+                    }
                     val state = np.mediaId?.let { dl[it] }
                     IconButton(onClick = { vm.toggleCurrentEpisodeDownload() }) {
                         Icon(
@@ -353,6 +358,7 @@ fun NowPlayingScreen(vm: MainViewModel, np: NowPlaying) {
     if (showPractice) PracticeSheet(vm, np) { showPractice = false }
     if (showSleep) SleepDialog(vm, np.isPodcast) { showSleep = false }
     if (showSpeed) PodcastSpeedSheet(vm, np) { showSpeed = false }
+    notesFor?.let { ep -> EpisodeNotesSheet(vm, ep) { notesFor = null } }
 }
 
 @Composable
