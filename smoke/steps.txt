@@ -14,10 +14,12 @@ not found: Browse Google Drive
 tapped Podcasts
 tapped Find podcasts
 tapped Open show
+tapped Episode details
 tapped Play episode
 tapped Open player
 tapped Forward 30 seconds
 tapped Download
+tapped Episode notes
 tapped 1×
 tapped 1.5×
 tapped Radio
