@@ -1,5 +1,3 @@
-search_rogan.json: 200 text/javascript; charset=utf-8 len=8459 clen=8459 final=https://itunes.apple.com/search?media=podcast&entity=podcast&limit=5&term=joe%20rogan%20experience
-rogan0: The Joe Rogan Experience https://feeds.megaphone.fm/GLT1412515089
-rogan0.xml: 200 application/xml; charset=utf-8 len=400000 clen=None final=https://feeds.megaphone.fm/GLT1412515089
-rogan1: The Joe Rogan AI Experience https://rss.buzzsprout.com/2170846.rss
-rogan1.xml: 200 text/xml; charset=utf-8 len=48504 clen=48504 final=https://rss.buzzsprout.com/2170846.rss
+latest: build-17
+asset: KravosPlayer-1.0.17.apk 4508338 https://github.com/ludwize/kravos-player/releases/download/build-17/KravosPlayer-1.0.17.apk
+downloaded 4508338 bytes, matches size: True
