@@ -3,7 +3,7 @@ MEDIA SESSION SERVICE (dumpsys media_session)
 6 sessions listeners.
 Global priority session is com.android.server.telecom/HeadsetMediaButton (userId=0)
   HeadsetMediaButton com.android.server.telecom/HeadsetMediaButton (userId=0)
-    ownerPid=530, ownerUid=1000, userId=0
+    ownerPid=531, ownerUid=1000, userId=0
     package=com.android.server.telecom
     launchIntent=null
     mediaButtonReceiver=null
@@ -30,18 +30,18 @@ Record for full_user=0
   Media button session is net.kravos.player/androidx.media3.session.id. (userId=0)
   Sessions Stack - have 7 sessions:
     androidx.media3.session.id. net.kravos.player/androidx.media3.session.id. (userId=0)
-      ownerPid=2742, ownerUid=10192, userId=0
+      ownerPid=2758, ownerUid=10192, userId=0
       package=net.kravos.player
-      launchIntent=PendingIntent{dc36b90: PendingIntentRecord{2b05315 net.kravos.player startActivity (allowlist: 7b60988:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
+      launchIntent=PendingIntent{7fc0755: PendingIntentRecord{4ca9d89 net.kravos.player startActivity (allowlist: 71b865d:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
       mediaButtonReceiver=null
       active=true
       flags=7
       rating type=0
       controllers: 8
-      state=PlaybackState {state=PLAYING(3), position=44758, buffered position=61832, speed=1.0, updated=213059, actions=7339687, custom actions=[], active item id=0, error=null}
+      state=PlaybackState {state=PLAYING(3), position=44600, buffered position=61483, speed=1.0, updated=210091, actions=7339687, custom actions=[], active item id=0, error=null}
       audioAttrs=AudioAttributes: usage=USAGE_MEDIA content=CONTENT_TYPE_MUSIC flags=0x800 tags= bundle=null
       volumeType=LOCAL, controlType=ABSOLUTE, max=0, current=0, volumeControlId=null
-      metadata: size=14, description=OK radio, null, null
+      metadata: size=16, description=OK radio, null, null
       queueTitle=null, size=50
     BluetoothMediaBrowserService com.google.android.bluetooth/BluetoothMediaBrowserService (userId=0)
       ownerPid=1056, ownerUid=1002, userId=0
@@ -52,7 +52,7 @@ Record for full_user=0
       flags=3
       rating type=0
       controllers: 0
-      state=PlaybackState {state=ERROR(7), position=0, buffered position=0, speed=0.0, updated=55452, actions=0, custom actions=[], active item id=-1, error=Bluetooth audio disconnected}
+      state=PlaybackState {state=ERROR(7), position=0, buffered position=0, speed=0.0, updated=55161, actions=0, custom actions=[], active item id=-1, error=Bluetooth audio disconnected}
       audioAttrs=AudioAttributes: usage=USAGE_MEDIA content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null
       volumeType=LOCAL, controlType=ABSOLUTE, max=0, current=0, volumeControlId=null
       metadata: null
@@ -66,7 +66,7 @@ Record for full_user=0
       flags=3
       rating type=0
       controllers: 0
-      state=PlaybackState {state=ERROR(7), position=0, buffered position=0, speed=0.0, updated=55662, actions=0, custom actions=[], active item id=-1, error=Bluetooth audio disconnected}
+      state=PlaybackState {state=ERROR(7), position=0, buffered position=0, speed=0.0, updated=55193, actions=0, custom actions=[], active item id=-1, error=Bluetooth audio disconnected}
       audioAttrs=AudioAttributes: usage=USAGE_MEDIA content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null
       volumeType=LOCAL, controlType=ABSOLUTE, max=0, current=0, volumeControlId=null
       metadata: null
@@ -80,7 +80,7 @@ Record for full_user=0
       flags=3
       rating type=0
       controllers: 0
-      state=PlaybackState {state=ERROR(7), position=0, buffered position=0, speed=0.0, updated=61058, actions=0, custom actions=[], active item id=-1, error=Bluetooth audio disconnected}
+      state=PlaybackState {state=ERROR(7), position=0, buffered position=0, speed=0.0, updated=60680, actions=0, custom actions=[], active item id=-1, error=Bluetooth audio disconnected}
       audioAttrs=AudioAttributes: usage=USAGE_MEDIA content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null
       volumeType=LOCAL, controlType=ABSOLUTE, max=0, current=0, volumeControlId=null
       metadata: null
@@ -94,13 +94,13 @@ Record for full_user=0
       flags=3
       rating type=0
       controllers: 0
-      state=PlaybackState {state=ERROR(7), position=0, buffered position=0, speed=0.0, updated=61639, actions=0, custom actions=[], active item id=-1, error=Bluetooth audio disconnected}
+      state=PlaybackState {state=ERROR(7), position=0, buffered position=0, speed=0.0, updated=60688, actions=0, custom actions=[], active item id=-1, error=Bluetooth audio disconnected}
       audioAttrs=AudioAttributes: usage=USAGE_MEDIA content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null
       volumeType=LOCAL, controlType=ABSOLUTE, max=0, current=0, volumeControlId=null
       metadata: null
       queueTitle=Now Playing, size=0
     PodcastPlayer com.google.android.googlequicksearchbox/PodcastPlayer (userId=0)
-      ownerPid=1834, ownerUid=10132, userId=0
+      ownerPid=1852, ownerUid=10132, userId=0
       package=com.google.android.googlequicksearchbox
       launchIntent=null
       mediaButtonReceiver=null
@@ -108,21 +108,21 @@ Record for full_user=0
       flags=3
       rating type=0
       controllers: 2
-      state=PlaybackState {state=NONE(0), position=0, buffered position=0, speed=0.0, updated=72290, actions=2409991, custom actions=[Action:mName='Rewind 10 seconds, mIcon=2131234345, mExtras=null, Action:mName='Fast forward 30 second, mIcon=2131234125, mExtras=null, Action:mName='Skip to next episode, mIcon=2131234405, mExtras=null], active item id=-1, error=null}
+      state=PlaybackState {state=NONE(0), position=0, buffered position=0, speed=0.0, updated=71727, actions=2409991, custom actions=[Action:mName='Rewind 10 seconds, mIcon=2131234345, mExtras=null, Action:mName='Fast forward 30 second, mIcon=2131234125, mExtras=null, Action:mName='Skip to next episode, mIcon=2131234405, mExtras=null], active item id=-1, error=null}
       audioAttrs=AudioAttributes: usage=USAGE_MEDIA content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null
       volumeType=LOCAL, controlType=ABSOLUTE, max=0, current=0, volumeControlId=null
       metadata: size=0, description=null, null, null
       queueTitle=null, size=0
     YouTube playerlib com.google.android.apps.youtube.music/YouTube playerlib (userId=0)
-      ownerPid=1831, ownerUid=10155, userId=0
+      ownerPid=1844, ownerUid=10156, userId=0
       package=com.google.android.apps.youtube.music
       launchIntent=null
-      mediaButtonReceiver=MBR {pi=PendingIntent{85adc89: PendingIntentRecord{8d7d48e com.google.android.apps.youtube.music broadcastIntent}}, componentName=ComponentInfo{com.google.android.apps.youtube.music/androidx.media.session.MediaButtonReceiver}, type=1, pkg=com.google.android.apps.youtube.music}
+      mediaButtonReceiver=MBR {pi=PendingIntent{149356a: PendingIntentRecord{46e3a5b com.google.android.apps.youtube.music broadcastIntent}}, componentName=ComponentInfo{com.google.android.apps.youtube.music/androidx.media.session.MediaButtonReceiver}, type=1, pkg=com.google.android.apps.youtube.music}
       active=false
       flags=3
       rating type=2
       controllers: 0
-      state=PlaybackState {state=NONE(0), position=0, buffered position=0, speed=1.0, updated=72238, actions=11828, custom actions=[], active item id=-1, error=null}
+      state=PlaybackState {state=NONE(0), position=0, buffered position=0, speed=1.0, updated=73853, actions=11828, custom actions=[], active item id=-1, error=null}
       audioAttrs=AudioAttributes: usage=USAGE_MEDIA content=CONTENT_TYPE_UNKNOWN flags=0x800 tags= bundle=null
       volumeType=LOCAL, controlType=ABSOLUTE, max=0, current=0, volumeControlId=null
       metadata: null
