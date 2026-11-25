@@ -1,300 +1,300 @@
-51111:11-25 09:21:01.056  6716  6716 I AndroidRuntime: Leaving lock profiling enabled
-51125:11-25 09:21:01.144  6716  6716 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-51173:11-25 09:21:02.191  6716  6716 D AndroidRuntime: Shutting down VM
-51269:11-25 09:21:02.913  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-51322:11-25 09:21:02.920  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-51326:11-25 09:21:02.920  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-51379:11-25 09:21:02.926  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-51399:11-25 09:21:03.909  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=206696, buffered position=223552, speed=1.0, updated=372190, actions=7339687, custom actions=[], active item id=0, error=null}
-51400:11-25 09:21:03.911  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=206696, buffered position=223552, speed=1.0, updated=372190, actions=7339687, custom actions=[], active item id=0, error=null}
-51409:11-25 09:21:05.913  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-51462:11-25 09:21:05.916  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-51480:11-25 09:21:05.917  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-51533:11-25 09:21:05.921  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-51538:11-25 09:21:06.909  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=209703, buffered position=226571, speed=1.0, updated=375190, actions=7339687, custom actions=[], active item id=0, error=null}
-51539:11-25 09:21:06.911  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=209703, buffered position=226571, speed=1.0, updated=375190, actions=7339687, custom actions=[], active item id=0, error=null}
-51540:11-25 09:21:08.913  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-51593:11-25 09:21:08.921  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-51597:11-25 09:21:08.921  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-51650:11-25 09:21:08.927  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-51668:11-25 09:21:09.909  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=212698, buffered position=229635, speed=1.0, updated=378190, actions=7339687, custom actions=[], active item id=0, error=null}
-51669:11-25 09:21:09.911  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=212698, buffered position=229635, speed=1.0, updated=378190, actions=7339687, custom actions=[], active item id=0, error=null}
-51675:11-25 09:21:11.912  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-51728:11-25 09:21:11.919  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-51732:11-25 09:21:11.919  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-51785:11-25 09:21:11.923  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-51804:11-25 09:21:12.910  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=215697, buffered position=232607, speed=1.0, updated=381191, actions=7339687, custom actions=[], active item id=0, error=null}
-51805:11-25 09:21:12.912  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=215697, buffered position=232607, speed=1.0, updated=381191, actions=7339687, custom actions=[], active item id=0, error=null}
-51806:11-25 09:21:14.914  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-51859:11-25 09:21:14.918  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-51863:11-25 09:21:14.918  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-51916:11-25 09:21:14.923  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-51934:11-25 09:21:15.910  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=218706, buffered position=235533, speed=1.0, updated=384191, actions=7339687, custom actions=[], active item id=0, error=null}
-51935:11-25 09:21:15.912  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=218706, buffered position=235533, speed=1.0, updated=384191, actions=7339687, custom actions=[], active item id=0, error=null}
-51948:11-25 09:21:17.913  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52001:11-25 09:21:17.922  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52005:11-25 09:21:17.922  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52058:11-25 09:21:17.928  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52076:11-25 09:21:18.911  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=221700, buffered position=238552, speed=1.0, updated=387192, actions=7339687, custom actions=[], active item id=0, error=null}
-52077:11-25 09:21:18.913  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=221700, buffered position=238552, speed=1.0, updated=387192, actions=7339687, custom actions=[], active item id=0, error=null}
-52079:11-25 09:21:20.915  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52132:11-25 09:21:20.920  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52136:11-25 09:21:20.920  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52189:11-25 09:21:20.927  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52208:11-25 09:21:21.912  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=224698, buffered position=241384, speed=1.0, updated=390193, actions=7339687, custom actions=[], active item id=0, error=null}
-52209:11-25 09:21:21.914  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=224698, buffered position=241384, speed=1.0, updated=390193, actions=7339687, custom actions=[], active item id=0, error=null}
-52211:11-25 09:21:23.915  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52264:11-25 09:21:23.919  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52268:11-25 09:21:23.919  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52321:11-25 09:21:23.923  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52342:11-25 09:21:24.913  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=227705, buffered position=244496, speed=1.0, updated=393193, actions=7339687, custom actions=[], active item id=0, error=null}
-52343:11-25 09:21:24.914  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=227705, buffered position=244496, speed=1.0, updated=393193, actions=7339687, custom actions=[], active item id=0, error=null}
-52344:11-25 09:21:26.130  6737  6737 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-52345:11-25 09:21:26.134  6737  6737 I AndroidRuntime: Using default boot image
-52346:11-25 09:21:26.134  6737  6737 I AndroidRuntime: Leaving lock profiling enabled
-52360:11-25 09:21:26.229  6737  6737 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-52402:11-25 09:21:26.916  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52455:11-25 09:21:26.922  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52473:11-25 09:21:26.924  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52526:11-25 09:21:26.928  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52545:11-25 09:21:27.277  6737  6737 D AndroidRuntime: Shutting down VM
-52613:11-25 09:21:27.914  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=230700, buffered position=247514, speed=1.0, updated=396194, actions=7339687, custom actions=[], active item id=0, error=null}
-52614:11-25 09:21:27.915  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=230700, buffered position=247514, speed=1.0, updated=396194, actions=7339687, custom actions=[], active item id=0, error=null}
-52615:11-25 09:21:29.915  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52668:11-25 09:21:29.922  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52672:11-25 09:21:29.922  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52725:11-25 09:21:29.929  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52745:11-25 09:21:30.914  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=233706, buffered position=250579, speed=1.0, updated=399195, actions=7339687, custom actions=[], active item id=0, error=null}
-52746:11-25 09:21:30.916  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=233706, buffered position=250579, speed=1.0, updated=399195, actions=7339687, custom actions=[], active item id=0, error=null}
-52749:11-25 09:21:32.918  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52802:11-25 09:21:32.922  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52806:11-25 09:21:32.922  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52859:11-25 09:21:32.926  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52877:11-25 09:21:33.914  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=236707, buffered position=253644, speed=1.0, updated=402195, actions=7339687, custom actions=[], active item id=0, error=null}
-52878:11-25 09:21:33.916  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=236707, buffered position=253644, speed=1.0, updated=402195, actions=7339687, custom actions=[], active item id=0, error=null}
-52888:11-25 09:21:35.918  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52941:11-25 09:21:35.924  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-52945:11-25 09:21:35.925  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-52998:11-25 09:21:35.933  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53021:11-25 09:21:36.623  6772  6772 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-53022:11-25 09:21:36.628  6772  6772 I AndroidRuntime: Using default boot image
-53023:11-25 09:21:36.628  6772  6772 I AndroidRuntime: Leaving lock profiling enabled
-53036:11-25 09:21:36.770  6772  6772 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-53078:11-25 09:21:36.917  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=239706, buffered position=256616, speed=1.0, updated=405196, actions=7339687, custom actions=[], active item id=0, error=null}
-53079:11-25 09:21:36.919  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=239706, buffered position=256616, speed=1.0, updated=405196, actions=7339687, custom actions=[], active item id=0, error=null}
-53083:11-25 09:21:37.835  6772  6772 D AndroidRuntime: Shutting down VM
-53163:11-25 09:21:38.920  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-53216:11-25 09:21:38.925  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53220:11-25 09:21:38.925  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-53273:11-25 09:21:38.930  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53292:11-25 09:21:39.917  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=242703, buffered position=259588, speed=1.0, updated=408198, actions=7339687, custom actions=[], active item id=0, error=null}
-53293:11-25 09:21:39.919  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=242703, buffered position=259588, speed=1.0, updated=408198, actions=7339687, custom actions=[], active item id=0, error=null}
-53295:11-25 09:21:41.921  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-53348:11-25 09:21:41.928  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53352:11-25 09:21:41.929  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-53405:11-25 09:21:41.936  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53424:11-25 09:21:42.918  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=245712, buffered position=262560, speed=1.0, updated=411199, actions=7339687, custom actions=[], active item id=0, error=null}
-53425:11-25 09:21:42.919  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=245712, buffered position=262560, speed=1.0, updated=411199, actions=7339687, custom actions=[], active item id=0, error=null}
-53432:11-25 09:21:43.942  6795  6795 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-53433:11-25 09:21:43.947  6795  6795 I AndroidRuntime: Using default boot image
-53434:11-25 09:21:43.947  6795  6795 I AndroidRuntime: Leaving lock profiling enabled
-53447:11-25 09:21:44.101  6795  6795 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-53490:11-25 09:21:44.922  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-53543:11-25 09:21:44.927  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53547:11-25 09:21:44.928  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-53600:11-25 09:21:44.932  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53635:11-25 09:21:45.171  6795  6795 D AndroidRuntime: Shutting down VM
-53697:11-25 09:21:45.921  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=248707, buffered position=265625, speed=1.0, updated=414200, actions=7339687, custom actions=[], active item id=0, error=null}
-53698:11-25 09:21:45.923  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=248707, buffered position=265625, speed=1.0, updated=414200, actions=7339687, custom actions=[], active item id=0, error=null}
-53699:11-25 09:21:47.925  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-53752:11-25 09:21:47.930  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53756:11-25 09:21:47.930  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-53809:11-25 09:21:47.937  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53836:11-25 09:21:48.920  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=251710, buffered position=268690, speed=1.0, updated=417200, actions=7339687, custom actions=[], active item id=0, error=null}
-53837:11-25 09:21:48.921  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=251710, buffered position=268690, speed=1.0, updated=417200, actions=7339687, custom actions=[], active item id=0, error=null}
-53839:11-25 09:21:50.923  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-53892:11-25 09:21:50.931  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53896:11-25 09:21:50.931  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-53949:11-25 09:21:50.934  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-53969:11-25 09:21:51.070   866   901 V WindowManagerShell: Transition requested: android.os.BinderProxy@ed780c7 TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=false baseIntent=Intent { flg=0x10000000 cmp=net.kravos.player/.ui.MainActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{net.kravos.player/net.kravos.player.ui.MainActivity} numActivities=0 lastActiveTime=95050 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@be8a6f4} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-54013:11-25 09:21:51.320   531   555 V WindowManager: Sent Transition #16 createdAt=11-25 09:21:51.069 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=false baseIntent=Intent { flg=0x10000000 cmp=net.kravos.player/.ui.MainActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{net.kravos.player/net.kravos.player.ui.MainActivity} numActivities=0 lastActiveTime=95050 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{8e26d09 Task{48feee1 #8 type=standard A=10192:net.kravos.player}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-54015:11-25 09:21:51.321   531   555 V WindowManager:     info={id=16 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{4392f Task{e39d93d #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x87060aa sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{8e26d09 Task{48feee1 #8 type=standard A=10192:net.kravos.player}}} m=CLOSE f=NONE leash=Surface(name=Task=8)/@0x6ab8486 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{132eb44 token=android.os.Binder@fa9e457})/@0xd9e4253 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-54030:11-25 09:21:51.408  5406  5406 I CastMediaRouteProvider: Published 0 routes
-54155:11-25 09:21:51.922  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=254709, buffered position=271430, speed=1.0, updated=420203, actions=7339687, custom actions=[], active item id=0, error=null}
-54156:11-25 09:21:51.925  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=254709, buffered position=271430, speed=1.0, updated=420203, actions=7339687, custom actions=[], active item id=0, error=null}
-54164:11-25 09:21:52.250  2758  2758 I MediaController: Release 5cc05be [AndroidXMedia3/1.5.1] [emu64xa, sdk_gphone64_x86_64, Google, 34] [media3.common, media3.session, media3.database, media3.exoplayer, media3.decoder, media3.cast, media3.exoplayer.hls, media3.datasource.okhttp, media3.datasource, media3.extractor]
-54166:11-25 09:21:52.260   531  1277 D CoreBackPreview: Window{9f89b0 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback null
-54167:11-25 09:21:52.262   531  1870 W InputManager-JNI: Input channel object '9f89b0 net.kravos.player/net.kravos.player.ui.MainActivity (client)' was disposed without first being removed with the input manager!
-54203:11-25 09:21:53.928  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-54256:11-25 09:21:53.937  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54260:11-25 09:21:53.938  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-54313:11-25 09:21:53.944  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54332:11-25 09:21:54.937  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=257716, buffered position=274727, speed=1.0, updated=423213, actions=7339687, custom actions=[], active item id=0, error=null}
-54333:11-25 09:21:54.938  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=257716, buffered position=274727, speed=1.0, updated=423213, actions=7339687, custom actions=[], active item id=0, error=null}
-54335:11-25 09:21:55.465  6846  6846 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-54336:11-25 09:21:55.469  6846  6846 I AndroidRuntime: Using default boot image
-54337:11-25 09:21:55.470  6846  6846 I AndroidRuntime: Leaving lock profiling enabled
-54350:11-25 09:21:55.601  6846  6846 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-54398:11-25 09:21:56.657  6846  6846 D AndroidRuntime: Shutting down VM
-54477:11-25 09:21:56.940  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-54530:11-25 09:21:56.945  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54534:11-25 09:21:56.945  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-54587:11-25 09:21:56.950  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54605:11-25 09:21:57.936  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=260671, buffered position=277652, speed=1.0, updated=426217, actions=7339687, custom actions=[], active item id=0, error=null}
-54606:11-25 09:21:57.938  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=260671, buffered position=277652, speed=1.0, updated=426217, actions=7339687, custom actions=[], active item id=0, error=null}
-54609:11-25 09:21:59.940  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-54662:11-25 09:21:59.947  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54666:11-25 09:21:59.948  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-54719:11-25 09:21:59.951  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54745:11-25 09:22:00.940  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=263679, buffered position=280624, speed=1.0, updated=429221, actions=7339687, custom actions=[], active item id=0, error=null}
-54746:11-25 09:22:00.941  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=263679, buffered position=280624, speed=1.0, updated=429221, actions=7339687, custom actions=[], active item id=0, error=null}
-54748:11-25 09:22:02.602  6863  6863 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-54749:11-25 09:22:02.606  6863  6863 I AndroidRuntime: Using default boot image
-54750:11-25 09:22:02.606  6863  6863 I AndroidRuntime: Leaving lock profiling enabled
-54770:11-25 09:22:02.697  6863  6863 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-54816:11-25 09:22:02.944  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-54869:11-25 09:22:02.951  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54873:11-25 09:22:02.952  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-54926:11-25 09:22:02.959  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54955:11-25 09:22:03.737  6863  6863 D AndroidRuntime: Shutting down VM
-55030:11-25 09:22:03.941  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=266673, buffered position=283503, speed=1.0, updated=432222, actions=7339687, custom actions=[], active item id=0, error=null}
-55031:11-25 09:22:03.943  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=266673, buffered position=283503, speed=1.0, updated=432222, actions=7339687, custom actions=[], active item id=0, error=null}
-55034:11-25 09:22:05.945  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-55087:11-25 09:22:05.950  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55091:11-25 09:22:05.950  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-55144:11-25 09:22:05.959  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55163:11-25 09:22:06.945  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=269679, buffered position=286708, speed=1.0, updated=435225, actions=7339687, custom actions=[], active item id=0, error=null}
-55164:11-25 09:22:06.946  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=269679, buffered position=286708, speed=1.0, updated=435225, actions=7339687, custom actions=[], active item id=0, error=null}
-55170:11-25 09:22:08.948  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-55223:11-25 09:22:08.955  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55227:11-25 09:22:08.956  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-55280:11-25 09:22:08.962  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55299:11-25 09:22:09.948  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=272688, buffered position=289633, speed=1.0, updated=438229, actions=7339687, custom actions=[], active item id=0, error=null}
-55300:11-25 09:22:09.949  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=272688, buffered position=289633, speed=1.0, updated=438229, actions=7339687, custom actions=[], active item id=0, error=null}
-55308:11-25 09:22:10.952  6888  6888 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-55309:11-25 09:22:10.956  6888  6888 I AndroidRuntime: Using default boot image
-55310:11-25 09:22:10.956  6888  6888 I AndroidRuntime: Leaving lock profiling enabled
-55323:11-25 09:22:11.094  6888  6888 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-55365:11-25 09:22:11.952  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-55418:11-25 09:22:11.959  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55422:11-25 09:22:11.959  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-55475:11-25 09:22:11.964  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55506:11-25 09:22:12.151  6888  6888 D AndroidRuntime: Shutting down VM
-55577:11-25 09:22:12.952  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=275682, buffered position=292605, speed=1.0, updated=441231, actions=7339687, custom actions=[], active item id=0, error=null}
-55578:11-25 09:22:12.954  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=275682, buffered position=292605, speed=1.0, updated=441231, actions=7339687, custom actions=[], active item id=0, error=null}
-55579:11-25 09:22:14.955  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-55632:11-25 09:22:14.960  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55636:11-25 09:22:14.963  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-55689:11-25 09:22:14.966  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55709:11-25 09:22:15.952  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=278686, buffered position=295624, speed=1.0, updated=444233, actions=7339687, custom actions=[], active item id=0, error=null}
-55710:11-25 09:22:15.954  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=278686, buffered position=295624, speed=1.0, updated=444233, actions=7339687, custom actions=[], active item id=0, error=null}
-55712:11-25 09:22:17.955  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-55765:11-25 09:22:17.963  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55769:11-25 09:22:17.963  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-55822:11-25 09:22:17.971  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55840:11-25 09:22:18.956  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=281692, buffered position=298689, speed=1.0, updated=447237, actions=7339687, custom actions=[], active item id=0, error=null}
-55841:11-25 09:22:18.958  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=281692, buffered position=298689, speed=1.0, updated=447237, actions=7339687, custom actions=[], active item id=0, error=null}
-56078:11-25 09:22:20.958  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-56131:11-25 09:22:20.976  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56151:11-25 09:22:20.986  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-56209:11-25 09:22:21.004  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56349:11-25 09:22:21.974  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=284694, buffered position=301475, speed=1.0, updated=450243, actions=7339687, custom actions=[], active item id=0, error=null}
-56350:11-25 09:22:21.976  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=284694, buffered position=301475, speed=1.0, updated=450243, actions=7339687, custom actions=[], active item id=0, error=null}
-56667:11-25 09:22:23.978  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-56720:11-25 09:22:23.985  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56724:11-25 09:22:23.990  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-56777:11-25 09:22:23.996  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56956:11-25 09:22:24.972  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=287709, buffered position=304726, speed=1.0, updated=453252, actions=7339687, custom actions=[], active item id=0, error=null}
-56957:11-25 09:22:24.973  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=287709, buffered position=304726, speed=1.0, updated=453252, actions=7339687, custom actions=[], active item id=0, error=null}
-57181:11-25 09:22:26.974  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-57234:11-25 09:22:26.982  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57238:11-25 09:22:26.982  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-57291:11-25 09:22:27.114  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57346:11-25 09:22:27.781  5406  5406 I CastMediaRouteProvider: Published 0 routes
-57418:11-25 09:22:27.977  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=290619, buffered position=307651, speed=1.0, updated=456257, actions=7339687, custom actions=[], active item id=0, error=null}
-57419:11-25 09:22:27.979  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=290619, buffered position=307651, speed=1.0, updated=456257, actions=7339687, custom actions=[], active item id=0, error=null}
-57447:11-25 09:22:28.281  5406  5406 I CastMediaRouteProvider: Published 0 routes
-57473:11-25 09:22:29.981  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-57526:11-25 09:22:29.986  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57530:11-25 09:22:29.986  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-57583:11-25 09:22:29.994  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57603:11-25 09:22:30.981  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=293621, buffered position=310670, speed=1.0, updated=459261, actions=7339687, custom actions=[], active item id=0, error=null}
-57604:11-25 09:22:30.983  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=293621, buffered position=310670, speed=1.0, updated=459261, actions=7339687, custom actions=[], active item id=0, error=null}
-57624:11-25 09:22:32.993  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-57677:11-25 09:22:33.003  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57681:11-25 09:22:33.003  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-57734:11-25 09:22:33.010  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57752:11-25 09:22:33.985  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=296624, buffered position=313595, speed=1.0, updated=462266, actions=7339687, custom actions=[], active item id=0, error=null}
-57753:11-25 09:22:33.986  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=296624, buffered position=313595, speed=1.0, updated=462266, actions=7339687, custom actions=[], active item id=0, error=null}
-57812:11-25 09:22:35.830  7109  7109 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-57813:11-25 09:22:35.844  7109  7109 I AndroidRuntime: Using default boot image
-57814:11-25 09:22:35.845  7109  7109 I AndroidRuntime: Leaving lock profiling enabled
-57817:11-25 09:22:35.990  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-57871:11-25 09:22:36.077  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57875:11-25 09:22:36.082  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-57928:11-25 09:22:36.101  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57959:11-25 09:22:36.461  7109  7109 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-58003:11-25 09:22:37.007  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=299623, buffered position=316614, speed=1.0, updated=465268, actions=7339687, custom actions=[], active item id=0, error=null}
-58004:11-25 09:22:37.008  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=299623, buffered position=316614, speed=1.0, updated=465268, actions=7339687, custom actions=[], active item id=0, error=null}
-58038:11-25 09:22:38.872  7109  7109 D AndroidRuntime: Shutting down VM
-58090:11-25 09:22:39.015  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-58143:11-25 09:22:39.053  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58147:11-25 09:22:39.060  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-58204:11-25 09:22:39.088  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58294:11-25 09:22:40.009  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=302565, buffered position=319679, speed=1.0, updated=468290, actions=7339687, custom actions=[], active item id=0, error=null}
-58295:11-25 09:22:40.011  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=302565, buffered position=319679, speed=1.0, updated=468290, actions=7339687, custom actions=[], active item id=0, error=null}
-58316:11-25 09:22:42.013  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-58369:11-25 09:22:42.020  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58373:11-25 09:22:42.024  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-58426:11-25 09:22:42.039  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58470:11-25 09:22:42.459   531   531 D MediaSessionService: Media button session is changed to com.google.android.googlequicksearchbox/PodcastPlayer (userId=0)
-58476:11-25 09:22:42.466  1056  1056 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-58484:11-25 09:22:42.476   531  2026 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:com.google.android.bluetooth targetPackage:com.google.android.googlequicksearchbox reason:MediaSessionRecord:android.support.v4.media.session.command.GET_EXTRA_BINDER [WIU] [FGS]
-58560:11-25 09:22:42.524  1056  1056 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-58572:11-25 09:22:43.224  7138  7138 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-58573:11-25 09:22:43.246  7138  7138 I AndroidRuntime: Using default boot image
-58574:11-25 09:22:43.249  7138  7138 I AndroidRuntime: Leaving lock profiling enabled
-58588:11-25 09:22:43.484  7138  7138 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-58721:11-25 09:22:46.768  7138  7138 D AndroidRuntime: Shutting down VM
-58791:11-25 09:22:50.691  7183  7183 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-58792:11-25 09:22:50.696  7183  7183 I AndroidRuntime: Using default boot image
-58793:11-25 09:22:50.696  7183  7183 I AndroidRuntime: Leaving lock profiling enabled
-58807:11-25 09:22:50.816  7183  7183 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-58874:11-25 09:22:52.001  7183  7183 D AndroidRuntime: Shutting down VM
-58944:11-25 09:22:52.531   531   531 D MediaSessionService: Media button session is changed to net.kravos.player/androidx.media3.session.id. (userId=0)
-58946:11-25 09:22:52.532  1056  1056 I MediaPlayerList: onMediaKeyEventSessionChanged: token=net.kravos.player
-58948:11-25 09:22:52.534  1056  1056 D MediaPlayerList: setActivePlayer(): setting player to net.kravos.player
-58949:11-25 09:22:52.535   531  2017 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:com.google.android.bluetooth targetPackage:net.kravos.player reason:MediaSessionRecord:android.support.v4.media.session.command.GET_EXTRA_BINDER [WIU] [FGS]
-58951:11-25 09:22:52.538  1056  1056 I MediaPlayerList: onMediaKeyEventSessionChanged: token=net.kravos.player
-58952:11-25 09:22:52.541  1056  1056 D MediaPlayerList: setActivePlayer(): setting player to net.kravos.player
-58955:11-25 09:22:52.542  1056  1056 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-58961:11-25 09:22:52.544  1056  1056 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-59007:11-25 09:22:55.022  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=317581, buffered position=334632, speed=1.0, updated=483303, actions=7339687, custom actions=[], active item id=0, error=null}
-59008:11-25 09:22:55.023  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=317581, buffered position=334632, speed=1.0, updated=483303, actions=7339687, custom actions=[], active item id=0, error=null}
-59014:11-25 09:22:57.023  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-59067:11-25 09:22:57.036  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-59071:11-25 09:22:57.040  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-59124:11-25 09:22:57.046  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-59154:11-25 09:22:58.026  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=320589, buffered position=337697, speed=1.0, updated=486305, actions=7339687, custom actions=[], active item id=0, error=null}
-59155:11-25 09:22:58.027  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=320589, buffered position=337697, speed=1.0, updated=486305, actions=7339687, custom actions=[], active item id=0, error=null}
-59157:11-25 09:22:58.371  7210  7210 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-59158:11-25 09:22:58.384  7210  7210 I AndroidRuntime: Using default boot image
-59159:11-25 09:22:58.385  7210  7210 I AndroidRuntime: Leaving lock profiling enabled
-59173:11-25 09:22:58.629  7210  7210 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-59216:11-25 09:23:00.030  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-59269:11-25 09:23:00.047  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-59273:11-25 09:23:00.054  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-59326:11-25 09:23:00.064  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-59353:11-25 09:23:01.028  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=323590, buffered position=340808, speed=1.0, updated=489309, actions=7339687, custom actions=[], active item id=0, error=null}
-59354:11-25 09:23:01.029  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=323590, buffered position=340808, speed=1.0, updated=489309, actions=7339687, custom actions=[], active item id=0, error=null}
-59371:11-25 09:23:03.031  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-59424:11-25 09:23:03.049  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-59428:11-25 09:23:03.071  1056  1056 E AudioMediaPlayerWrapper: Timeout while waiting for metadata to sync for net.kravos.player
-59481:11-25 09:23:03.102  1056  1056 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-59514:11-25 09:23:03.190  7210  7210 D AndroidRuntime: Shutting down VM
-59643:11-25 09:23:04.031  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=326594, buffered position=343734, speed=1.0, updated=492311, actions=7339687, custom actions=[], active item id=0, error=null}
-59644:11-25 09:23:04.033  1056  1056 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=326594, buffered position=343734, speed=1.0, updated=492311, actions=7339687, custom actions=[], active item id=0, error=null}
-59676:11-25 09:23:04.637   531   531 D MediaSessionService: Media button session is changed to com.google.android.googlequicksearchbox/PodcastPlayer (userId=0)
-59678:11-25 09:23:04.639  1056  1056 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-59700:11-25 09:23:04.644  1056  1056 D MediaPlayerList: onActiveSessionsChanged: controller: net.kravos.player
-59707:11-25 09:23:04.649   531  2044 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:com.google.android.bluetooth targetPackage:com.google.android.googlequicksearchbox reason:MediaSessionRecord:android.support.v4.media.session.command.GET_EXTRA_BINDER [WIU] [FGS]
+45834:11-25 09:35:42.401  6375  6375 D AndroidRuntime: Shutting down VM
+45967:11-25 09:35:49.596  6402  6402 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+45968:11-25 09:35:49.600  6402  6402 I AndroidRuntime: Using default boot image
+45969:11-25 09:35:49.600  6402  6402 I AndroidRuntime: Leaving lock profiling enabled
+45982:11-25 09:35:49.699  6402  6402 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+46028:11-25 09:35:50.770  6402  6402 D AndroidRuntime: Shutting down VM
+46186:11-25 09:35:54.718  6423  6423 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+46187:11-25 09:35:54.721  6423  6423 I AndroidRuntime: Using default boot image
+46188:11-25 09:35:54.721  6423  6423 I AndroidRuntime: Leaving lock profiling enabled
+46201:11-25 09:35:54.800  6423  6423 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+46259:11-25 09:35:55.842  6423  6423 D AndroidRuntime: Shutting down VM
+46330:11-25 09:35:59.747  6439  6439 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+46331:11-25 09:35:59.751  6439  6439 I AndroidRuntime: Using default boot image
+46332:11-25 09:35:59.751  6439  6439 I AndroidRuntime: Leaving lock profiling enabled
+46345:11-25 09:35:59.833  6439  6439 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+46404:11-25 09:36:00.873  6439  6439 D AndroidRuntime: Shutting down VM
+46534:11-25 09:36:04.840  6474  6474 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+46535:11-25 09:36:04.844  6474  6474 I AndroidRuntime: Using default boot image
+46536:11-25 09:36:04.844  6474  6474 I AndroidRuntime: Leaving lock profiling enabled
+46549:11-25 09:36:04.923  6474  6474 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+46596:11-25 09:36:05.950  6474  6474 D AndroidRuntime: Shutting down VM
+46677:11-25 09:36:09.879  6490  6490 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+46678:11-25 09:36:09.883  6490  6490 I AndroidRuntime: Using default boot image
+46679:11-25 09:36:09.883  6490  6490 I AndroidRuntime: Leaving lock profiling enabled
+46692:11-25 09:36:09.966  6490  6490 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+46750:11-25 09:36:11.006  6490  6490 D AndroidRuntime: Shutting down VM
+46821:11-25 09:36:14.957  6506  6506 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+46822:11-25 09:36:14.961  6506  6506 I AndroidRuntime: Using default boot image
+46823:11-25 09:36:14.961  6506  6506 I AndroidRuntime: Leaving lock profiling enabled
+46836:11-25 09:36:15.052  6506  6506 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+46893:11-25 09:36:16.096  6506  6506 D AndroidRuntime: Shutting down VM
+46963:11-25 09:36:20.008  6525  6525 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+46964:11-25 09:36:20.012  6525  6525 I AndroidRuntime: Using default boot image
+46965:11-25 09:36:20.012  6525  6525 I AndroidRuntime: Leaving lock profiling enabled
+46978:11-25 09:36:20.106  6525  6525 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+47033:11-25 09:36:21.139  6525  6525 D AndroidRuntime: Shutting down VM
+47106:11-25 09:36:25.051  6542  6542 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+47107:11-25 09:36:25.055  6542  6542 I AndroidRuntime: Using default boot image
+47108:11-25 09:36:25.055  6542  6542 I AndroidRuntime: Leaving lock profiling enabled
+47121:11-25 09:36:25.139  6542  6542 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+47222:11-25 09:36:26.206  6542  6542 D AndroidRuntime: Shutting down VM
+47260:11-25 09:36:30.136  6565  6565 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+47261:11-25 09:36:30.140  6565  6565 I AndroidRuntime: Using default boot image
+47262:11-25 09:36:30.140  6565  6565 I AndroidRuntime: Leaving lock profiling enabled
+47275:11-25 09:36:30.223  6565  6565 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+47333:11-25 09:36:31.265  6565  6565 D AndroidRuntime: Shutting down VM
+47400:11-25 09:36:35.179  6583  6583 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+47401:11-25 09:36:35.182  6583  6583 I AndroidRuntime: Using default boot image
+47402:11-25 09:36:35.182  6583  6583 I AndroidRuntime: Leaving lock profiling enabled
+47415:11-25 09:36:35.264  6583  6583 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+47471:11-25 09:36:36.298  6583  6583 D AndroidRuntime: Shutting down VM
+47540:11-25 09:36:40.212  6600  6600 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+47541:11-25 09:36:40.215  6600  6600 I AndroidRuntime: Using default boot image
+47542:11-25 09:36:40.215  6600  6600 I AndroidRuntime: Leaving lock profiling enabled
+47555:11-25 09:36:40.302  6600  6600 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+47612:11-25 09:36:41.339  6600  6600 D AndroidRuntime: Shutting down VM
+47681:11-25 09:36:45.261  6617  6617 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+47682:11-25 09:36:45.264  6617  6617 I AndroidRuntime: Using default boot image
+47683:11-25 09:36:45.264  6617  6617 I AndroidRuntime: Leaving lock profiling enabled
+47696:11-25 09:36:45.348  6617  6617 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+47744:11-25 09:36:46.397  6617  6617 D AndroidRuntime: Shutting down VM
+47914:11-25 09:36:50.333  6642  6642 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+47915:11-25 09:36:50.337  6642  6642 I AndroidRuntime: Using default boot image
+47916:11-25 09:36:50.337  6642  6642 I AndroidRuntime: Leaving lock profiling enabled
+47930:11-25 09:36:50.423  6642  6642 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+47976:11-25 09:36:51.450  6642  6642 D AndroidRuntime: Shutting down VM
+48082:11-25 09:36:55.368  6662  6662 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+48083:11-25 09:36:55.371  6662  6662 I AndroidRuntime: Using default boot image
+48084:11-25 09:36:55.371  6662  6662 I AndroidRuntime: Leaving lock profiling enabled
+48097:11-25 09:36:55.453  6662  6662 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+48144:11-25 09:36:56.483  6662  6662 D AndroidRuntime: Shutting down VM
+49324:11-25 09:37:00.401  6698  6698 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+49325:11-25 09:37:00.405  6698  6698 I AndroidRuntime: Using default boot image
+49326:11-25 09:37:00.405  6698  6698 I AndroidRuntime: Leaving lock profiling enabled
+49339:11-25 09:37:00.488  6698  6698 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+49403:11-25 09:37:01.542  6698  6698 D AndroidRuntime: Shutting down VM
+49467:11-25 09:37:05.454  6714  6714 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+49468:11-25 09:37:05.458  6714  6714 I AndroidRuntime: Using default boot image
+49469:11-25 09:37:05.458  6714  6714 I AndroidRuntime: Leaving lock profiling enabled
+49482:11-25 09:37:05.539  6714  6714 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+49538:11-25 09:37:06.585  6714  6714 D AndroidRuntime: Shutting down VM
+49609:11-25 09:37:10.509  6731  6731 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+49610:11-25 09:37:10.513  6731  6731 I AndroidRuntime: Using default boot image
+49611:11-25 09:37:10.513  6731  6731 I AndroidRuntime: Leaving lock profiling enabled
+49624:11-25 09:37:10.598  6731  6731 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+49682:11-25 09:37:11.638  6731  6731 D AndroidRuntime: Shutting down VM
+49754:11-25 09:37:15.555  6753  6753 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+49755:11-25 09:37:15.559  6753  6753 I AndroidRuntime: Using default boot image
+49756:11-25 09:37:15.559  6753  6753 I AndroidRuntime: Leaving lock profiling enabled
+49769:11-25 09:37:15.640  6753  6753 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+49828:11-25 09:37:16.682  6753  6753 D AndroidRuntime: Shutting down VM
+49895:11-25 09:37:20.602  6770  6770 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+49896:11-25 09:37:20.606  6770  6770 I AndroidRuntime: Using default boot image
+49897:11-25 09:37:20.606  6770  6770 I AndroidRuntime: Leaving lock profiling enabled
+49910:11-25 09:37:20.690  6770  6770 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+49965:11-25 09:37:21.715  6770  6770 D AndroidRuntime: Shutting down VM
+50036:11-25 09:37:25.642  6789  6789 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+50037:11-25 09:37:25.646  6789  6789 I AndroidRuntime: Using default boot image
+50038:11-25 09:37:25.646  6789  6789 I AndroidRuntime: Leaving lock profiling enabled
+50052:11-25 09:37:25.732  6789  6789 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+50106:11-25 09:37:26.756  6789  6789 D AndroidRuntime: Shutting down VM
+50176:11-25 09:37:30.708  6806  6806 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+50177:11-25 09:37:30.712  6806  6806 I AndroidRuntime: Using default boot image
+50178:11-25 09:37:30.712  6806  6806 I AndroidRuntime: Leaving lock profiling enabled
+50191:11-25 09:37:30.801  6806  6806 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+50382:11-25 09:37:31.855  6806  6806 D AndroidRuntime: Shutting down VM
+50514:11-25 09:37:38.987  6846  6846 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+50515:11-25 09:37:38.992  6846  6846 I AndroidRuntime: Using default boot image
+50516:11-25 09:37:38.992  6846  6846 I AndroidRuntime: Leaving lock profiling enabled
+50530:11-25 09:37:39.120  6846  6846 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+50581:11-25 09:37:40.202  6846  6846 D AndroidRuntime: Shutting down VM
+50657:11-25 09:37:44.112  6868  6868 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+50658:11-25 09:37:44.115  6868  6868 I AndroidRuntime: Using default boot image
+50659:11-25 09:37:44.115  6868  6868 I AndroidRuntime: Leaving lock profiling enabled
+50672:11-25 09:37:44.209  6868  6868 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+50757:11-25 09:37:45.272  6868  6868 D AndroidRuntime: Shutting down VM
+50803:11-25 09:37:49.176  6885  6885 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+50804:11-25 09:37:49.179  6885  6885 I AndroidRuntime: Using default boot image
+50805:11-25 09:37:49.180  6885  6885 I AndroidRuntime: Leaving lock profiling enabled
+50818:11-25 09:37:49.265  6885  6885 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+50881:11-25 09:37:50.341  6885  6885 D AndroidRuntime: Shutting down VM
+50957:11-25 09:37:54.254  6903  6903 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+50958:11-25 09:37:54.258  6903  6903 I AndroidRuntime: Using default boot image
+50959:11-25 09:37:54.258  6903  6903 I AndroidRuntime: Leaving lock profiling enabled
+50972:11-25 09:37:54.338  6903  6903 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+51030:11-25 09:37:55.379  6903  6903 D AndroidRuntime: Shutting down VM
+51128:11-25 09:37:59.297  6921  6921 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+51129:11-25 09:37:59.301  6921  6921 I AndroidRuntime: Using default boot image
+51130:11-25 09:37:59.301  6921  6921 I AndroidRuntime: Leaving lock profiling enabled
+51143:11-25 09:37:59.382  6921  6921 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+51202:11-25 09:38:00.422  6921  6921 D AndroidRuntime: Shutting down VM
+51290:11-25 09:38:04.339  6939  6939 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+51291:11-25 09:38:04.343  6939  6939 I AndroidRuntime: Using default boot image
+51292:11-25 09:38:04.343  6939  6939 I AndroidRuntime: Leaving lock profiling enabled
+51305:11-25 09:38:04.426  6939  6939 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+51365:11-25 09:38:05.481  6939  6939 D AndroidRuntime: Shutting down VM
+51436:11-25 09:38:09.385  6956  6956 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+51437:11-25 09:38:09.389  6956  6956 I AndroidRuntime: Using default boot image
+51438:11-25 09:38:09.389  6956  6956 I AndroidRuntime: Leaving lock profiling enabled
+51451:11-25 09:38:09.472  6956  6956 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+51510:11-25 09:38:10.515  6956  6956 D AndroidRuntime: Shutting down VM
+51581:11-25 09:38:14.427  6973  6973 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+51582:11-25 09:38:14.431  6973  6973 I AndroidRuntime: Using default boot image
+51583:11-25 09:38:14.431  6973  6973 I AndroidRuntime: Leaving lock profiling enabled
+51596:11-25 09:38:14.512  6973  6973 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+51657:11-25 09:38:15.549  6973  6973 D AndroidRuntime: Shutting down VM
+51727:11-25 09:38:19.454  6991  6991 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+51728:11-25 09:38:19.458  6991  6991 I AndroidRuntime: Using default boot image
+51729:11-25 09:38:19.458  6991  6991 I AndroidRuntime: Leaving lock profiling enabled
+51742:11-25 09:38:19.541  6991  6991 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+51803:11-25 09:38:20.583  6991  6991 D AndroidRuntime: Shutting down VM
+51868:11-25 09:38:24.502  7008  7008 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+51869:11-25 09:38:24.506  7008  7008 I AndroidRuntime: Using default boot image
+51870:11-25 09:38:24.506  7008  7008 I AndroidRuntime: Leaving lock profiling enabled
+51883:11-25 09:38:24.591  7008  7008 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+51946:11-25 09:38:25.642  7008  7008 D AndroidRuntime: Shutting down VM
+52015:11-25 09:38:29.561  7025  7025 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+52016:11-25 09:38:29.565  7025  7025 I AndroidRuntime: Using default boot image
+52017:11-25 09:38:29.565  7025  7025 I AndroidRuntime: Leaving lock profiling enabled
+52030:11-25 09:38:29.651  7025  7025 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+52092:11-25 09:38:30.694  7025  7025 D AndroidRuntime: Shutting down VM
+52159:11-25 09:38:34.607  7042  7042 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+52160:11-25 09:38:34.611  7042  7042 I AndroidRuntime: Using default boot image
+52161:11-25 09:38:34.611  7042  7042 I AndroidRuntime: Leaving lock profiling enabled
+52174:11-25 09:38:34.698  7042  7042 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+52234:11-25 09:38:35.743  7042  7042 D AndroidRuntime: Shutting down VM
+52343:11-25 09:38:44.407  7074  7074 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+52344:11-25 09:38:44.412  7074  7074 I AndroidRuntime: Using default boot image
+52345:11-25 09:38:44.412  7074  7074 I AndroidRuntime: Leaving lock profiling enabled
+52359:11-25 09:38:44.523  7074  7074 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+52407:11-25 09:38:45.611  7074  7074 D AndroidRuntime: Shutting down VM
+52512:11-25 09:38:56.024  7109  7109 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+52513:11-25 09:38:56.029  7109  7109 I AndroidRuntime: Using default boot image
+52514:11-25 09:38:56.029  7109  7109 I AndroidRuntime: Leaving lock profiling enabled
+52527:11-25 09:38:56.138  7109  7109 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+52584:11-25 09:38:57.196  7109  7109 D AndroidRuntime: Shutting down VM
+52673:11-25 09:39:01.154  7128  7128 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+52674:11-25 09:39:01.158  7128  7128 I AndroidRuntime: Using default boot image
+52675:11-25 09:39:01.158  7128  7128 I AndroidRuntime: Leaving lock profiling enabled
+52688:11-25 09:39:01.269  7128  7128 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+52746:11-25 09:39:02.323  7128  7128 D AndroidRuntime: Shutting down VM
+52819:11-25 09:39:06.259  7145  7145 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+52820:11-25 09:39:06.263  7145  7145 I AndroidRuntime: Using default boot image
+52821:11-25 09:39:06.263  7145  7145 I AndroidRuntime: Leaving lock profiling enabled
+52834:11-25 09:39:06.345  7145  7145 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+52895:11-25 09:39:07.375  7145  7145 D AndroidRuntime: Shutting down VM
+52959:11-25 09:39:11.315  7162  7162 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+52960:11-25 09:39:11.319  7162  7162 I AndroidRuntime: Using default boot image
+52961:11-25 09:39:11.319  7162  7162 I AndroidRuntime: Leaving lock profiling enabled
+52974:11-25 09:39:11.402  7162  7162 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+53032:11-25 09:39:12.464  7162  7162 D AndroidRuntime: Shutting down VM
+53101:11-25 09:39:16.379  7179  7179 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+53102:11-25 09:39:16.383  7179  7179 I AndroidRuntime: Using default boot image
+53103:11-25 09:39:16.383  7179  7179 I AndroidRuntime: Leaving lock profiling enabled
+53116:11-25 09:39:16.476  7179  7179 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+53165:11-25 09:39:17.518  7179  7179 D AndroidRuntime: Shutting down VM
+53531:11-25 09:39:21.428  7224  7224 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+53532:11-25 09:39:21.432  7224  7224 I AndroidRuntime: Using default boot image
+53533:11-25 09:39:21.432  7224  7224 I AndroidRuntime: Leaving lock profiling enabled
+53546:11-25 09:39:21.517  7224  7224 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+53606:11-25 09:39:22.558  7224  7224 D AndroidRuntime: Shutting down VM
+53671:11-25 09:39:26.471  7241  7241 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+53672:11-25 09:39:26.474  7241  7241 I AndroidRuntime: Using default boot image
+53673:11-25 09:39:26.474  7241  7241 I AndroidRuntime: Leaving lock profiling enabled
+53686:11-25 09:39:26.557  7241  7241 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+53737:11-25 09:39:27.599  7241  7241 D AndroidRuntime: Shutting down VM
+53813:11-25 09:39:31.525  7258  7258 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+53814:11-25 09:39:31.529  7258  7258 I AndroidRuntime: Using default boot image
+53815:11-25 09:39:31.529  7258  7258 I AndroidRuntime: Leaving lock profiling enabled
+53828:11-25 09:39:31.612  7258  7258 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+53885:11-25 09:39:32.658  7258  7258 D AndroidRuntime: Shutting down VM
+53957:11-25 09:39:36.579  7275  7275 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+53958:11-25 09:39:36.582  7275  7275 I AndroidRuntime: Using default boot image
+53959:11-25 09:39:36.582  7275  7275 I AndroidRuntime: Leaving lock profiling enabled
+53974:11-25 09:39:36.680  7275  7275 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+54033:11-25 09:39:37.721  7275  7275 D AndroidRuntime: Shutting down VM
+54097:11-25 09:39:41.685  7292  7292 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+54098:11-25 09:39:41.689  7292  7292 I AndroidRuntime: Using default boot image
+54099:11-25 09:39:41.689  7292  7292 I AndroidRuntime: Leaving lock profiling enabled
+54112:11-25 09:39:41.809  7292  7292 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+54168:11-25 09:39:42.841  7292  7292 D AndroidRuntime: Shutting down VM
+54239:11-25 09:39:46.752  7308  7308 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+54240:11-25 09:39:46.756  7308  7308 I AndroidRuntime: Using default boot image
+54241:11-25 09:39:46.756  7308  7308 I AndroidRuntime: Leaving lock profiling enabled
+54254:11-25 09:39:46.839  7308  7308 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+54308:11-25 09:39:47.885  7308  7308 D AndroidRuntime: Shutting down VM
+54381:11-25 09:39:51.881  7325  7325 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+54382:11-25 09:39:51.885  7325  7325 I AndroidRuntime: Using default boot image
+54383:11-25 09:39:51.885  7325  7325 I AndroidRuntime: Leaving lock profiling enabled
+54396:11-25 09:39:51.971  7325  7325 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+54450:11-25 09:39:53.010  7325  7325 D AndroidRuntime: Shutting down VM
+54541:11-25 09:40:12.183  7346  7346 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+54542:11-25 09:40:12.187  7346  7346 I AndroidRuntime: Using default boot image
+54543:11-25 09:40:12.188  7346  7346 I AndroidRuntime: Leaving lock profiling enabled
+54556:11-25 09:40:12.294  7346  7346 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+54616:11-25 09:40:13.358  7346  7346 D AndroidRuntime: Shutting down VM
+54687:11-25 09:40:20.548  7368  7368 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+54688:11-25 09:40:20.552  7368  7368 I AndroidRuntime: Using default boot image
+54689:11-25 09:40:20.552  7368  7368 I AndroidRuntime: Leaving lock profiling enabled
+54702:11-25 09:40:20.656  7368  7368 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+54758:11-25 09:40:21.724  7368  7368 D AndroidRuntime: Shutting down VM
+54830:11-25 09:40:29.666  7386  7386 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+54831:11-25 09:40:29.670  7386  7386 I AndroidRuntime: Using default boot image
+54832:11-25 09:40:29.670  7386  7386 I AndroidRuntime: Leaving lock profiling enabled
+54845:11-25 09:40:29.751  7386  7386 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+54903:11-25 09:40:30.790  7386  7386 D AndroidRuntime: Shutting down VM
+54979:11-25 09:40:54.751  7403  7403 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+54980:11-25 09:40:54.755  7403  7403 I AndroidRuntime: Using default boot image
+54981:11-25 09:40:54.755  7403  7403 I AndroidRuntime: Leaving lock profiling enabled
+54994:11-25 09:40:54.839  7403  7403 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+55057:11-25 09:40:55.886  7403  7403 D AndroidRuntime: Shutting down VM
+55193:11-25 09:41:05.410  7439  7439 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+55194:11-25 09:41:05.414  7439  7439 I AndroidRuntime: Using default boot image
+55195:11-25 09:41:05.414  7439  7439 I AndroidRuntime: Leaving lock profiling enabled
+55208:11-25 09:41:05.516  7439  7439 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+55262:11-25 09:41:06.584  7439  7439 D AndroidRuntime: Shutting down VM
+55341:11-25 09:41:12.780  7460  7460 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+55342:11-25 09:41:12.785  7460  7460 I AndroidRuntime: Using default boot image
+55343:11-25 09:41:12.785  7460  7460 I AndroidRuntime: Leaving lock profiling enabled
+55357:11-25 09:41:12.894  7460  7460 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+55417:11-25 09:41:13.960  7460  7460 D AndroidRuntime: Shutting down VM
+55496:11-25 09:41:24.235  7494  7494 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+55497:11-25 09:41:24.239  7494  7494 I AndroidRuntime: Using default boot image
+55498:11-25 09:41:24.239  7494  7494 I AndroidRuntime: Leaving lock profiling enabled
+55511:11-25 09:41:24.342  7494  7494 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+55568:11-25 09:41:25.393  7494  7494 D AndroidRuntime: Shutting down VM
+55637:11-25 09:41:31.330  7510  7510 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+55638:11-25 09:41:31.334  7510  7510 I AndroidRuntime: Using default boot image
+55639:11-25 09:41:31.334  7510  7510 I AndroidRuntime: Leaving lock profiling enabled
+55652:11-25 09:41:31.416  7510  7510 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+55699:11-25 09:41:32.441  7510  7510 D AndroidRuntime: Shutting down VM
+55784:11-25 09:41:39.658  7534  7534 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+55785:11-25 09:41:39.663  7534  7534 I AndroidRuntime: Using default boot image
+55786:11-25 09:41:39.663  7534  7534 I AndroidRuntime: Leaving lock profiling enabled
+55799:11-25 09:41:39.769  7534  7534 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+55848:11-25 09:41:40.865  7534  7534 D AndroidRuntime: Shutting down VM
+56925:11-25 09:41:56.250  5667  5667 I CastMediaRouteProvider: Published 0 routes
+56953:11-25 09:41:56.746  5667  5667 I CastMediaRouteProvider: Published 0 routes
+57014:11-25 09:42:03.193  7748  7748 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+57015:11-25 09:42:03.200  7748  7748 I AndroidRuntime: Using default boot image
+57016:11-25 09:42:03.200  7748  7748 I AndroidRuntime: Leaving lock profiling enabled
+57047:11-25 09:42:03.526  7748  7748 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+57136:11-25 09:42:05.789  7748  7748 D AndroidRuntime: Shutting down VM
+57253:11-25 09:42:09.429   524   524 D MediaSessionService: Media button session is changed to com.google.android.googlequicksearchbox/PodcastPlayer (userId=0)
+57338:11-25 09:42:09.482   524  1779 I MediaSessionService: tempAllowlistTargetPkgIfPossible callingPackage:com.google.android.bluetooth targetPackage:com.google.android.googlequicksearchbox reason:MediaSessionRecord:android.support.v4.media.session.command.GET_EXTRA_BINDER [WIU] [FGS]
+57363:11-25 09:42:10.008  7797  7797 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+57364:11-25 09:42:10.020  7797  7797 I AndroidRuntime: Using default boot image
+57365:11-25 09:42:10.020  7797  7797 I AndroidRuntime: Leaving lock profiling enabled
+57379:11-25 09:42:10.380  7797  7797 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+57534:11-25 09:42:14.745  7797  7797 D AndroidRuntime: Shutting down VM
+57605:11-25 09:42:18.673  7846  7846 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+57606:11-25 09:42:18.677  7846  7846 I AndroidRuntime: Using default boot image
+57607:11-25 09:42:18.677  7846  7846 I AndroidRuntime: Leaving lock profiling enabled
+57620:11-25 09:42:18.786  7846  7846 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+57692:11-25 09:42:20.102  7846  7846 D AndroidRuntime: Shutting down VM
+57785:11-25 09:42:26.418  7874  7874 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+57786:11-25 09:42:26.434  7874  7874 I AndroidRuntime: Using default boot image
+57787:11-25 09:42:26.435  7874  7874 I AndroidRuntime: Leaving lock profiling enabled
+57800:11-25 09:42:26.651  7874  7874 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+57880:11-25 09:42:34.456  7874  7874 D AndroidRuntime: Shutting down VM

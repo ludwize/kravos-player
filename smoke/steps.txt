@@ -1,22 +1,22 @@
 tapped Allow
-tapped Settings
-tapped Lists
-tapped Search
-tapped Library
+not found: Settings
+not found: Lists
+not found: Search
+not found: Library
 tapped Connect Google Drive
 not found: Connect
-tapped Radio
-tapped Play station
-tapped Open player
-tapped World
-tapped Library
+not found: Radio
+not found: Play station
+not found: Open player
+not found: World
+not found: Library
 not found: Browse Google Drive
-tapped Podcasts
-tapped Find podcasts
-tapped Open show
-tapped Episode details
+not found: Podcasts
+not found: Find podcasts
+not found: Open show (waited 60 s)
+not found: Episode details
 not found: Play episode (waited 60 s)
-tapped Open player
+not found: Open player
 not found: Forward 30 seconds
 not found: Download
 not found: Episode notes
