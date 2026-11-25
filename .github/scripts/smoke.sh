@@ -27,7 +27,8 @@ hits = []
 for n in root.iter('node'):
     if n.get('text') == want or n.get('content-desc') == want:
         x1, y1, x2, y2 = map(int, re.findall(r'\d+', n.get('bounds')))
-        if y2 - y1 >= 20:  # skip rows clipped under a toolbar
+        # When picking the n-th match in a list, skip rows clipped under the toolbar.
+        if nth == 0 or y2 - y1 >= 30:
             hits.append(((x1 + x2) // 2, (y1 + y2) // 2))
 if hits:
     x, y = hits[min(nth, len(hits) - 1)]
