@@ -60,6 +60,8 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -104,10 +106,19 @@ fun PodcastsScreen(vm: MainViewModel) {
             vm.clearPodMessage()
         }
     }
-    when (val s = vm.podCurrent) {
-        PodScreen.Home -> PodHome(vm)
-        PodScreen.Search -> PodSearch(vm)
-        is PodScreen.Show -> PodShow(vm, s.podcast)
+    val holder = rememberSaveableStateHolder()
+    val s = vm.podCurrent
+    val key = when (s) {
+        PodScreen.Home -> "home"
+        PodScreen.Search -> "search"
+        is PodScreen.Show -> "show-${s.podcast.id}"
+    }
+    holder.SaveableStateProvider(key) {
+        when (s) {
+            PodScreen.Home -> PodHome(vm)
+            PodScreen.Search -> PodSearch(vm)
+            is PodScreen.Show -> PodShow(vm, s.podcast)
+        }
     }
 }
 
@@ -286,8 +297,8 @@ private fun PodShow(vm: MainViewModel, initial: Podcast) {
     val state: ShowState = shows[initial.id] ?: ShowState(initial, loading = true)
     val p = state.podcast
     val subscribed = subs.any { it.id == p.id }
-    var oldestFirst by remember(p.id) { mutableStateOf(false) }
-    var hidePlayed by remember(p.id) { mutableStateOf(false) }
+    var oldestFirst by rememberSaveable(p.id) { mutableStateOf(false) }
+    var hidePlayed by rememberSaveable(p.id) { mutableStateOf(false) }
 
     LaunchedEffect(initial.id) { vm.loadShow(initial) }
 

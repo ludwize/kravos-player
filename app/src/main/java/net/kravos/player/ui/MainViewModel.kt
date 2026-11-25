@@ -457,6 +457,14 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    private val browserListStates = HashMap<String, LazyListState>()
+
+    /** Scroll position per Drive folder (and per search), so going back up shows the same spot. */
+    fun browserListState(b: BrowserState): LazyListState {
+        val key = b.searchQuery?.let { "q:$it" } ?: b.path.joinToString("/") { it.first }.ifEmpty { "top" }
+        return browserListStates.getOrPut(key) { LazyListState() }
+    }
+
     fun browserBack(): Boolean {
         val b = _browser.value
         if (b.searchQuery != null) {

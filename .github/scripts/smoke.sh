@@ -105,14 +105,26 @@ tap_text "Podcasts"
 sleep 3
 adb exec-out screencap -p > "$OUT/13-podcasts-home.png"
 tap_text "Find podcasts"
+# Scroll the chart down; after opening a show and coming back it must still be scrolled (14a vs 20b).
+for t in $(seq 1 20); do
+  adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1; adb pull /sdcard/ui.xml "$OUT/ui.xml" >/dev/null 2>&1
+  grep -q 'content-desc="Open show"' "$OUT/ui.xml" && break; sleep 3
+done
+adb shell input swipe $((W / 2)) $((H * 3 / 4)) $((W / 2)) $((H / 3)) 400
+sleep 2
+adb exec-out screencap -p > "$OUT/14a-podcast-chart-scrolled.png"
 wait_tap "Open show" 60
 sleep 2
 adb exec-out screencap -p > "$OUT/15-podcast-show.png"
+adb shell input swipe $((W / 2)) $((H * 3 / 4)) $((W / 2)) $((H / 3)) 400
+sleep 2
+adb exec-out screencap -p > "$OUT/15a-podcast-show-scrolled.png"
 wait_tap "Episode details" 60
 sleep 4
 adb exec-out screencap -p > "$OUT/15b-podcast-episode-details.png"
 adb shell input keyevent KEYCODE_BACK
 sleep 2
+adb exec-out screencap -p > "$OUT/15c-podcast-show-after-details.png"
 wait_tap "Play episode" 60
 sleep 15
 adb exec-out screencap -p > "$OUT/16-podcast-playing.png"
@@ -150,7 +162,8 @@ adb shell dumpsys media_session > "$OUT/media_session_podcast.txt" 2>&1
 
 # Typed search through the directory, subscribe, and the home page listing the subscription.
 tap_text "Back"
-sleep 2
+sleep 3
+adb exec-out screencap -p > "$OUT/20b-podcast-chart-after-back.png"
 adb shell input tap $((W / 2)) $((H * 19 / 100))
 sleep 1
 adb shell input text balkan

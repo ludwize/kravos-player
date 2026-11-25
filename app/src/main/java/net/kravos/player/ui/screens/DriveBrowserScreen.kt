@@ -101,7 +101,7 @@ fun DriveBrowserScreen(vm: MainViewModel) {
         val folderId = b.path.lastOrNull()?.first
         val realFolder = b.searchQuery == null && folderId != null && folderId != MainViewModel.SHARED
         when {
-            atTop -> LazyColumn(Modifier.fillMaxSize()) {
+            atTop -> LazyColumn(Modifier.fillMaxSize(), state = vm.browserListState(b)) {
                 item { SimpleRow("My Drive", "All your folders", null, Icons.Default.Folder) { vm.browserOpen(listOf("root" to "My Drive")) } }
                 item {
                     SimpleRow("Shared with me", "Folders others shared with you", null, Icons.Default.FolderShared) {
@@ -111,7 +111,7 @@ fun DriveBrowserScreen(vm: MainViewModel) {
             }
             b.loading -> Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { CircularProgressIndicator() }
             b.error != null && b.folders.isEmpty() && b.files.isEmpty() -> EmptyState(b.error ?: "")
-            else -> LazyColumn(Modifier.fillMaxSize()) {
+            else -> LazyColumn(Modifier.fillMaxSize(), state = vm.browserListState(b)) {
                 if (realFolder && folderId != null) {
                     item {
                         val name = b.path.last().second

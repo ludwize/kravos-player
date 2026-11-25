@@ -33,7 +33,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
@@ -100,6 +103,16 @@ class MainActivity : AppCompatActivity() {
 @Composable
 private fun Root(vm: MainViewModel) {
     val np by vm.player.state.collectAsStateWithLifecycle()
+    val holder = rememberSaveableStateHolder()
+    // Forget the saved state of screens that were popped off the stack (tab roots are kept, so a tab
+    // still remembers its place when you come back to it from another tab).
+    val live = vm.stack.mapIndexed { i, s -> screenKey(i, s) }
+    val seen = remember { mutableSetOf<String>() }
+    LaunchedEffect(live) {
+        val current = live.toSet()
+        seen.filter { it !in current && !it.startsWith("0|") }.forEach { holder.removeState(it); seen.remove(it) }
+        seen.addAll(current)
+    }
     BackHandler(enabled = vm.showPlayer || vm.stack.size > 1 || (vm.current == Screen.Podcasts && vm.podStack.size > 1)) { vm.back() }
 
     Box(Modifier.fillMaxSize()) {
@@ -120,7 +133,11 @@ private fun Root(vm: MainViewModel) {
             },
         ) { padding ->
             Surface(Modifier.fillMaxSize().padding(padding), color = MaterialTheme.colorScheme.background) {
-                when (val s = vm.current) {
+                // Each screen on the back stack keeps its own saved UI state (scroll position, expanded
+                // sections...), so going back lands where you were instead of at the top of the list.
+                val s = vm.current
+                holder.SaveableStateProvider(screenKey(vm.stack.lastIndex, s)) {
+                when (s) {
                     Screen.Library -> LibraryScreen(vm)
                     Screen.Playlists -> PlaylistsScreen(vm)
                     Screen.Search -> SearchScreen(vm)
@@ -136,6 +153,7 @@ private fun Root(vm: MainViewModel) {
                     is Screen.PlaylistScreen -> PlaylistDetailScreen(vm, s)
                     is Screen.Smart -> SmartScreen(vm, s)
                 }
+                }
             }
         }
         AnimatedVisibility(
@@ -147,6 +165,8 @@ private fun Root(vm: MainViewModel) {
         }
     }
 }
+
+private fun screenKey(index: Int, s: Screen): String = "$index|$s"
 
 @Composable
 private fun androidx.compose.foundation.layout.RowScope.NavItem(
