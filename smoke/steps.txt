@@ -1,29 +1,29 @@
 tapped Allow
-not found: Settings
-not found: Lists
-not found: Search
-not found: Library
+tapped Settings
+tapped Lists
+tapped Search
+tapped Library
 tapped Connect Google Drive
 not found: Connect
-not found: Radio
-not found: Play station
-not found: Open player
-not found: World
-not found: Library
+tapped Radio
+tapped Play station
+tapped Open player
+tapped World
+tapped Library
 not found: Browse Google Drive
-not found: Podcasts
-not found: Find podcasts
-not found: Open show (waited 60 s)
-not found: Episode details
-not found: Play episode (waited 60 s)
-not found: Open player
-not found: Forward 30 seconds
-not found: Download
-not found: Episode notes
-not found: 1×
-not found: 1.5×
-not found: Radio
-not found: Podcasts
-not found: Back
-not found: Subscribe (waited 20 s)
-not found: Back
+tapped Podcasts
+tapped Find podcasts
+tapped Open show
+tapped Episode details
+tapped Play episode
+tapped Open player
+tapped Forward 30 seconds
+tapped Download
+tapped Episode notes
+tapped 1×
+tapped 1.5×
+tapped Radio
+tapped Podcasts
+tapped Back
+tapped Subscribe
+tapped Back
