@@ -20,6 +20,8 @@ android {
         targetSdk = 35
         versionCode = buildNumber
         versionName = "1.0.$buildNumber"
+        buildConfigField("String", "GITHUB_REPO", "\"ludwize/kravos-player\"")
+        buildConfigField("int", "BUILD_NUMBER", "$buildNumber")
     }
 
     signingConfigs {

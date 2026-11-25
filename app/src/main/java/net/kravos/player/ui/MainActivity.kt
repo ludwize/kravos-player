@@ -58,6 +58,7 @@ import net.kravos.player.ui.screens.PodcastsScreen
 import net.kravos.player.ui.screens.SearchScreen
 import net.kravos.player.ui.screens.SettingsScreen
 import net.kravos.player.ui.screens.SmartScreen
+import net.kravos.player.ui.screens.UpdateBanner
 import net.kravos.player.ui.theme.KravosTheme
 
 class MainActivity : AppCompatActivity() {
@@ -88,6 +89,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         (application as App).graph.player.connect()
+        (application as App).graph.updater.check()
     }
 
     override fun onStop() {
@@ -120,6 +122,7 @@ private fun Root(vm: MainViewModel) {
             contentWindowInsets = WindowInsets(0, 0, 0, 0),
             bottomBar = {
                 Column {
+                    UpdateBanner(vm.graph.updater)
                     if (np.hasItem) MiniPlayer(vm, np) { vm.showPlayer = true }
                     NavigationBar {
                         NavItem(vm, Screen.Library, "Library") { Icon(Icons.Default.LibraryMusic, null) }

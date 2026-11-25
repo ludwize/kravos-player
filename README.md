@@ -68,6 +68,12 @@ export KP_KEYSTORE_FILE=/tmp/release.jks KP_KEYSTORE_PASSWORD='<password>'
 Keep the keystore password safe. The OAuth client is tied to this key's SHA-1, and Android only
 installs updates that are signed with the same key.
 
+## Updates
+
+The app checks this repo's latest GitHub release (`build-N`) on start (every few hours) and in
+**Settings → App updates**; a bar above the player offers Update → Install. This needs the repo to be
+public (the app has no GitHub token). Every build is signed with the same key, so it installs over the old one.
+
 ## Install
 
 Download the APK from the latest Release on the phone and open it (allow "Install unknown apps" for

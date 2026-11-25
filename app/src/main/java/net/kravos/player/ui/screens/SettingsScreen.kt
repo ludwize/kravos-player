@@ -125,6 +125,8 @@ fun SettingsScreen(vm: MainViewModel) {
     Column(Modifier.fillMaxSize()) {
         TopAppBar(title = { Text("Settings") })
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
+            SectionHeader("App updates")
+            UpdateSettings(g.updater)
             SectionHeader("Google Drive")
             Row(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
                 Icon(Icons.Default.Cloud, null)

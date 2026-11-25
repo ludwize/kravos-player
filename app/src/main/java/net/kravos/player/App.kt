@@ -33,6 +33,7 @@ import net.kravos.player.playback.RoutingDataSource
 import net.kravos.player.podcast.PodcastApi
 import net.kravos.player.podcast.PodcastStore
 import net.kravos.player.radio.RadioApi
+import net.kravos.player.update.Updater
 import okhttp3.OkHttpClient
 import java.io.File
 import java.util.concurrent.TimeUnit
@@ -154,4 +155,6 @@ class AppGraph(val app: App) {
     }
 
     val player = PlayerConnection(app)
+
+    val updater: Updater by lazy { Updater(app, plainHttp, scope) }
 }
