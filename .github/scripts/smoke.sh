@@ -16,18 +16,22 @@ adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1 && adb pull /sdcard/ui
 tap_text() {
   adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
   adb pull /sdcard/ui.xml "$OUT/ui.xml" >/dev/null 2>&1
-  python3 - "$1" "$OUT/ui.xml" <<'EOF' > "$OUT/tap.txt"
+  python3 - "$1" "$OUT/ui.xml" "${2:-0}" <<'EOF' > "$OUT/tap.txt"
 import re, sys, xml.etree.ElementTree as ET
-want, path = sys.argv[1], sys.argv[2]
+want, path, nth = sys.argv[1], sys.argv[2], int(sys.argv[3])
 try:
     root = ET.parse(path).getroot()
 except Exception:
     sys.exit(0)
+hits = []
 for n in root.iter('node'):
     if n.get('text') == want or n.get('content-desc') == want:
         x1, y1, x2, y2 = map(int, re.findall(r'\d+', n.get('bounds')))
-        print((x1 + x2) // 2, (y1 + y2) // 2)
-        break
+        if y2 - y1 >= 20:  # skip rows clipped under a toolbar
+            hits.append(((x1 + x2) // 2, (y1 + y2) // 2))
+if hits:
+    x, y = hits[min(nth, len(hits) - 1)]
+    print(x, y)
 EOF
   if [ -s "$OUT/tap.txt" ]; then
     adb shell input tap $(cat "$OUT/tap.txt")
@@ -119,7 +123,7 @@ adb exec-out screencap -p > "$OUT/15-podcast-show.png"
 adb shell input swipe $((W / 2)) $((H * 3 / 4)) $((W / 2)) $((H / 3)) 400
 sleep 2
 adb exec-out screencap -p > "$OUT/15a-podcast-show-scrolled.png"
-wait_tap "Episode details" 60
+tap_text "Episode details" 2
 sleep 4
 adb exec-out screencap -p > "$OUT/15b-podcast-episode-details.png"
 adb shell input keyevent KEYCODE_BACK
