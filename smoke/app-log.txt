@@ -1,300 +1,300 @@
-54826:11-25 10:09:54.101  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=68722, buffered position=126328, speed=1.0, updated=327000, actions=7339999, custom actions=[], active item id=0, error=null}
-54827:11-25 10:09:54.103  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-54828:11-25 10:09:54.104  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54869:11-25 10:09:56.635   526   526 I NotificationService: Cannot find enqueued record for key: 0|net.kravos.player|42|null|10192
-54873:11-25 10:09:57.097  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=71722, buffered position=126328, speed=1.0, updated=330002, actions=7339999, custom actions=[], active item id=0, error=null}
-54874:11-25 10:09:57.098  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-54875:11-25 10:09:57.100  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54893:11-25 10:09:57.102  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=71722, buffered position=126328, speed=1.0, updated=330002, actions=7339999, custom actions=[], active item id=0, error=null}
-54894:11-25 10:09:57.104  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-54895:11-25 10:09:57.105  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54910:11-25 10:10:00.098  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=74721, buffered position=126328, speed=1.0, updated=333002, actions=7339999, custom actions=[], active item id=0, error=null}
-54911:11-25 10:10:00.100  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-54912:11-25 10:10:00.101  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54930:11-25 10:10:00.107  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=74721, buffered position=126328, speed=1.0, updated=333002, actions=7339999, custom actions=[], active item id=0, error=null}
-54931:11-25 10:10:00.109  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-54932:11-25 10:10:00.111  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54948:11-25 10:10:04.747  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=79379, buffered position=191007, speed=1.0, updated=337652, actions=7339999, custom actions=[], active item id=0, error=null}
-54949:11-25 10:10:04.750  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-54950:11-25 10:10:04.751  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54968:11-25 10:10:04.754  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=79379, buffered position=191007, speed=1.0, updated=337652, actions=7339999, custom actions=[], active item id=0, error=null}
-54969:11-25 10:10:04.756  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-54970:11-25 10:10:04.757  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-54996:11-25 10:10:07.749  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=82376, buffered position=191007, speed=1.0, updated=340654, actions=7339999, custom actions=[], active item id=0, error=null}
-54997:11-25 10:10:07.751  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-54998:11-25 10:10:07.752  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55016:11-25 10:10:07.756  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=82376, buffered position=191007, speed=1.0, updated=340654, actions=7339999, custom actions=[], active item id=0, error=null}
-55017:11-25 10:10:07.758  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55018:11-25 10:10:07.760  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55025:11-25 10:10:10.750  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=85379, buffered position=191007, speed=1.0, updated=343655, actions=7339999, custom actions=[], active item id=0, error=null}
-55026:11-25 10:10:10.751  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55027:11-25 10:10:10.753  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55045:11-25 10:10:10.755  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=85379, buffered position=191007, speed=1.0, updated=343655, actions=7339999, custom actions=[], active item id=0, error=null}
-55046:11-25 10:10:10.756  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55047:11-25 10:10:10.758  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55057:11-25 10:10:13.751  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=88374, buffered position=191007, speed=1.0, updated=346656, actions=7339999, custom actions=[], active item id=0, error=null}
-55058:11-25 10:10:13.753  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55059:11-25 10:10:13.754  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55077:11-25 10:10:13.757  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=88374, buffered position=191007, speed=1.0, updated=346656, actions=7339999, custom actions=[], active item id=0, error=null}
-55078:11-25 10:10:13.759  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55079:11-25 10:10:13.760  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55083:11-25 10:10:14.160  6957  6957 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-55084:11-25 10:10:14.165  6957  6957 I AndroidRuntime: Using default boot image
-55085:11-25 10:10:14.165  6957  6957 I AndroidRuntime: Leaving lock profiling enabled
-55099:11-25 10:10:14.298  6957  6957 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-55159:11-25 10:10:15.372  6957  6957 D AndroidRuntime: Shutting down VM
-55271:11-25 10:10:16.394   526  2006 D CoreBackPreview: Window{13aa3c7 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@3da9560, mPriority=0, mIsAnimationCallback=false}
-55308:11-25 10:10:16.436   526   550 V WindowManager:     info={id=17 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{9a0d2d4 Task{dc40e52 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0xf87490b sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{1a9b2e6 Task{235fd7e #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x176f7ee sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{93d1a8a token=android.os.Binder@67a0c83})/@0x9651785 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-55342:11-25 10:10:16.613   526  1224 I ImeTracker: net.kravos.player:a71a01fc: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-55343:11-25 10:10:16.613   526  1224 I ImeTracker: net.kravos.player:a71a01fc: onCancelled at PHASE_SERVER_SHOULD_HIDE
-55346:11-25 10:10:16.617  1534  1534 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, false)
-55349:11-25 10:10:16.751  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=91382, buffered position=191007, speed=1.0, updated=349656, actions=7339999, custom actions=[], active item id=0, error=null}
-55350:11-25 10:10:16.753  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55351:11-25 10:10:16.755  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55369:11-25 10:10:16.757  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=91382, buffered position=191007, speed=1.0, updated=349656, actions=7339999, custom actions=[], active item id=0, error=null}
-55370:11-25 10:10:16.759  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55371:11-25 10:10:16.763  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55382:11-25 10:10:19.752  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=94384, buffered position=191007, speed=1.0, updated=352658, actions=7339999, custom actions=[], active item id=0, error=null}
-55383:11-25 10:10:19.754  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55384:11-25 10:10:19.756  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55388:11-25 10:10:19.756  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=94384, buffered position=191007, speed=1.0, updated=352658, actions=7339999, custom actions=[], active item id=0, error=null}
-55389:11-25 10:10:19.765  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55390:11-25 10:10:19.766  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55424:11-25 10:10:22.598   526  1224 D CoreBackPreview: Window{13aa3c7 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback null
-55425:11-25 10:10:22.606   526   540 W InputManager-JNI: Input channel object '13aa3c7 net.kravos.player/net.kravos.player.ui.MainActivity (client)' was disposed without first being removed with the input manager!
-55427:11-25 10:10:22.648   526  1968 I ImeTracker: net.kravos.player:80d54ee7: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-55428:11-25 10:10:22.648   526  1968 I ImeTracker: net.kravos.player:80d54ee7: onCancelled at PHASE_SERVER_SHOULD_HIDE
-55431:11-25 10:10:22.651  1534  1534 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, false)
-55434:11-25 10:10:22.754  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=97384, buffered position=191007, speed=1.0, updated=355659, actions=7339999, custom actions=[], active item id=0, error=null}
-55435:11-25 10:10:22.758  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55436:11-25 10:10:22.768  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55440:11-25 10:10:22.769  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=97384, buffered position=191007, speed=1.0, updated=355659, actions=7339999, custom actions=[], active item id=0, error=null}
-55441:11-25 10:10:22.771  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55442:11-25 10:10:22.772  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55471:11-25 10:10:24.917  7009  7009 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-55472:11-25 10:10:24.923  7009  7009 I AndroidRuntime: Using default boot image
-55473:11-25 10:10:24.923  7009  7009 I AndroidRuntime: Leaving lock profiling enabled
-55486:11-25 10:10:25.071  7009  7009 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-55529:11-25 10:10:25.755  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=100380, buffered position=191007, speed=1.0, updated=358660, actions=7339999, custom actions=[], active item id=0, error=null}
-55530:11-25 10:10:25.759  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55531:11-25 10:10:25.761  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55549:11-25 10:10:25.763  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=100380, buffered position=191007, speed=1.0, updated=358660, actions=7339999, custom actions=[], active item id=0, error=null}
-55550:11-25 10:10:25.766  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55551:11-25 10:10:25.768  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55565:11-25 10:10:26.143  7009  7009 D AndroidRuntime: Shutting down VM
-55661:11-25 10:10:27.188   526  1705 D CoreBackPreview: Window{c29490a u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@b786029, mPriority=0, mIsAnimationCallback=false}
-55668:11-25 10:10:27.230   526   550 V WindowManager:     info={id=18 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{9a0d2d4 Task{dc40e52 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0xf87490b sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{1a9b2e6 Task{235fd7e #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x176f7ee sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{93d1a8a token=android.os.Binder@67a0c83})/@0x9651785 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-55705:11-25 10:10:27.392   526   540 I ImeTracker: net.kravos.player:2bc114a4: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-55706:11-25 10:10:27.392   526   540 I ImeTracker: net.kravos.player:2bc114a4: onCancelled at PHASE_SERVER_SHOULD_HIDE
-55709:11-25 10:10:27.400  1534  1534 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, false)
-55716:11-25 10:10:28.756  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=103387, buffered position=191007, speed=1.0, updated=361660, actions=7339999, custom actions=[], active item id=0, error=null}
-55717:11-25 10:10:28.758  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55718:11-25 10:10:28.759  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55736:11-25 10:10:28.761  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=103387, buffered position=191007, speed=1.0, updated=361660, actions=7339999, custom actions=[], active item id=0, error=null}
-55737:11-25 10:10:28.763  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55738:11-25 10:10:28.764  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55748:11-25 10:10:31.756  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=106381, buffered position=191007, speed=1.0, updated=364661, actions=7339999, custom actions=[], active item id=0, error=null}
-55749:11-25 10:10:31.758  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55750:11-25 10:10:31.760  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55768:11-25 10:10:31.763  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=106381, buffered position=191007, speed=1.0, updated=364661, actions=7339999, custom actions=[], active item id=0, error=null}
-55769:11-25 10:10:31.764  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55770:11-25 10:10:31.766  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55780:11-25 10:10:32.423  7050  7050 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-55781:11-25 10:10:32.429  7050  7050 I AndroidRuntime: Using default boot image
-55782:11-25 10:10:32.429  7050  7050 I AndroidRuntime: Leaving lock profiling enabled
-55796:11-25 10:10:32.582  7050  7050 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-55891:11-25 10:10:33.647  7050  7050 D AndroidRuntime: Shutting down VM
-55927:11-25 10:10:34.629  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=109255, buffered position=191007, speed=1.5, updated=367533, actions=7339999, custom actions=[], active item id=0, error=null}
-55928:11-25 10:10:34.636  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55929:11-25 10:10:34.640  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55948:11-25 10:10:34.643  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=109255, buffered position=191007, speed=1.5, updated=367533, actions=7339999, custom actions=[], active item id=0, error=null}
-55949:11-25 10:10:34.645  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55950:11-25 10:10:34.646  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55956:11-25 10:10:34.759  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=109388, buffered position=191007, speed=1.5, updated=367662, actions=7339999, custom actions=[], active item id=0, error=null}
-55957:11-25 10:10:34.759  1042  1042 W AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player tried to update with no new data
-55958:11-25 10:10:34.760  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=109388, buffered position=191007, speed=1.5, updated=367662, actions=7339999, custom actions=[], active item id=0, error=null}
-55959:11-25 10:10:34.760  1042  1042 W AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player tried to update with no new data
-55967:11-25 10:10:37.764  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=113709, buffered position=191007, speed=1.5, updated=370669, actions=7339999, custom actions=[], active item id=0, error=null}
-55968:11-25 10:10:37.784  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55969:11-25 10:10:37.786  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-55988:11-25 10:10:37.792  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=113709, buffered position=191007, speed=1.5, updated=370669, actions=7339999, custom actions=[], active item id=0, error=null}
-55989:11-25 10:10:37.794  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-55990:11-25 10:10:37.796  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56003:11-25 10:10:39.699   526   540 D CoreBackPreview: Window{c29490a u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback null
-56004:11-25 10:10:39.703   526   540 W InputManager-JNI: Input channel object 'c29490a net.kravos.player/net.kravos.player.ui.MainActivity (client)' was disposed without first being removed with the input manager!
-56006:11-25 10:10:39.728   526   540 I ImeTracker: net.kravos.player:204080d3: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-56007:11-25 10:10:39.728   526   540 I ImeTracker: net.kravos.player:204080d3: onCancelled at PHASE_SERVER_SHOULD_HIDE
-56010:11-25 10:10:39.731  1534  1534 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, false)
-56015:11-25 10:10:40.768  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=118223, buffered position=191007, speed=1.5, updated=373673, actions=7339999, custom actions=[], active item id=0, error=null}
-56016:11-25 10:10:40.772  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56017:11-25 10:10:40.775  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56021:11-25 10:10:40.776  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=118223, buffered position=191007, speed=1.5, updated=373673, actions=7339999, custom actions=[], active item id=0, error=null}
-56022:11-25 10:10:40.777  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56023:11-25 10:10:40.790  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56061:11-25 10:10:43.772  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=122731, buffered position=191007, speed=1.5, updated=376675, actions=7339999, custom actions=[], active item id=0, error=null}
-56062:11-25 10:10:43.776  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56063:11-25 10:10:43.778  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56082:11-25 10:10:43.781  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=122731, buffered position=191007, speed=1.5, updated=376675, actions=7339999, custom actions=[], active item id=0, error=null}
-56083:11-25 10:10:43.783  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56084:11-25 10:10:43.784  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56090:11-25 10:10:44.054  7090  7090 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-56091:11-25 10:10:44.060  7090  7090 I AndroidRuntime: Using default boot image
-56092:11-25 10:10:44.060  7090  7090 I AndroidRuntime: Leaving lock profiling enabled
-56105:11-25 10:10:44.194  7090  7090 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-56156:11-25 10:10:45.255  7090  7090 D AndroidRuntime: Shutting down VM
-56310:11-25 10:10:46.287   526   550 V WindowManager:     info={id=19 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{9a0d2d4 Task{dc40e52 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0xf87490b sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{1a9b2e6 Task{235fd7e #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x176f7ee sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{93d1a8a token=android.os.Binder@67a0c83})/@0x9651785 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-56361:11-25 10:10:46.776  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=127240, buffered position=191007, speed=1.5, updated=379681, actions=7339999, custom actions=[], active item id=0, error=null}
-56362:11-25 10:10:46.778  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56363:11-25 10:10:46.779  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56382:11-25 10:10:46.782  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=127240, buffered position=191007, speed=1.5, updated=379681, actions=7339999, custom actions=[], active item id=0, error=null}
-56383:11-25 10:10:46.784  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56384:11-25 10:10:46.785  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56418:11-25 10:10:49.778  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=131730, buffered position=191007, speed=1.5, updated=382683, actions=7339999, custom actions=[], active item id=0, error=null}
-56419:11-25 10:10:49.780  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56420:11-25 10:10:49.782  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56439:11-25 10:10:49.786  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=131730, buffered position=191007, speed=1.5, updated=382683, actions=7339999, custom actions=[], active item id=0, error=null}
-56440:11-25 10:10:49.788  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56441:11-25 10:10:49.790  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56449:11-25 10:10:51.279  7119  7119 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-56450:11-25 10:10:51.285  7119  7119 I AndroidRuntime: Using default boot image
-56451:11-25 10:10:51.285  7119  7119 I AndroidRuntime: Leaving lock profiling enabled
-56464:11-25 10:10:51.404  7119  7119 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-56523:11-25 10:10:52.608  7119  7119 D AndroidRuntime: Shutting down VM
-56587:11-25 10:10:52.780  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=136233, buffered position=191007, speed=1.5, updated=385685, actions=7339999, custom actions=[], active item id=0, error=null}
-56588:11-25 10:10:52.782  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56589:11-25 10:10:52.784  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56608:11-25 10:10:52.787  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=136233, buffered position=191007, speed=1.5, updated=385685, actions=7339999, custom actions=[], active item id=0, error=null}
-56609:11-25 10:10:52.789  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56610:11-25 10:10:52.790  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56648:11-25 10:10:53.615   526   550 V WindowManager:     info={id=20 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{9a0d2d4 Task{dc40e52 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0xf87490b sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{1a9b2e6 Task{235fd7e #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0x176f7ee sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{93d1a8a token=android.os.Binder@67a0c83})/@0x9651785 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-56705:11-25 10:10:55.780  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=140750, buffered position=191007, speed=1.5, updated=388685, actions=7339999, custom actions=[], active item id=0, error=null}
-56706:11-25 10:10:55.782  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56707:11-25 10:10:55.784  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56726:11-25 10:10:55.788  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=140750, buffered position=191007, speed=1.5, updated=388685, actions=7339999, custom actions=[], active item id=0, error=null}
-56727:11-25 10:10:55.790  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56728:11-25 10:10:55.792  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56745:11-25 10:10:59.001  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=145567, buffered position=256653, speed=1.5, updated=391906, actions=7339999, custom actions=[], active item id=0, error=null}
-56746:11-25 10:10:59.003  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56747:11-25 10:10:59.004  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56766:11-25 10:10:59.008  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=145567, buffered position=256653, speed=1.5, updated=391906, actions=7339999, custom actions=[], active item id=0, error=null}
-56767:11-25 10:10:59.010  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56768:11-25 10:10:59.011  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56777:11-25 10:10:59.858  7157  7157 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-56778:11-25 10:10:59.866  7157  7157 I AndroidRuntime: Using default boot image
-56779:11-25 10:10:59.866  7157  7157 I AndroidRuntime: Leaving lock profiling enabled
-56793:11-25 10:11:00.022  7157  7157 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-56893:11-25 10:11:01.132  7157  7157 D AndroidRuntime: Shutting down VM
-56930:11-25 10:11:02.004  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=150071, buffered position=256653, speed=1.5, updated=394908, actions=7339999, custom actions=[], active item id=0, error=null}
-56931:11-25 10:11:02.013  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56932:11-25 10:11:02.024  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56936:11-25 10:11:02.025  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=150071, buffered position=256653, speed=1.5, updated=394908, actions=7339999, custom actions=[], active item id=0, error=null}
-56937:11-25 10:11:02.038  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56938:11-25 10:11:02.046  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56961:11-25 10:11:05.006  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=154587, buffered position=256653, speed=1.5, updated=397911, actions=7339999, custom actions=[], active item id=0, error=null}
-56962:11-25 10:11:05.009  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56963:11-25 10:11:05.010  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56982:11-25 10:11:05.013  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=154587, buffered position=256653, speed=1.5, updated=397911, actions=7339999, custom actions=[], active item id=0, error=null}
-56983:11-25 10:11:05.015  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56984:11-25 10:11:05.016  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-56995:11-25 10:11:08.008  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=159080, buffered position=256653, speed=1.5, updated=400913, actions=7339999, custom actions=[], active item id=0, error=null}
-56996:11-25 10:11:08.009  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-56997:11-25 10:11:08.011  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57016:11-25 10:11:08.014  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=159080, buffered position=256653, speed=1.5, updated=400913, actions=7339999, custom actions=[], active item id=0, error=null}
-57017:11-25 10:11:08.015  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57018:11-25 10:11:08.018  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57030:11-25 10:11:08.351  2484  2484 I ImeTracker: net.kravos.player:cd1730a2: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT_BY_INSETS_API
-57033:11-25 10:11:08.352  1534  1534 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x8001(Normal) imeOptions=0x2000003 privateImeOptions=null actionName=SEARCH actionLabel=null actionId=0 initialSelStart=0 initialSelEnd=0 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=-1 fieldName=null extras=Bundle[mParcelledData.dataSize=168]}, false)
-57038:11-25 10:11:08.358  1534  1534 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x8001(Normal) imeOptions=0x2000003 privateImeOptions=null actionName=SEARCH actionLabel=null actionId=0 initialSelStart=0 initialSelEnd=0 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=-1 fieldName=null extras=Bundle[mParcelledData.dataSize=168]}, true)
-57042:11-25 10:11:08.360  1534  1534 I GoogleInputMethodService: GoogleInputMethodService.onStartInputView():1995 onStartInputView(EditorInfo{inputType=0x8001(Normal) imeOptions=0x2000003 privateImeOptions=null actionName=SEARCH actionLabel=null actionId=0 initialSelStart=0 initialSelEnd=0 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=-1 fieldName=null extras=Bundle[{androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true}]}, false)
-57046:11-25 10:11:08.387  2484  2484 I ImeTracker: net.kravos.player:c6304a24: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
-57055:11-25 10:11:08.446  1534  1534 I AndroidIME: AbstractIme.onActivate():86 LatinIme.onActivate() : EditorInfo = inputType=0x8001(Normal) imeOptions=0x2000003 privateImeOptions=null actionName=SEARCH actionLabel=null actionId=0 initialSelStart=0 initialSelEnd=0 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=-1 fieldName=null extras=Bundle[{androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true}], IncognitoMode = false, DeviceLocked = false
-57117:11-25 10:11:08.522   526   842 D CoreBackPreview: Window{5f2ad77 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@590a51f, mPriority=0, mIsAnimationCallback=false}
-57122:11-25 10:11:08.538   526  1774 I ImeTracker: net.kravos.player:cd1730a2: onFailed at PHASE_WM_SHOW_IME_RUNNER
-57280:11-25 10:11:09.975  2484  2484 I ImeTracker: net.kravos.player:c6304a24: onShown
-57302:11-25 10:11:10.302  2484  2484 W FrameTracker: Missed SF frame:UNKNOWN: 80, 25806, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@net.kravos.player>
-57369:11-25 10:11:11.012  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=163587, buffered position=256653, speed=1.5, updated=403915, actions=7339999, custom actions=[], active item id=0, error=null}
-57370:11-25 10:11:11.016  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57371:11-25 10:11:11.019  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57393:11-25 10:11:11.026  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=163587, buffered position=256653, speed=1.5, updated=403915, actions=7339999, custom actions=[], active item id=0, error=null}
-57394:11-25 10:11:11.028  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57396:11-25 10:11:11.030  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57488:11-25 10:11:14.011  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=168086, buffered position=256653, speed=1.5, updated=406916, actions=7339999, custom actions=[], active item id=0, error=null}
-57489:11-25 10:11:14.013  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57490:11-25 10:11:14.014  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57509:11-25 10:11:14.017  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=168086, buffered position=256653, speed=1.5, updated=406916, actions=7339999, custom actions=[], active item id=0, error=null}
-57510:11-25 10:11:14.019  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57511:11-25 10:11:14.020  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57523:11-25 10:11:17.011  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=172589, buffered position=256653, speed=1.5, updated=409916, actions=7339999, custom actions=[], active item id=0, error=null}
-57524:11-25 10:11:17.013  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57525:11-25 10:11:17.014  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57529:11-25 10:11:17.015  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=172589, buffered position=256653, speed=1.5, updated=409916, actions=7339999, custom actions=[], active item id=0, error=null}
-57530:11-25 10:11:17.016  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57531:11-25 10:11:17.027  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57552:11-25 10:11:20.012  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=177093, buffered position=256653, speed=1.5, updated=412917, actions=7339999, custom actions=[], active item id=0, error=null}
-57553:11-25 10:11:20.015  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57554:11-25 10:11:20.017  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57573:11-25 10:11:20.020  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=177093, buffered position=256653, speed=1.5, updated=412917, actions=7339999, custom actions=[], active item id=0, error=null}
-57574:11-25 10:11:20.023  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57575:11-25 10:11:20.024  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57588:11-25 10:11:21.856  7270  7270 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-57589:11-25 10:11:21.872  7270  7270 I AndroidRuntime: Using default boot image
-57590:11-25 10:11:21.872  7270  7270 I AndroidRuntime: Leaving lock profiling enabled
-57603:11-25 10:11:22.034  7270  7270 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-57646:11-25 10:11:23.015  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=181593, buffered position=256653, speed=1.5, updated=415919, actions=7339999, custom actions=[], active item id=0, error=null}
-57647:11-25 10:11:23.017  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57648:11-25 10:11:23.019  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57667:11-25 10:11:23.022  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=181593, buffered position=256653, speed=1.5, updated=415919, actions=7339999, custom actions=[], active item id=0, error=null}
-57668:11-25 10:11:23.023  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57669:11-25 10:11:23.024  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57678:11-25 10:11:23.159  7270  7270 D AndroidRuntime: Shutting down VM
-57811:11-25 10:11:24.111  7288  7288 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-57812:11-25 10:11:24.116  7288  7288 I AndroidRuntime: Using default boot image
-57813:11-25 10:11:24.116  7288  7288 I AndroidRuntime: Leaving lock profiling enabled
-57826:11-25 10:11:24.260  7288  7288 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-57902:11-25 10:11:25.461  7288  7288 D AndroidRuntime: Shutting down VM
-57951:11-25 10:11:26.016  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=186099, buffered position=256653, speed=1.5, updated=418921, actions=7339999, custom actions=[], active item id=0, error=null}
-57952:11-25 10:11:26.018  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57953:11-25 10:11:26.020  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57972:11-25 10:11:26.023  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=186099, buffered position=256653, speed=1.5, updated=418921, actions=7339999, custom actions=[], active item id=0, error=null}
-57973:11-25 10:11:26.025  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57974:11-25 10:11:26.027  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-57984:11-25 10:11:29.018  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=190603, buffered position=256653, speed=1.5, updated=421922, actions=7339999, custom actions=[], active item id=0, error=null}
-57985:11-25 10:11:29.020  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-57986:11-25 10:11:29.021  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58005:11-25 10:11:29.024  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=190603, buffered position=256653, speed=1.5, updated=421922, actions=7339999, custom actions=[], active item id=0, error=null}
-58006:11-25 10:11:29.025  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-58007:11-25 10:11:29.027  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58021:11-25 10:11:30.625   526  2475 I ImeTracker: net.kravos.player:8f2c2753: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_SOFT_INPUT_BY_BACK_KEY
-58033:11-25 10:11:30.677   526   947 D CoreBackPreview: Window{5f2ad77 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@62e4d87, mPriority=0, mIsAnimationCallback=false}
-58034:11-25 10:11:30.679  2484  2484 I ImeTracker: net.kravos.player:5159cdc7: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
-58035:11-25 10:11:30.680   526   947 I ImeTracker: net.kravos.player:5159cdc7: onCancelled at PHASE_SERVER_SHOULD_HIDE
-58036:11-25 10:11:30.682  2484  2484 I ImeTracker: net.kravos.player:8f2c2753: onHidden
-58038:11-25 10:11:30.740  2484  2484 W FrameTracker: Missed SF frame:UNKNOWN: 80, 27490, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@net.kravos.player>
-58041:11-25 10:11:31.765  7321  7321 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
-58042:11-25 10:11:31.771  7321  7321 I AndroidRuntime: Using default boot image
-58043:11-25 10:11:31.771  7321  7321 I AndroidRuntime: Leaving lock profiling enabled
-58057:11-25 10:11:31.932  7321  7321 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
-58099:11-25 10:11:32.021  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=195108, buffered position=256653, speed=1.5, updated=424925, actions=7339999, custom actions=[], active item id=0, error=null}
-58100:11-25 10:11:32.023  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-58101:11-25 10:11:32.024  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58120:11-25 10:11:32.028  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=195108, buffered position=256653, speed=1.5, updated=424925, actions=7339999, custom actions=[], active item id=0, error=null}
-58121:11-25 10:11:32.029  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-58122:11-25 10:11:32.031  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58143:11-25 10:11:33.033  7321  7321 D AndroidRuntime: Shutting down VM
-58210:11-25 10:11:34.000  2484  2484 I ImeTracker: net.kravos.player:8ceec07b: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
-58211:11-25 10:11:34.001   526  1126 I ImeTracker: net.kravos.player:8ceec07b: onCancelled at PHASE_SERVER_SHOULD_HIDE
-58212:11-25 10:11:34.001  2484  2484 I ImeTracker: net.kravos.player:57428b3b: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
-58213:11-25 10:11:34.002  2484  2484 I ImeTracker: net.kravos.player:57428b3b: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
-58214:11-25 10:11:34.004  1534  1534 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, true)
-58218:11-25 10:11:35.022  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=199605, buffered position=256653, speed=1.5, updated=427927, actions=7339999, custom actions=[], active item id=0, error=null}
-58219:11-25 10:11:35.024  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-58220:11-25 10:11:35.026  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58239:11-25 10:11:35.029  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=199605, buffered position=256653, speed=1.5, updated=427927, actions=7339999, custom actions=[], active item id=0, error=null}
-58240:11-25 10:11:35.031  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-58241:11-25 10:11:35.032  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58252:11-25 10:11:38.024  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=204108, buffered position=256653, speed=1.5, updated=430928, actions=7339999, custom actions=[], active item id=0, error=null}
-58253:11-25 10:11:38.026  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-58254:11-25 10:11:38.028  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
-58273:11-25 10:11:38.032  1042  1042 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=204108, buffered position=256653, speed=1.5, updated=430928, actions=7339999, custom actions=[], active item id=0, error=null}
-58274:11-25 10:11:38.034  1042  1042 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
-58275:11-25 10:11:38.035  1042  1042 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+55034:11-25 11:32:29.007  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+55073:11-25 11:32:30.734   523   523 I NotificationService: Cannot find enqueued record for key: 0|net.kravos.player|42|null|10192
+55077:11-25 11:32:31.984  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=72277, buffered position=149394, speed=1.0, updated=322446, actions=7339999, custom actions=[], active item id=0, error=null}
+55078:11-25 11:32:31.987  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+55079:11-25 11:32:31.989  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+55083:11-25 11:32:31.989  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=72277, buffered position=149394, speed=1.0, updated=322446, actions=7339999, custom actions=[], active item id=0, error=null}
+55084:11-25 11:32:31.991  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+55085:11-25 11:32:31.992  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+55106:11-25 11:32:34.989  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=75280, buffered position=149394, speed=1.0, updated=325450, actions=7339999, custom actions=[], active item id=0, error=null}
+55107:11-25 11:32:34.990  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+55108:11-25 11:32:34.991  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+55112:11-25 11:32:34.992  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=75280, buffered position=149394, speed=1.0, updated=325450, actions=7339999, custom actions=[], active item id=0, error=null}
+55113:11-25 11:32:34.993  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+55114:11-25 11:32:34.994  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+55138:11-25 11:32:37.989  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=78280, buffered position=149394, speed=1.0, updated=328451, actions=7339999, custom actions=[], active item id=0, error=null}
+55139:11-25 11:32:37.991  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+55140:11-25 11:32:37.992  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+55144:11-25 11:32:37.992  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=78280, buffered position=149394, speed=1.0, updated=328451, actions=7339999, custom actions=[], active item id=0, error=null}
+55145:11-25 11:32:37.993  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+55146:11-25 11:32:37.994  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+55169:11-25 11:32:40.990  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=81281, buffered position=149394, speed=1.0, updated=331452, actions=7339999, custom actions=[], active item id=0, error=null}
+55170:11-25 11:32:40.991  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+55171:11-25 11:32:40.993  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+55175:11-25 11:32:40.993  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=81281, buffered position=149394, speed=1.0, updated=331452, actions=7339999, custom actions=[], active item id=0, error=null}
+55176:11-25 11:32:40.994  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+55177:11-25 11:32:40.995  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56343:11-25 11:32:43.991  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=84279, buffered position=149394, speed=1.0, updated=334453, actions=7339999, custom actions=[], active item id=0, error=null}
+56344:11-25 11:32:43.993  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56345:11-25 11:32:43.995  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56349:11-25 11:32:43.996  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=84279, buffered position=149394, speed=1.0, updated=334453, actions=7339999, custom actions=[], active item id=0, error=null}
+56350:11-25 11:32:43.998  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56351:11-25 11:32:43.999  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56373:11-25 11:32:46.991  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=87278, buffered position=149394, speed=1.0, updated=337453, actions=7339999, custom actions=[], active item id=0, error=null}
+56374:11-25 11:32:46.993  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56375:11-25 11:32:46.996  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56379:11-25 11:32:46.996  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=87278, buffered position=149394, speed=1.0, updated=337453, actions=7339999, custom actions=[], active item id=0, error=null}
+56380:11-25 11:32:46.998  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56381:11-25 11:32:47.005  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56409:11-25 11:32:49.183  6700  6700 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+56410:11-25 11:32:49.187  6700  6700 I AndroidRuntime: Using default boot image
+56411:11-25 11:32:49.187  6700  6700 I AndroidRuntime: Leaving lock profiling enabled
+56424:11-25 11:32:49.286  6700  6700 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+56469:11-25 11:32:49.991  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=90279, buffered position=149394, speed=1.0, updated=340453, actions=7339999, custom actions=[], active item id=0, error=null}
+56470:11-25 11:32:49.993  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56471:11-25 11:32:49.994  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56475:11-25 11:32:49.994  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=90279, buffered position=149394, speed=1.0, updated=340453, actions=7339999, custom actions=[], active item id=0, error=null}
+56476:11-25 11:32:49.995  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56477:11-25 11:32:49.997  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56514:11-25 11:32:50.331  6700  6700 D AndroidRuntime: Shutting down VM
+56588:11-25 11:32:51.269   523  1733 D CoreBackPreview: Window{1a2e0b7 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@5fad153, mPriority=0, mIsAnimationCallback=false}
+56605:11-25 11:32:51.350   523   544 V WindowManager:     info={id=17 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{a0374c4 Task{cbf17a6 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x59a95f6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{ec5a756 Task{18073bb #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0xc697f18 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{436e35d token=android.os.Binder@d0ab934})/@0xf31ad9a sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
+56636:11-25 11:32:51.481   523  2204 I ImeTracker: net.kravos.player:ea02259d: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+56637:11-25 11:32:51.481   523  2204 I ImeTracker: net.kravos.player:ea02259d: onCancelled at PHASE_SERVER_SHOULD_HIDE
+56640:11-25 11:32:51.487  1547  1547 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, false)
+56707:11-25 11:32:52.992  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=93282, buffered position=149394, speed=1.0, updated=343454, actions=7339999, custom actions=[], active item id=0, error=null}
+56708:11-25 11:32:52.994  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56709:11-25 11:32:52.995  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56713:11-25 11:32:52.996  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=93282, buffered position=149394, speed=1.0, updated=343454, actions=7339999, custom actions=[], active item id=0, error=null}
+56714:11-25 11:32:52.997  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56715:11-25 11:32:52.998  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56736:11-25 11:32:55.993  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=96284, buffered position=149394, speed=1.0, updated=346455, actions=7339999, custom actions=[], active item id=0, error=null}
+56737:11-25 11:32:55.994  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56738:11-25 11:32:55.996  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56742:11-25 11:32:55.997  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=96284, buffered position=149394, speed=1.0, updated=346455, actions=7339999, custom actions=[], active item id=0, error=null}
+56743:11-25 11:32:55.998  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56744:11-25 11:32:55.999  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56774:11-25 11:32:57.462   523   920 D CoreBackPreview: Window{1a2e0b7 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback null
+56775:11-25 11:32:57.470   523   920 W InputManager-JNI: Input channel object '1a2e0b7 net.kravos.player/net.kravos.player.ui.MainActivity (client)' was disposed without first being removed with the input manager!
+56777:11-25 11:32:57.500   523  1733 I ImeTracker: net.kravos.player:f15995ca: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+56778:11-25 11:32:57.500   523  1733 I ImeTracker: net.kravos.player:f15995ca: onCancelled at PHASE_SERVER_SHOULD_HIDE
+56781:11-25 11:32:57.504  1547  1547 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, false)
+56812:11-25 11:32:58.997  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=99284, buffered position=149394, speed=1.0, updated=349457, actions=7339999, custom actions=[], active item id=0, error=null}
+56813:11-25 11:32:59.002  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56814:11-25 11:32:59.008  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56818:11-25 11:32:59.009  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=99284, buffered position=149394, speed=1.0, updated=349457, actions=7339999, custom actions=[], active item id=0, error=null}
+56819:11-25 11:32:59.012  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+56820:11-25 11:32:59.017  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+56844:11-25 11:32:59.727  6752  6752 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+56845:11-25 11:32:59.733  6752  6752 I AndroidRuntime: Using default boot image
+56846:11-25 11:32:59.733  6752  6752 I AndroidRuntime: Leaving lock profiling enabled
+56859:11-25 11:32:59.850  6752  6752 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+56971:11-25 11:33:00.968  6752  6752 D AndroidRuntime: Shutting down VM
+57005:11-25 11:33:01.901   523  1688 D CoreBackPreview: Window{f5a1374 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@7bef2e0, mPriority=0, mIsAnimationCallback=false}
+57063:11-25 11:33:02.022   523   903 I ImeTracker: net.kravos.player:d1b6a968: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+57069:11-25 11:33:02.023   523   544 V WindowManager:     info={id=18 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{a0374c4 Task{cbf17a6 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x59a95f6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{ec5a756 Task{18073bb #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0xc697f18 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{436e35d token=android.os.Binder@d0ab934})/@0xf31ad9a sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
+57075:11-25 11:33:02.025   523   903 I ImeTracker: net.kravos.player:d1b6a968: onCancelled at PHASE_SERVER_SHOULD_HIDE
+57084:11-25 11:33:02.070  1547  1547 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, false)
+57118:11-25 11:33:02.146  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=102435, buffered position=231653, speed=1.0, updated=352606, actions=7339999, custom actions=[], active item id=0, error=null}
+57119:11-25 11:33:02.155  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57120:11-25 11:33:02.156  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57124:11-25 11:33:02.157  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=102435, buffered position=231653, speed=1.0, updated=352606, actions=7339999, custom actions=[], active item id=0, error=null}
+57125:11-25 11:33:02.158  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57126:11-25 11:33:02.159  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57159:11-25 11:33:05.144  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=105428, buffered position=231653, speed=1.0, updated=355607, actions=7339999, custom actions=[], active item id=0, error=null}
+57160:11-25 11:33:05.147  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57161:11-25 11:33:05.148  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57165:11-25 11:33:05.149  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=105428, buffered position=231653, speed=1.0, updated=355607, actions=7339999, custom actions=[], active item id=0, error=null}
+57166:11-25 11:33:05.150  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57167:11-25 11:33:05.152  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57193:11-25 11:33:07.126  6786  6786 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+57194:11-25 11:33:07.130  6786  6786 I AndroidRuntime: Using default boot image
+57195:11-25 11:33:07.131  6786  6786 I AndroidRuntime: Leaving lock profiling enabled
+57208:11-25 11:33:07.255  6786  6786 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+57257:11-25 11:33:08.147  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=108435, buffered position=231653, speed=1.0, updated=358608, actions=7339999, custom actions=[], active item id=0, error=null}
+57258:11-25 11:33:08.151  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57259:11-25 11:33:08.152  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57263:11-25 11:33:08.153  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=108435, buffered position=231653, speed=1.0, updated=358608, actions=7339999, custom actions=[], active item id=0, error=null}
+57264:11-25 11:33:08.154  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57265:11-25 11:33:08.155  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57322:11-25 11:33:08.384  6786  6786 D AndroidRuntime: Shutting down VM
+57370:11-25 11:33:09.312  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=109604, buffered position=231653, speed=1.5, updated=359774, actions=7339999, custom actions=[], active item id=0, error=null}
+57371:11-25 11:33:09.314  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57376:11-25 11:33:09.315  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57380:11-25 11:33:09.315  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=109604, buffered position=231653, speed=1.5, updated=359774, actions=7339999, custom actions=[], active item id=0, error=null}
+57381:11-25 11:33:09.324  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57382:11-25 11:33:09.336  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57403:11-25 11:33:11.148  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=112098, buffered position=231653, speed=1.5, updated=361610, actions=7339999, custom actions=[], active item id=0, error=null}
+57404:11-25 11:33:11.149  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57405:11-25 11:33:11.150  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57424:11-25 11:33:11.152  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=112098, buffered position=231653, speed=1.5, updated=361610, actions=7339999, custom actions=[], active item id=0, error=null}
+57425:11-25 11:33:11.153  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57426:11-25 11:33:11.154  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57437:11-25 11:33:14.148  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=116592, buffered position=231653, speed=1.5, updated=364610, actions=7339999, custom actions=[], active item id=0, error=null}
+57438:11-25 11:33:14.150  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57439:11-25 11:33:14.151  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57443:11-25 11:33:14.152  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=116592, buffered position=231653, speed=1.5, updated=364610, actions=7339999, custom actions=[], active item id=0, error=null}
+57444:11-25 11:33:14.153  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57445:11-25 11:33:14.154  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57468:11-25 11:33:14.364   523   541 D CoreBackPreview: Window{f5a1374 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback null
+57469:11-25 11:33:14.369   523   541 W InputManager-JNI: Input channel object 'f5a1374 net.kravos.player/net.kravos.player.ui.MainActivity (client)' was disposed without first being removed with the input manager!
+57471:11-25 11:33:14.398   523   541 I ImeTracker: net.kravos.player:902e04d4: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+57472:11-25 11:33:14.398   523   541 I ImeTracker: net.kravos.player:902e04d4: onCancelled at PHASE_SERVER_SHOULD_HIDE
+57475:11-25 11:33:14.401  1547  1547 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, false)
+57502:11-25 11:33:17.152  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=121091, buffered position=231653, speed=1.5, updated=367612, actions=7339999, custom actions=[], active item id=0, error=null}
+57503:11-25 11:33:17.156  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57504:11-25 11:33:17.157  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57508:11-25 11:33:17.158  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=121091, buffered position=231653, speed=1.5, updated=367612, actions=7339999, custom actions=[], active item id=0, error=null}
+57509:11-25 11:33:17.159  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57510:11-25 11:33:17.161  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57533:11-25 11:33:18.639  6834  6834 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+57534:11-25 11:33:18.643  6834  6834 I AndroidRuntime: Using default boot image
+57535:11-25 11:33:18.643  6834  6834 I AndroidRuntime: Leaving lock profiling enabled
+57548:11-25 11:33:18.757  6834  6834 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+57614:11-25 11:33:19.886  6834  6834 D AndroidRuntime: Shutting down VM
+57670:11-25 11:33:20.151  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=125606, buffered position=231653, speed=1.5, updated=370612, actions=7339999, custom actions=[], active item id=0, error=null}
+57671:11-25 11:33:20.152  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57672:11-25 11:33:20.153  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57691:11-25 11:33:20.155  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=125606, buffered position=231653, speed=1.5, updated=370612, actions=7339999, custom actions=[], active item id=0, error=null}
+57692:11-25 11:33:20.156  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57693:11-25 11:33:20.157  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57721:11-25 11:33:20.922   523   544 V WindowManager:     info={id=19 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{a0374c4 Task{cbf17a6 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x59a95f6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{ec5a756 Task{18073bb #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0xc697f18 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{436e35d token=android.os.Binder@d0ab934})/@0xf31ad9a sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
+57764:11-25 11:33:23.152  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=130104, buffered position=231653, speed=1.5, updated=373614, actions=7339999, custom actions=[], active item id=0, error=null}
+57765:11-25 11:33:23.154  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57766:11-25 11:33:23.155  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57770:11-25 11:33:23.155  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=130104, buffered position=231653, speed=1.5, updated=373614, actions=7339999, custom actions=[], active item id=0, error=null}
+57771:11-25 11:33:23.156  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57772:11-25 11:33:23.157  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57797:11-25 11:33:25.862  6862  6862 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+57798:11-25 11:33:25.865  6862  6862 I AndroidRuntime: Using default boot image
+57799:11-25 11:33:25.865  6862  6862 I AndroidRuntime: Leaving lock profiling enabled
+57812:11-25 11:33:25.954  6862  6862 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+57854:11-25 11:33:26.154  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=134599, buffered position=231653, speed=1.5, updated=376616, actions=7339999, custom actions=[], active item id=0, error=null}
+57855:11-25 11:33:26.155  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57856:11-25 11:33:26.156  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57875:11-25 11:33:26.158  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=134599, buffered position=231653, speed=1.5, updated=376616, actions=7339999, custom actions=[], active item id=0, error=null}
+57876:11-25 11:33:26.159  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+57877:11-25 11:33:26.160  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+57899:11-25 11:33:27.105  6862  6862 D AndroidRuntime: Shutting down VM
+57994:11-25 11:33:28.101   523   544 V WindowManager:     info={id=20 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{a0374c4 Task{cbf17a6 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x59a95f6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{ec5a756 Task{18073bb #8 type=standard A=10192:net.kravos.player}}} m=TO_BACK f=NONE leash=Surface(name=Task=8)/@0xc697f18 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{436e35d token=android.os.Binder@d0ab934})/@0xf31ad9a sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
+58026:11-25 11:33:29.155  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=139115, buffered position=231653, speed=1.5, updated=379617, actions=7339999, custom actions=[], active item id=0, error=null}
+58027:11-25 11:33:29.156  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58028:11-25 11:33:29.157  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58032:11-25 11:33:29.158  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=139115, buffered position=231653, speed=1.5, updated=379617, actions=7339999, custom actions=[], active item id=0, error=null}
+58033:11-25 11:33:29.159  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58034:11-25 11:33:29.160  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58058:11-25 11:33:32.156  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=143620, buffered position=231653, speed=1.5, updated=382618, actions=7339999, custom actions=[], active item id=0, error=null}
+58059:11-25 11:33:32.157  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58060:11-25 11:33:32.158  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58079:11-25 11:33:32.161  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=143620, buffered position=231653, speed=1.5, updated=382618, actions=7339999, custom actions=[], active item id=0, error=null}
+58080:11-25 11:33:32.162  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58081:11-25 11:33:32.163  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58094:11-25 11:33:34.251  6897  6897 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+58095:11-25 11:33:34.255  6897  6897 I AndroidRuntime: Using default boot image
+58096:11-25 11:33:34.255  6897  6897 I AndroidRuntime: Leaving lock profiling enabled
+58110:11-25 11:33:34.366  6897  6897 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+58154:11-25 11:33:35.159  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=148107, buffered position=231653, speed=1.5, updated=385620, actions=7339999, custom actions=[], active item id=0, error=null}
+58155:11-25 11:33:35.162  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58156:11-25 11:33:35.164  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58160:11-25 11:33:35.165  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=148107, buffered position=231653, speed=1.5, updated=385620, actions=7339999, custom actions=[], active item id=0, error=null}
+58161:11-25 11:33:35.166  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58162:11-25 11:33:35.167  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58188:11-25 11:33:35.530  6897  6897 D AndroidRuntime: Shutting down VM
+58274:11-25 11:33:38.159  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=152613, buffered position=231653, speed=1.5, updated=388621, actions=7339999, custom actions=[], active item id=0, error=null}
+58275:11-25 11:33:38.161  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58276:11-25 11:33:38.162  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58280:11-25 11:33:38.162  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=152613, buffered position=231653, speed=1.5, updated=388621, actions=7339999, custom actions=[], active item id=0, error=null}
+58281:11-25 11:33:38.163  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58282:11-25 11:33:38.165  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58305:11-25 11:33:41.159  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=157117, buffered position=231653, speed=1.5, updated=391622, actions=7339999, custom actions=[], active item id=0, error=null}
+58306:11-25 11:33:41.161  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58307:11-25 11:33:41.162  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58326:11-25 11:33:41.164  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=157117, buffered position=231653, speed=1.5, updated=391622, actions=7339999, custom actions=[], active item id=0, error=null}
+58327:11-25 11:33:41.165  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58328:11-25 11:33:41.167  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58343:11-25 11:33:42.626  2726  2726 I ImeTracker: net.kravos.player:e3dbc561: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT_BY_INSETS_API
+58346:11-25 11:33:42.628  1547  1547 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x8001(Normal) imeOptions=0x2000003 privateImeOptions=null actionName=SEARCH actionLabel=null actionId=0 initialSelStart=0 initialSelEnd=0 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=-1 fieldName=null extras=Bundle[mParcelledData.dataSize=404]}, false)
+58350:11-25 11:33:42.634  1547  1547 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x8001(Normal) imeOptions=0x2000003 privateImeOptions=null actionName=SEARCH actionLabel=null actionId=0 initialSelStart=0 initialSelEnd=0 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=-1 fieldName=null extras=Bundle[mParcelledData.dataSize=404]}, true)
+58354:11-25 11:33:42.647  1547  1547 I GoogleInputMethodService: GoogleInputMethodService.onStartInputView():1995 onStartInputView(EditorInfo{inputType=0x8001(Normal) imeOptions=0x2000003 privateImeOptions=null actionName=SEARCH actionLabel=null actionId=0 initialSelStart=0 initialSelEnd=0 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=-1 fieldName=null extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=9, androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true, android.support.text.emoji.emojiCompat_replaceAll=false}]}, false)
+58358:11-25 11:33:42.665  2726  2726 I ImeTracker: net.kravos.player:d9ed3bb6: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+58367:11-25 11:33:42.724  1547  1547 I AndroidIME: AbstractIme.onActivate():86 LatinIme.onActivate() : EditorInfo = inputType=0x8001(Normal) imeOptions=0x2000003 privateImeOptions=null actionName=SEARCH actionLabel=null actionId=0 initialSelStart=0 initialSelEnd=0 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=-1 fieldName=null extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=9, androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true, android.support.text.emoji.emojiCompat_replaceAll=false}], IncognitoMode = false, DeviceLocked = false
+58399:11-25 11:33:42.773   523  1191 D CoreBackPreview: Window{6798249 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@f2ac7ba, mPriority=0, mIsAnimationCallback=false}
+58417:11-25 11:33:42.790   523  1191 I ImeTracker: net.kravos.player:e3dbc561: onFailed at PHASE_WM_SHOW_IME_RUNNER
+58597:11-25 11:33:43.646  2726  2726 I ImeTracker: net.kravos.player:d9ed3bb6: onShown
+58640:11-25 11:33:43.841  2726  2726 W FrameTracker: Missed SF frame:UNKNOWN: 80, 24786, 0, CUJ=J<IME_INSETS_ANIMATION::0@1@net.kravos.player>
+58722:11-25 11:33:44.162  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=161619, buffered position=231653, speed=1.5, updated=394623, actions=7339999, custom actions=[], active item id=0, error=null}
+58723:11-25 11:33:44.166  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58724:11-25 11:33:44.167  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58728:11-25 11:33:44.168  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=161619, buffered position=231653, speed=1.5, updated=394623, actions=7339999, custom actions=[], active item id=0, error=null}
+58729:11-25 11:33:44.169  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58730:11-25 11:33:44.172  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58865:11-25 11:33:47.161  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=166109, buffered position=231653, speed=1.5, updated=397623, actions=7339999, custom actions=[], active item id=0, error=null}
+58866:11-25 11:33:47.162  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58867:11-25 11:33:47.164  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58886:11-25 11:33:47.166  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=166109, buffered position=231653, speed=1.5, updated=397623, actions=7339999, custom actions=[], active item id=0, error=null}
+58887:11-25 11:33:47.167  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58888:11-25 11:33:47.168  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58897:11-25 11:33:50.163  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=170618, buffered position=231653, speed=1.5, updated=400625, actions=7339999, custom actions=[], active item id=0, error=null}
+58898:11-25 11:33:50.164  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58899:11-25 11:33:50.165  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58903:11-25 11:33:50.166  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=170618, buffered position=231653, speed=1.5, updated=400625, actions=7339999, custom actions=[], active item id=0, error=null}
+58904:11-25 11:33:50.167  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58905:11-25 11:33:50.168  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58931:11-25 11:33:53.164  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=175124, buffered position=231653, speed=1.5, updated=403626, actions=7339999, custom actions=[], active item id=0, error=null}
+58932:11-25 11:33:53.165  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58933:11-25 11:33:53.166  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58937:11-25 11:33:53.167  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=175124, buffered position=231653, speed=1.5, updated=403626, actions=7339999, custom actions=[], active item id=0, error=null}
+58938:11-25 11:33:53.168  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+58939:11-25 11:33:53.169  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+58964:11-25 11:33:55.267  7009  7009 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+58965:11-25 11:33:55.271  7009  7009 I AndroidRuntime: Using default boot image
+58966:11-25 11:33:55.271  7009  7009 I AndroidRuntime: Leaving lock profiling enabled
+58980:11-25 11:33:55.419  7009  7009 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+59024:11-25 11:33:56.167  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=179622, buffered position=231653, speed=1.5, updated=406627, actions=7339999, custom actions=[], active item id=0, error=null}
+59025:11-25 11:33:56.170  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59026:11-25 11:33:56.172  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59030:11-25 11:33:56.172  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=179622, buffered position=231653, speed=1.5, updated=406627, actions=7339999, custom actions=[], active item id=0, error=null}
+59031:11-25 11:33:56.174  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59032:11-25 11:33:56.175  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59103:11-25 11:33:56.574  7009  7009 D AndroidRuntime: Shutting down VM
+59195:11-25 11:33:57.478  7027  7027 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+59196:11-25 11:33:57.482  7027  7027 I AndroidRuntime: Using default boot image
+59197:11-25 11:33:57.482  7027  7027 I AndroidRuntime: Leaving lock profiling enabled
+59210:11-25 11:33:57.591  7027  7027 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+59365:11-25 11:33:58.698  7027  7027 D AndroidRuntime: Shutting down VM
+59439:11-25 11:34:00.571  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=186238, buffered position=305475, speed=1.5, updated=411033, actions=7339999, custom actions=[], active item id=0, error=null}
+59440:11-25 11:34:00.572  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59441:11-25 11:34:00.573  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59445:11-25 11:34:00.574  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=186238, buffered position=305475, speed=1.5, updated=411033, actions=7339999, custom actions=[], active item id=0, error=null}
+59446:11-25 11:34:00.575  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59447:11-25 11:34:00.576  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59477:11-25 11:34:03.572  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=190736, buffered position=305475, speed=1.5, updated=414034, actions=7339999, custom actions=[], active item id=0, error=null}
+59478:11-25 11:34:03.573  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59479:11-25 11:34:03.574  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59483:11-25 11:34:03.575  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=190736, buffered position=305475, speed=1.5, updated=414034, actions=7339999, custom actions=[], active item id=0, error=null}
+59484:11-25 11:34:03.576  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59485:11-25 11:34:03.577  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59511:11-25 11:34:03.788   523  1733 I ImeTracker: net.kravos.player:a57d0a99: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_SOFT_INPUT_BY_BACK_KEY
+59521:11-25 11:34:03.852   523  1733 D CoreBackPreview: Window{6798249 u0 net.kravos.player/net.kravos.player.ui.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@2d43e25, mPriority=0, mIsAnimationCallback=false}
+59522:11-25 11:34:03.856  2726  2726 I ImeTracker: net.kravos.player:1e4035f9: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+59523:11-25 11:34:03.857   523   920 I ImeTracker: net.kravos.player:1e4035f9: onCancelled at PHASE_SERVER_SHOULD_HIDE
+59524:11-25 11:34:03.858  2726  2726 I ImeTracker: net.kravos.player:a57d0a99: onHidden
+59527:11-25 11:34:04.043  2726  2726 W FrameTracker: Missed SF frame:UNKNOWN: 80, 27024, 0, CUJ=J<IME_INSETS_ANIMATION::1@1@net.kravos.player>
+59529:11-25 11:34:04.907  7075  7075 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+59530:11-25 11:34:04.911  7075  7075 I AndroidRuntime: Using default boot image
+59531:11-25 11:34:04.911  7075  7075 I AndroidRuntime: Leaving lock profiling enabled
+59544:11-25 11:34:05.043  7075  7075 D AndroidRuntime: Calling main entry com.android.commands.uiautomator.Launcher
+59638:11-25 11:34:06.123  7075  7075 D AndroidRuntime: Shutting down VM
+59668:11-25 11:34:06.574  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=195229, buffered position=305475, speed=1.5, updated=417035, actions=7339999, custom actions=[], active item id=0, error=null}
+59669:11-25 11:34:06.577  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59670:11-25 11:34:06.579  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59674:11-25 11:34:06.580  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=195229, buffered position=305475, speed=1.5, updated=417035, actions=7339999, custom actions=[], active item id=0, error=null}
+59675:11-25 11:34:06.581  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59676:11-25 11:34:06.583  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59697:11-25 11:34:07.033  2726  2726 I ImeTracker: net.kravos.player:235b3885: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+59698:11-25 11:34:07.034   523  2204 I ImeTracker: net.kravos.player:235b3885: onCancelled at PHASE_SERVER_SHOULD_HIDE
+59699:11-25 11:34:07.034  2726  2726 I ImeTracker: net.kravos.player:a6fded63: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+59700:11-25 11:34:07.034  2726  2726 I ImeTracker: net.kravos.player:a6fded63: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+59701:11-25 11:34:07.040  1547  1547 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=net.kravos.player fieldId=0 fieldName=null extras=null}, true)
+59708:11-25 11:34:09.574  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=199729, buffered position=305475, speed=1.5, updated=420036, actions=7339999, custom actions=[], active item id=0, error=null}
+59709:11-25 11:34:09.575  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59710:11-25 11:34:09.576  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59714:11-25 11:34:09.577  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=199729, buffered position=305475, speed=1.5, updated=420036, actions=7339999, custom actions=[], active item id=0, error=null}
+59715:11-25 11:34:09.578  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59716:11-25 11:34:09.579  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59742:11-25 11:34:12.575  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=204241, buffered position=305475, speed=1.5, updated=423037, actions=7339999, custom actions=[], active item id=0, error=null}
+59743:11-25 11:34:12.576  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59744:11-25 11:34:12.577  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
+59763:11-25 11:34:12.579  1037  1037 V AudioMediaPlayerWrapper: onPlaybackStateChanged(): net.kravos.player : PlaybackState {state=PLAYING(3), position=204241, buffered position=305475, speed=1.5, updated=423037, actions=7339999, custom actions=[], active item id=0, error=null}
+59764:11-25 11:34:12.580  1037  1037 D AudioMediaPlayerWrapper: net.kravos.player Only Title and Artist info sync for metadata
+59765:11-25 11:34:12.581  1037  1037 V AudioMediaPlayerWrapper: trySendMediaUpdate(): Metadata has been updated for net.kravos.player
